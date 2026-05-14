@@ -4886,3 +4886,44 @@ STDOUT:
 ⚠ Analytics log not found at /tmp/analytics.log
 ```
 Full output: [`server-runs/2026-05-14T23-00-50-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-00-50-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T23:03:50.852Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `bb747ac` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2302ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+# Test with correct parameter name
+echo "=== Testing /api/events with correct params ==="
+curl -s -X POST http://localhost:3000/api/events \
+  -H "Content-Type: application/json" \
+  -d '{"eventType":"auth_success","shopId":"test-shop-123"}' | jq . || echo "Response: $(curl -s -X POST http://localhost:3000/api/events -H 'Content-Type: application/json' -d '{\"eventType\":\"auth_success\",\"shopId\":\"test-shop-123\"}')"
+
+echo ""
+echo "=== Checking analytics log ==="
+if [ -f /tmp/analytics.log ]; then
+  echo "✓ Log file exists"
+  tail -10 /tmp/analytics.log
+else
+  # Check docker container for the log
+  echo "Checking inside container..."
+  docker exec etsy-dashboard-app-new ls -la /tmp/ | grep analytics || echo "No analytics.log in container /tmp/"
+fi
+```
+STDOUT:
+```
+=== Testing /api/events with correct params ===
+{
+  "success": true,
+  "event": {
+    "timestamp": "2026-05-14T23:03:50.758Z",
+    "eventType": "auth_success",
+    "metadata": {}
+  }
+}
+
+=== Checking analytics log ===
+Checking inside container...
+-rw-r--r-- 1 nextjs nextjs  559 May 14 23:03 analytics-events.json
+```
+Full output: [`server-runs/2026-05-14T23-03-50-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-03-50-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
