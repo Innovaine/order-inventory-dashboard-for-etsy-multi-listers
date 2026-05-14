@@ -3174,3 +3174,31 @@ e0ef3006b440   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-en
 5fadef28d2f0   postgres:16-alpine                                     "docker-entrypoint.s…"   4 minutes ago   Up 4 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
 ```
 Full output: [`server-runs/2026-05-14T20-29-28-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-29-28-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T20:32:38.961Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `994e738` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 12107ms)
+```
+sleep 5
+curl -sf http://localhost:3000 -o /dev/null && echo "OK" || echo "FAIL"
+docker logs etsy-dashboard-app --tail=20
+```
+STDOUT:
+```
+OK
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "etsy_dashboard", schema "public" at "postgres:5432"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+  - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 130ms
+```
+Full output: [`server-runs/2026-05-14T20-32-38-app-sleep-5-1.log`](server-runs/2026-05-14T20-32-38-app-sleep-5-1.log)
