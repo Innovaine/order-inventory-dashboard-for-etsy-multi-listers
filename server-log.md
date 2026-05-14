@@ -3712,3 +3712,54 @@ drwxrwxr-x   3 tester tester   4096 May 14 13:27 tests
 -rw-rw-r--   1 tester tester    602 May 14 11:58 tsconfig.json
 ```
 Full output: [`server-runs/2026-05-14T21-07-50-app-uptime-df--h-tail--1-docker-ps-ls--la-or-1.log`](server-runs/2026-05-14T21-07-50-app-uptime-df--h-tail--1-docker-ps-ls--la-or-1.log)
+
+## 2026-05-14T21:08:22.672Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `368c0ac` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 3852ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull && ls -la playwright.config.ts 2>/dev/null || echo "playwright.config.ts not found"
+```
+STDOUT:
+```
+Updating babfc77..368c0ac
+Fast-forward
+ day-10/_index.md              |  17 ++
+ day-10/test.md                | 224 ++++++++++++++++++++++++
+ day-11/_index.md              |  17 ++
+ day-11/_plan.md               |  36 ++++
+ day-11/design.md              | 135 +++++++++++++++
+ day-11/engineering.md         |  82 +++++++++
+ day-11/requirements.md        |  28 +++
+ package.json                  |   1 +
+ playwright.config.ts          |  27 +++
+ requirements.md               | 177 ++++++++++---------
+ server-log.md                 | 393 ++++++++++++++++++++++++++++++++++++++++++
+ test-results/day-10/report.md | 240 ++++++++++++++++++++++++++
+ 12 files changed, 1293 insertions(+), 84 deletions(-)
+ create mode 100644 day-10/_index.md
+ create mode 100644 day-10/test.md
+ create mode 100644 day-11/_index.md
+ create mode 100644 day-11/_plan.md
+ create mode 100644 day-11/design.md
+ create mode 100644 day-11/engineering.md
+ create mode 100644 day-11/requirements.md
+ create mode 100644 playwright.config.ts
+ create mode 100644 test-results/day-10/report.md
+-rw-rw-r-- 1 tester tester 615 May 14 21:08 playwright.config.ts
+```
+Full output: [`server-runs/2026-05-14T21-08-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-08-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T21:08:53.724Z — Priya ran 1 command(s)
+### Command 1 on app as tester (✓ exit 0, 5092ms)
+```
+docker ps && curl -sf http://localhost:3000 -o /dev/null && echo "App responding on port 3000" || echo "App not responding"
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                                                  COMMAND                  CREATED          STATUS                    PORTS                                         NAMES
+e0ef3006b440   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   43 minutes ago   Up 39 minutes             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   etsy-dashboard-app
+5fadef28d2f0   postgres:16-alpine                                     "docker-entrypoint.s…"   43 minutes ago   Up 43 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+App responding on port 3000
+```
+Full output: [`server-runs/2026-05-14T21-08-53-app-docker-ps-curl--sf-http-localhost-3000---1.log`](server-runs/2026-05-14T21-08-53-app-docker-ps-curl--sf-http-localhost-3000---1.log)
