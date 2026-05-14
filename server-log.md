@@ -321,3 +321,17 @@ _Pre-SSH: warehouse pushed to GitHub as commit `0d2fcbd` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && timeout 120 docker compose build --no-cache 2>&1 | tail -100
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T13:24:42.093Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `be19350` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2785ms)
+```
+ls -la ~/order-inventory-dashboard-for-etsy-multi-listers/ | grep package
+```
+STDOUT:
+```
+-rw-rw-r--  1 reviewer reviewer 71297 May 14 11:56 package-lock.json
+-rw-rw-r--  1 reviewer reviewer   824 May 14 11:55 package.json
+```
+Full output: [`server-runs/2026-05-14T13-24-42-app-ls--la-order-inventory-dashboard-for-ets-1.log`](server-runs/2026-05-14T13-24-42-app-ls--la-order-inventory-dashboard-for-ets-1.log)
