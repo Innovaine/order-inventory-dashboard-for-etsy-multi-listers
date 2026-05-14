@@ -3840,3 +3840,24 @@ echo $! > /tmp/pw-test.pid
 echo "Started PID=$(cat /tmp/pw-test.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T21:12:46.523Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `030f7e7` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 3225ms)
+```
+cat > /tmp/run-pw.sh << 'EOF'
+#!/bin/bash
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers npx playwright test --reporter=list
+EOF
+chmod +x /tmp/run-pw.sh
+nohup /tmp/run-pw.sh > /tmp/pw-output.log 2>&1 &
+echo $! > /tmp/pw.pid
+echo "Started PID=$(cat /tmp/pw.pid)"
+```
+STDOUT:
+```
+Started PID=550736
+```
+Full output: [`server-runs/2026-05-14T21-12-46-app-cat-tmp-run-pw.sh-EOF-1.log`](server-runs/2026-05-14T21-12-46-app-cat-tmp-run-pw.sh-EOF-1.log)
