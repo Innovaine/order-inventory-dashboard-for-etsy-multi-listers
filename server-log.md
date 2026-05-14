@@ -4575,3 +4575,12 @@ STDOUT:
 File not readable from host
 ```
 Full output: [`server-runs/2026-05-14T22-11-45-app-curl--s--X-POST-http-localhost-3000-api--1.log`](server-runs/2026-05-14T22-11-45-app-curl--s--X-POST-http-localhost-3000-api--1.log)
+
+## 2026-05-14T22:12:08.216Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `51b9978` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exit 1, 2064ms)
+```
+docker exec etsy-dashboard-app ls -la /tmp/analytics-events.json && echo "---" && docker exec etsy-dashboard-app cat /tmp/analytics-events.json
+```
+ERROR: command exited 1
