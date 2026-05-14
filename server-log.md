@@ -40,3 +40,11 @@ _Pre-SSH: warehouse pushed to GitHub as commit `c5b8962` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull --ff-only
 ```
 ERROR: command exited 1
+
+## 2026-05-14T11:55:15.105Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `780c131` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 3753ms)
+```
+rm -rf ~/order-inventory-dashboard-for-etsy-multi-listers && cd ~ && git clone https://github.com/Innovaine/order-inventory-dashboard-for-etsy-multi-listers.git
+```
