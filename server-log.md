@@ -418,3 +418,21 @@ postgres:16-alpine                 4e6e670bb069        395MB          111MB
 shop-in-a-box-app:latest           586b1e56c46a        203MB         48.5MB   U
 ```
 Full output: [`server-runs/2026-05-14T13-25-15-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T13-25-15-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T13:25:45.907Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `380ae8f` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 12326ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm install --prefer-offline --no-audit 2>&1 | tail -20
+```
+STDOUT:
+```
+npm warn deprecated next@14.2.3: This version has a security vulnerability. Please upgrade to a patched version. See https://nextjs.org/blog/security-update-2025-12-11 for more details.
+
+added 141 packages in 9s
+
+33 packages are looking for funding
+  run `npm fund` for details
+```
+Full output: [`server-runs/2026-05-14T13-25-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T13-25-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
