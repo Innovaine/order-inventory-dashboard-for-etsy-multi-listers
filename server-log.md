@@ -2514,3 +2514,22 @@ STDOUT:
  Container etsy-dashboard-app Started
 ```
 Full output: [`server-runs/2026-05-14T19-47-00-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-47-00-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:47:34.641Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0e1ed22` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 7066ms)
+```
+docker ps
+sleep 5
+curl -sSf http://localhost:3000 -o /dev/null && echo "APP RESPONDING OK" || echo "APP NOT RESPONDING"
+docker logs etsy-dashboard-app --tail 30
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                                                  COMMAND                  CREATED          STATUS                              PORTS                                         NAMES
+3447efd05ebe   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   10 minutes ago   Restarting (1) About a minute ago                                                 etsy-dashboard-app
+f093e29f7632   postgres:16-alpine                                     "docker-entrypoint.s…"   10 minutes ago   Up 10 minutes (healthy)             0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+APP NOT RESPONDING
+```
+Full output: [`server-runs/2026-05-14T19-47-34-app-docker-ps-1.log`](server-runs/2026-05-14T19-47-34-app-docker-ps-1.log)
