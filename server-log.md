@@ -2828,3 +2828,37 @@ Fast-forward
 Build started, PID=528940
 ```
 Full output: [`server-runs/2026-05-14T19-54-12-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-54-12-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:54:39.720Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `7130e2d` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 1945ms)
+```
+kill -0 $(cat /tmp/etsy-build-openssl.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -20 /tmp/etsy-build-openssl.log
+```
+STDOUT:
+```
+RUNNING
+#18 16.39     at async _r.loadEngine (/app/node_modules/@prisma/client/runtime/library.js:112:448)
+#18 16.39     at async _r.instantiateLibrary (/app/node_modules/@prisma/client/runtime/library.js:111:12599) {
+#18 16.39   clientVersion: '5.22.0',
+#18 16.39   errorCode: undefined
+#18 16.39 }
+#18 16.39    Generating static pages (5/11) 
+#18 16.39    Generating static pages (8/11) 
+#18 16.42 PrismaClientInitializationError: Unable to require(`/app/node_modules/.prisma/client/libquery_engine-linux-musl.so.node`).
+#18 16.42 The Prisma engines do not seem to be compatible with your system. Please refer to the documentation about Prisma's system requirements: https://pris.ly/d/system-requirements
+#18 16.42 
+#18 16.42 Details: Error loading shared library libssl.so.1.1: No such file or directory (needed by /app/node_modules/.prisma/client/libquery_engine-linux-musl.so.node)
+#18 16.42     at Object.loadLibrary (/app/node_modules/@prisma/client/runtime/library.js:111:10243)
+#18 16.42     at async _r.loadEngine (/app/node_modules/@prisma/client/runtime/library.js:112:448)
+#18 16.42     at async _r.instantiateLibrary (/app/node_modules/@prisma/client/runtime/library.js:111:12599) {
+#18 16.42   clientVersion: '5.22.0',
+#18 16.42   errorCode: undefined
+#18 16.42 }
+#18 16.46  ✓ Generating static pages (11/11)
+#18 16.61    Finalizing page optimization ...
+#18 16.61    Collecting build traces ...
+```
+Full output: [`server-runs/2026-05-14T19-54-39-app-kill--0-cat-tmp-etsy-build-openssl.pid-2-1.log`](server-runs/2026-05-14T19-54-39-app-kill--0-cat-tmp-etsy-build-openssl.pid-2-1.log)
