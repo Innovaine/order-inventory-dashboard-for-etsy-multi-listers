@@ -1491,3 +1491,12 @@ STDOUT:
 .dockerignore not found
 ```
 Full output: [`server-runs/2026-05-14T18-56-18-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T18-56-18-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T18:57:00.704Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `264b418` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 12433ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup docker compose build > /tmp/etsy-build2.log 2>&1 & echo $! > /tmp/etsy-build2.pid && echo "Started build, PID=$(cat /tmp/etsy-build2.pid)"
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
