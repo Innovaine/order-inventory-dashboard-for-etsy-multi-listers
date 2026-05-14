@@ -312,3 +312,12 @@ STDOUT:
 NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
 ```
 Full output: [`server-runs/2026-05-14T13-21-10-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T13-21-10-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T13:24:17.600Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0d2fcbd` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exec-error: Connection timed out, 39701ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && timeout 120 docker compose build --no-cache 2>&1 | tail -100
+```
+ERROR: Connection timed out
