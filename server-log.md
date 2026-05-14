@@ -4071,3 +4071,12 @@ BUILD DONE/NOT STARTED
  Image order-inventory-dashboard-for-etsy-multi-listers-app Built
 ```
 Full output: [`server-runs/2026-05-14T21-55-52-app-kill--0-cat-tmp-build.pid-2-dev-null-2-d-1.log`](server-runs/2026-05-14T21-55-52-app-kill--0-cat-tmp-build.pid-2-dev-null-2-d-1.log)
+
+## 2026-05-14T21:58:14.973Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `5383ad5` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 13000ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose up -d
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
