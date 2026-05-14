@@ -1584,3 +1584,19 @@ etsy-dashboard-app
 a32c757c5a3d   postgres:16-alpine                                     "docker-entrypoint.s…"   About a minute ago   Up About a minute (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
 ```
 Full output: [`server-runs/2026-05-14T19-01-19-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log`](server-runs/2026-05-14T19-01-19-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log)
+
+## 2026-05-14T19:02:03.887Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `a19c947` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 7430ms)
+```
+sleep 5; curl -i http://localhost:3000/ 2>&1 | head -30
+```
+STDOUT:
+```
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (7) Failed to connect to localhost port 3000 after 0 ms: Couldn't connect to server
+```
+Full output: [`server-runs/2026-05-14T19-02-03-app-sleep-5-curl--i-http-localhost-3000-2-1--1.log`](server-runs/2026-05-14T19-02-03-app-sleep-5-curl--i-http-localhost-3000-2-1--1.log)
