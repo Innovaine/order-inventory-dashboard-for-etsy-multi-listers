@@ -1330,3 +1330,38 @@ Full output: [`server-runs/2026-05-14T17-58-51-app-cd-order-inventory-dashboard-
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && timeout 90 docker compose build 2>&1
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T18:52:42.527Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `02be827` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2317ms)
+```
+docker ps -a; df -h / | tail -1; uptime; ls -la ~/order-inventory-dashboard-for-etsy-multi-listers 2>/dev/null | head -20 || echo "repo not yet cloned"
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+/dev/sda1       387G  9.3G  378G   3% /
+ 18:52:42 up 1 day, 19:55,  1 user,  load average: 0.00, 0.00, 0.00
+total 256
+drwxrwxr-x  16 engineer engineer  4096 May 14 17:49 .
+drwxr-x---  15 engineer engineer  4096 May 14 11:52 ..
+drwxrwxr-x   8 engineer engineer  4096 May 14 17:56 .git
+-rw-rw-r--   1 engineer engineer  1353 May 14 17:49 Dockerfile
+-rw-rw-r--   1 engineer engineer  1849 May 14 11:52 README.md
+-rw-rw-r--   1 engineer engineer  1547 May 14 11:52 _meta.json
+drwxrwxr-x   2 engineer engineer  4096 May 14 11:52 day-01
+drwxrwxr-x   2 engineer engineer  4096 May 14 17:28 day-02
+drwxrwxr-x   2 engineer engineer  4096 May 14 17:28 day-03
+drwxrwxr-x   2 engineer engineer  4096 May 14 17:49 day-04
+drwxrwxr-x   2 engineer engineer  4096 May 14 17:49 day-05
+drwxrwxr-x   2 engineer engineer  4096 May 14 11:52 decisions
+-rw-rw-r--   1 engineer engineer  1109 May 14 11:52 docker-compose.yml
+-rw-rw-r--   1 engineer engineer   782 May 14 17:28 email-cold-1-etsy-shop-owner-high-volume.txt
+-rw-rw-r--   1 engineer engineer   557 May 14 17:28 email-cold-2-etsy-shop-owner-multi-channel.txt
+-rw-rw-r--   1 engineer engineer   624 May 14 17:28 email-cold-3-etsy-shop-owner-struggling-growth.txt
+-rw-rw-r--   1 engineer engineer   208 May 14 17:28 email-followup.txt
+drwxrwxr-x   2 engineer engineer  4096 May 14 17:28 execution
+-rw-rw-r--   1 engineer engineer  1154 May 14 11:52 idea.md
+```
+Full output: [`server-runs/2026-05-14T18-52-42-app-docker-ps--a-df--h-tail--1-uptime-ls--la-1.log`](server-runs/2026-05-14T18-52-42-app-docker-ps--a-df--h-tail--1-uptime-ls--la-1.log)
