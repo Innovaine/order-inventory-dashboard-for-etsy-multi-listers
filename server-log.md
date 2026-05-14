@@ -4392,3 +4392,16 @@ BUILD RUNNING
 #13 [builder 3/5] COPY . .
 ```
 Full output: [`server-runs/2026-05-14T22-04-14-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log`](server-runs/2026-05-14T22-04-14-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log)
+
+## 2026-05-14T22:04:52.034Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `d91e0f7` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 1884ms)
+```
+kill -0 $(cat /tmp/day12-build.pid 2>/dev/null) 2>/dev/null && echo "BUILD STILL RUNNING" || (echo "BUILD FINISHED" && tail -30 /tmp/day12-build.log | grep -E "(Successfully|DONE|error|ERROR|failed)")
+```
+STDOUT:
+```
+BUILD STILL RUNNING
+```
+Full output: [`server-runs/2026-05-14T22-04-52-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log`](server-runs/2026-05-14T22-04-52-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log)
