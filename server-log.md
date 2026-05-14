@@ -4560,3 +4560,18 @@ STDOUT:
 {"error":"Not authenticated"}
 ```
 Full output: [`server-runs/2026-05-14T22-11-17-app-curl--sf-http-localhost-3000-echo-echo---1.log`](server-runs/2026-05-14T22-11-17-app-curl--sf-http-localhost-3000-echo-echo---1.log)
+
+## 2026-05-14T22:11:45.979Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `292198d` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2377ms)
+```
+curl -s -X POST http://localhost:3000/api/events -H "Content-Type: application/json" -d '{"eventType":"test_event","metadata":{"test":true,"action":"review"}}' && echo "" && echo "---checking-file---" && docker exec etsy-dashboard-app cat /tmp/analytics-events.json 2>/dev/null || echo "File not readable from host"
+```
+STDOUT:
+```
+{"success":true,"event":{"timestamp":"2026-05-14T22:11:46.028Z","eventType":"test_event","metadata":{"test":true,"action":"review"}}}
+---checking-file---
+File not readable from host
+```
+Full output: [`server-runs/2026-05-14T22-11-45-app-curl--s--X-POST-http-localhost-3000-api--1.log`](server-runs/2026-05-14T22-11-45-app-curl--s--X-POST-http-localhost-3000-api--1.log)
