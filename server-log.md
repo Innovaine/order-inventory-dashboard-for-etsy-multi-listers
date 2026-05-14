@@ -2750,3 +2750,21 @@ _Pre-SSH: warehouse pushed to GitHub as commit `629667b` so the server's `git pu
 ```
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose up -d
 ```
+
+## 2026-05-14T19:53:13.369Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `7b63e7a` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 7341ms)
+```
+docker ps
+sleep 5
+curl -sSf http://localhost:3000 -o /dev/null && echo "APP OK" || echo "APP FAIL"
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                                                  COMMAND                  CREATED         STATUS                          PORTS                                         NAMES
+8aaaba51f158   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   2 minutes ago   Restarting (1) 25 seconds ago                                                 etsy-dashboard-app
+2a92ec7e04c2   postgres:16-alpine                                     "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes (healthy)          0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+APP FAIL
+```
+Full output: [`server-runs/2026-05-14T19-53-13-app-docker-ps-1.log`](server-runs/2026-05-14T19-53-13-app-docker-ps-1.log)
