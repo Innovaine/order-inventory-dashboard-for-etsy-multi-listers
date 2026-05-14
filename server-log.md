@@ -5105,3 +5105,48 @@ DONE
   11 passed (24.0s)
 ```
 Full output: [`server-runs/2026-05-14T23-08-22-app-kill--0-cat-tmp-day13-full.pid-2-dev-nul-1.log`](server-runs/2026-05-14T23-08-22-app-kill--0-cat-tmp-day13-full.pid-2-dev-nul-1.log)
+
+## 2026-05-14T23:09:39.501Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `09a6844` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2420ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+echo "=== Viewing analytics events log ==="
+docker exec etsy-dashboard-app-new cat /tmp/analytics-events.json | jq . 2>/dev/null || docker exec etsy-dashboard-app-new cat /tmp/analytics-events.json
+```
+STDOUT:
+```
+=== Viewing analytics events log ===
+[
+  {
+    "timestamp": "2026-05-14T22:11:46.028Z",
+    "eventType": "test_event",
+    "metadata": {
+      "test": true,
+      "action": "review"
+    }
+  },
+  {
+    "timestamp": "2026-05-14T22:13:51.295Z",
+    "eventType": "test1",
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-05-14T22:13:51.310Z",
+    "eventType": "test2",
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-05-14T22:13:51.322Z",
+    "eventType": "test3",
+    "metadata": {}
+  },
+  {
+    "timestamp": "2026-05-14T23:03:50.758Z",
+    "eventType": "auth_success",
+    "metadata": {}
+  }
+]
+```
+Full output: [`server-runs/2026-05-14T23-09-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-09-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
