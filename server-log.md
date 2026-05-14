@@ -837,3 +837,18 @@ nohup docker compose build > /tmp/docker-build.log 2>&1 & \
 echo "Build started in background, PID: $!"
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T17:37:44.344Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `728aba9` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2071ms)
+```
+docker ps | grep -E 'etsy|inventory|dashboard' || echo "No etsy/inventory containers" && \
+curl -s -o /dev/null -w "HTTP %{http_code} in %{time_total}s\n" http://localhost:3000 2>&1 || echo "Port 3000 not responding"
+```
+STDOUT:
+```
+No etsy/inventory containers
+HTTP 404 in 0.011886s
+```
+Full output: [`server-runs/2026-05-14T17-37-44-app-docker-ps-grep--E-etsy-inventory-dashboa-1.log`](server-runs/2026-05-14T17-37-44-app-docker-ps-grep--E-etsy-inventory-dashboa-1.log)
