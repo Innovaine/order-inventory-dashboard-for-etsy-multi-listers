@@ -3155,3 +3155,22 @@ _Pre-SSH: warehouse pushed to GitHub as commit `4155bd0` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose up -d
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T20:29:28.905Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `acb6436` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 7846ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+nohup docker compose up -d > /tmp/etsy-up.log 2>&1 &
+echo $! > /tmp/etsy-up.pid
+sleep 3
+docker ps
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                                                  COMMAND                  CREATED         STATUS                   PORTS                                         NAMES
+e0ef3006b440   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   4 minutes ago   Up 2 seconds             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   etsy-dashboard-app
+5fadef28d2f0   postgres:16-alpine                                     "docker-entrypoint.s…"   4 minutes ago   Up 4 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+```
+Full output: [`server-runs/2026-05-14T20-29-28-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-29-28-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
