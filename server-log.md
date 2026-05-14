@@ -3772,3 +3772,16 @@ _Pre-SSH: warehouse pushed to GitHub as commit `d5c8def` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm install -D @playwright/test 2>&1 | tail -20
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T21:10:29.703Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `70e44a7` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 4148ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup npm install -D @playwright/test > /tmp/npm-install-pw.log 2>&1 & echo $! > /tmp/npm-install-pw.pid && echo "Started npm install, PID=$(cat /tmp/npm-install-pw.pid)"
+```
+STDOUT:
+```
+Started npm install, PID=549426
+```
+Full output: [`server-runs/2026-05-14T21-10-29-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-10-29-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
