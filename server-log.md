@@ -4494,3 +4494,32 @@ _Pre-SSH: warehouse pushed to GitHub as commit `5c74af7` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose logs etsy-dashboard-app --tail=30
 ```
 ERROR: command exited 1
+
+## 2026-05-14T22:09:49.686Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `71a1acc` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2128ms)
+```
+docker ps -a && echo "---" && docker logs etsy-dashboard-app --tail=20
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                COMMAND                  CREATED          STATUS                 PORTS                                         NAMES
+02516b692c8d   4be0f022519d         "docker-entrypoint.s…"   11 minutes ago   Up 10 minutes          0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   etsy-dashboard-app
+5fadef28d2f0   postgres:16-alpine   "docker-entrypoint.s…"   2 hours ago      Up 2 hours (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+---
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "etsy_dashboard", schema "public" at "postgres:5432"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+  - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 144ms
+```
+Full output: [`server-runs/2026-05-14T22-09-49-app-docker-ps--a-echo-----docker-logs-etsy-d-1.log`](server-runs/2026-05-14T22-09-49-app-docker-ps--a-echo-----docker-logs-etsy-d-1.log)
