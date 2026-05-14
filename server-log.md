@@ -2541,3 +2541,68 @@ _Pre-SSH: warehouse pushed to GitHub as commit `31a2925` so the server's `git pu
 ```
 docker logs etsy-dashboard-app --tail 80
 ```
+
+## 2026-05-14T19:48:37.900Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `fbd4dcd` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 1982ms) _(showing tail — full 4,011B stdout + 0B stderr)_
+```
+docker logs etsy-dashboard-app 2>&1 | tail -100
+```
+STDOUT:
+```
+…    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/app/node_modules/.bin/prisma_schema_build_bg.wasm'
+}
+
+Node.js v20.20.2
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open '/app/node_modules/.bin/prisma_schema_build_bg.wasm'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at /app/node_modules/.bin/prisma:19:14531
+    at /app/node_modules/.bin/prisma:2:385
+    at Object.<anonymous> (/app/node_modules/.bin/prisma:244:96)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/app/node_modules/.bin/prisma_schema_build_bg.wasm'
+}
+
+Node.js v20.20.2
+node:fs:573
+  return binding.open(
+                 ^
+
+Error: ENOENT: no such file or directory, open '/app/node_modules/.bin/prisma_schema_build_bg.wasm'
+    at Object.openSync (node:fs:573:18)
+    at Object.readFileSync (node:fs:452:35)
+    at /app/node_modules/.bin/prisma:19:14531
+    at /app/node_modules/.bin/prisma:2:385
+    at Object.<anonymous> (/app/node_modules/.bin/prisma:244:96)
+    at Module._compile (node:internal/modules/cjs/loader:1521:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1623:10)
+    at Module.load (node:internal/modules/cjs/loader:1266:32)
+    at Module._load (node:internal/modules/cjs/loader:1091:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/app/node_modules/.bin/prisma_schema_build_bg.wasm'
+}
+
+Node.js v20.20.2
+```
+Full output: [`server-runs/2026-05-14T19-48-37-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log`](server-runs/2026-05-14T19-48-37-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log)
