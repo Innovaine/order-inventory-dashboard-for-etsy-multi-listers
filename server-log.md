@@ -2135,3 +2135,76 @@ STDOUT:
 Build started, PID=511554
 ```
 Full output: [`server-runs/2026-05-14T19-29-17-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-29-17-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:29:41.680Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `f2ebf84` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2078ms) _(showing tail — full 3,446B stdout + 0B stderr)_
+```
+kill -0 $(cat /tmp/etsy-build.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -100 /tmp/etsy-build.log
+```
+STDOUT:
+```
+…OPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#12 CACHED
+
+#13 [deps 2/4] WORKDIR /app
+#13 CACHED
+
+#14 [runner  6/10] RUN chown nextjs:nodejs .next
+#14 CACHED
+
+#15 [builder 4/5] RUN ./node_modules/.bin/prisma generate
+#15 CACHED
+
+#16 [runner  3/10] RUN adduser --system --uid 1001 nextjs
+#16 CACHED
+
+#17 [deps 1/4] RUN apk add --no-cache libc6-compat
+#17 CACHED
+
+#18 [builder 5/5] RUN npm run build
+#18 CACHED
+
+#19 [deps 3/4] COPY package.json package-lock.json* ./
+#19 CACHED
+
+#20 [runner  5/10] RUN mkdir .next
+#20 CACHED
+
+#21 [runner  4/10] COPY --from=builder /app/public ./public
+#21 CACHED
+
+#22 [builder 3/5] COPY . .
+#22 CACHED
+
+#23 [runner  9/10] COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+#23 CACHED
+
+#24 [runner 10/10] COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
+#24 CACHED
+
+#25 exporting to image
+#25 exporting layers done
+#25 exporting manifest sha256:c934ecb5c0c2348065ee63333bd05e3e1635d441a60cbc552bf96ba1ffc3dba4 done
+#25 exporting config sha256:d383156b2e727095ab827e0f15277644c6c882a75a575d62047de3b7a10e102f done
+#25 exporting attestation manifest sha256:83c2946954a7a718b35b50fa276759b0d46afdf60f411579a785b5115677df93 0.0s done
+#25 exporting manifest list sha256:3668f61809d493f03ebb775b7803e601b6dc069573ac59dfdba2ef81b7b63d5c done
+#25 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
+#25 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#25 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#25 DONE 0.1s
+
+#26 resolving provenance for metadata file
+#26 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built 
+ Container etsy-dashboard-db Running 
+ Container etsy-dashboard-app Recreate 
+ Container etsy-dashboard-app Recreated 
+ Container etsy-dashboard-db Waiting 
+ Container etsy-dashboard-db Healthy 
+ Container etsy-dashboard-app Starting 
+ Container etsy-dashboard-app Started
+```
+Full output: [`server-runs/2026-05-14T19-29-41-app-kill--0-cat-tmp-etsy-build.pid-2-dev-nul-1.log`](server-runs/2026-05-14T19-29-41-app-kill--0-cat-tmp-etsy-build.pid-2-dev-nul-1.log)
