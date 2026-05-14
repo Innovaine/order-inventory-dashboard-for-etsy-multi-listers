@@ -928,3 +928,63 @@ STDOUT:
 Build started in background, PID: 490051
 ```
 Full output: [`server-runs/2026-05-14T17-50-51-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-50-51-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T17:51:40.807Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `eb4b8f1` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 1985ms) _(showing tail — full 5,109B stdout + 0B stderr)_
+```
+ps aux | grep 490051 | grep -v grep || echo "Process 490051 completed"; tail -100 /tmp/docker-build.log 2>/dev/null || echo "Build log not yet created"
+```
+STDOUT:
+```
+…shallow|linked>] [--legacy-bundling]
+#13 10.91 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+#13 10.91 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+#13 10.91 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+#13 10.91 npm error [--no-bin-links] [--no-fund] [--dry-run]
+#13 10.91 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+#13 10.91 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+#13 10.91 npm error
+#13 10.91 npm error aliases: clean-install, ic, install-clean, isntall-clean
+#13 10.91 npm error
+#13 10.91 npm error Run "npm help ci" for more info
+#13 10.91 npm notice
+#13 10.91 npm notice New major version of npm available! 10.8.2 -> 11.14.1
+#13 10.91 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1
+#13 10.91 npm notice To update run: npm install -g npm@11.14.1
+#13 10.91 npm notice
+#13 10.91 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-05-14T17_36_56_111Z-debug-0.log
+#13 ERROR: process "/bin/sh -c npm ci" did not complete successfully: exit code: 1
+------
+ > [deps 4/4] RUN npm ci:
+10.91 npm error
+10.91 npm error aliases: clean-install, ic, install-clean, isntall-clean
+10.91 npm error
+10.91 npm error Run "npm help ci" for more info
+10.91 npm notice
+10.91 npm notice New major version of npm available! 10.8.2 -> 11.14.1
+10.91 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1
+10.91 npm notice To update run: npm install -g npm@11.14.1
+10.91 npm notice
+10.91 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-05-14T17_36_56_111Z-debug-0.log
+------
+Dockerfile:9
+
+--------------------
+
+   7 |     
+
+   8 |     COPY package.json package-lock.json* ./
+
+   9 | >>> RUN npm ci
+
+  10 |     
+
+  11 |     # Rebuild the source code only when needed
+
+--------------------
+
+failed to solve: process "/bin/sh -c npm ci" did not complete successfully: exit code: 1
+```
+Full output: [`server-runs/2026-05-14T17-51-40-app-ps-aux-grep-490051-grep--v-grep-echo-Pro-1.log`](server-runs/2026-05-14T17-51-40-app-ps-aux-grep-490051-grep--v-grep-echo-Pro-1.log)
