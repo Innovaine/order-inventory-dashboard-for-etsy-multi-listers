@@ -1,12 +1,9 @@
-// FR-2: Fetch inventory data from database
-// Returns cached inventory items for display
-
+// Get current shop session from httpOnly cookie
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/lib/prisma';
 
 export async function GET(request: NextRequest) {
   try {
-    // Read shopId from httpOnly cookie (set during auth)
     const shopId = request.cookies.get('shopId')?.value;
 
     if (!shopId) {
@@ -16,8 +13,17 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    // Fetch shop details
     const shop = await prisma.shop.findUnique({
       where: { id: shopId },
+      select: {
+        id: true,
+        shopId: true,
+        shopName: true,
+        lastSyncedAt: true,
+        syncStatus: true,
+        syncError: true,
+      },
     });
 
     if (!shop) {
@@ -27,19 +33,9 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    const items = await prisma.inventoryItem.findMany({
-      where: { shopId: shop.id },
-      orderBy: { quantity: 'asc' }, // Low stock first per FR-2
-    });
-
-    return NextResponse.json({
-      items,
-      lastSyncedAt: shop.lastSyncedAt,
-      syncStatus: shop.syncStatus,
-      syncError: shop.syncError,
-    });
+    return NextResponse.json({ shop });
   } catch (error: any) {
-    console.error('Inventory fetch error:', error);
+    console.error('Session fetch error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }

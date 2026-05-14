@@ -29,10 +29,8 @@ export default function HomePage() {
         return;
       }
 
-      // Store shop ID in session storage for subsequent requests
-      sessionStorage.setItem('shopId', data.shop.id);
-      sessionStorage.setItem('shopName', data.shop.shopName);
-      
+      // Session is now stored in httpOnly cookie (set by server)
+      // No client-side storage needed - more secure against XSS
       router.push('/dashboard');
     } catch (err: any) {
       setError('Connection error. Please try again.');

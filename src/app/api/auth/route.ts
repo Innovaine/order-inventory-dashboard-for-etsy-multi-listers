@@ -3,9 +3,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { EtsyClient } from '@/lib/etsy-client';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/lib/prisma';
 
 export async function POST(request: NextRequest) {
   try {
@@ -62,7 +60,8 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    return NextResponse.json({
+    // Set httpOnly cookie for session (secure in production)
+    const response = NextResponse.json({
       success: true,
       shop: {
         id: shop.id,
@@ -70,6 +69,16 @@ export async function POST(request: NextRequest) {
         shopName: shop.shopName,
       },
     });
+
+    response.cookies.set('shopId', shop.id, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      maxAge: 60 * 60 * 24 * 7, // 7 days
+      path: '/',
+    });
+
+    return response;
   } catch (error: any) {
     console.error('Auth error:', error);
     return NextResponse.json(

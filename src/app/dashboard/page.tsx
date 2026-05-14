@@ -8,29 +8,33 @@ import OrdersTable from '@/components/OrdersTable';
 import SyncStatus from '@/components/SyncStatus';
 
 export default function DashboardPage() {
-  const [shopId, setShopId] = useState<string | null>(null);
-  const [shopName, setShopName] = useState<string | null>(null);
   const router = useRouter();
   const queryClient = useQueryClient();
 
-  useEffect(() => {
-    // Check if shop is connected
-    const id = sessionStorage.getItem('shopId');
-    const name = sessionStorage.getItem('shopName');
-    
-    if (!id) {
-      router.push('/');
-      return;
-    }
-    
-    setShopId(id);
-    setShopName(name);
-  }, [router]);
+  // Fetch session from server (httpOnly cookie)
+  const { data: sessionData, isLoading: sessionLoading } = useQuery({
+    queryKey: ['session'],
+    queryFn: async () => {
+      const res = await fetch('/api/session');
+      if (!res.ok) {
+        if (res.status === 401) {
+          router.push('/');
+          throw new Error('Not authenticated');
+        }
+        throw new Error('Failed to fetch session');
+      }
+      return res.json();
+    },
+    retry: false,
+  });
+
+  const shopId = sessionData?.shop?.id;
+  const shopName = sessionData?.shop?.shopName;
 
   const { data: inventoryData, isLoading: inventoryLoading } = useQuery({
     queryKey: ['inventory', shopId],
     queryFn: async () => {
-      const res = await fetch(`/api/inventory?shopId=${shopId}`);
+      const res = await fetch('/api/inventory');
       if (!res.ok) throw new Error('Failed to fetch inventory');
       return res.json();
     },
@@ -41,7 +45,7 @@ export default function DashboardPage() {
   const { data: ordersData, isLoading: ordersLoading } = useQuery({
     queryKey: ['orders', shopId],
     queryFn: async () => {
-      const res = await fetch(`/api/orders?shopId=${shopId}`);
+      const res = await fetch('/api/orders');
       if (!res.ok) throw new Error('Failed to fetch orders');
       return res.json();
     },
@@ -56,7 +60,7 @@ export default function DashboardPage() {
       const res = await fetch('/api/sync', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ shopId }),
+        body: JSON.stringify({}),
       });
 
       if (res.ok) {
@@ -73,7 +77,7 @@ export default function DashboardPage() {
     if (!shopId) return;
 
     try {
-      const res = await fetch(`/api/export-csv?shopId=${shopId}`);
+      const res = await fetch('/api/export-csv');
       if (!res.ok) throw new Error('Export failed');
 
       const blob = await res.blob();
@@ -90,8 +94,12 @@ export default function DashboardPage() {
     }
   };
 
-  if (!shopId) {
-    return null; // Redirect is in progress
+  if (sessionLoading || !shopId) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-gray-600">Loading...</div>
+      </div>
+    );
   }
 
   return (
