@@ -2980,3 +2980,18 @@ docker ps
 docker logs etsy-dashboard-app-2-1 --tail=30
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T20:09:43.064Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `23199ff` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 5639ms)
+```
+docker ps
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                                                  COMMAND                  CREATED          STATUS                    PORTS                                         NAMES
+6390244b7772   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   etsy-dashboard-app
+c2038095726d   postgres:16-alpine                                     "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+```
+Full output: [`server-runs/2026-05-14T20-09-43-app-docker-ps-1.log`](server-runs/2026-05-14T20-09-43-app-docker-ps-1.log)
