@@ -4723,3 +4723,12 @@ STDOUT:
 node_modules exists
 ```
 Full output: [`server-runs/2026-05-14T22-18-32-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-18-32-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T22:23:20.997Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `dcef194` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 13342ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup npx playwright test --config=playwright.config.ts 2>&1 > /tmp/pw-run.log & echo $! > /tmp/pw.pid && echo "Started PID=$(cat /tmp/pw.pid)"
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
