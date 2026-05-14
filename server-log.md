@@ -5031,3 +5031,27 @@ export PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers
 npx playwright test --reporter=list 2>&1 | tee /tmp/day13-full-regression.log
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T23:06:49.913Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `3b2b3af` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 1967ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+# Write a script to run with env var
+cat > /tmp/run-pw-day13.sh << 'EOF'
+#!/bin/bash
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+export PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers
+npx playwright test --reporter=list
+EOF
+chmod +x /tmp/run-pw-day13.sh
+nohup /tmp/run-pw-day13.sh > /tmp/day13-full.log 2>&1 &
+echo $! > /tmp/day13-full.pid
+echo "Started test suite, PID: $(cat /tmp/day13-full.pid)"
+```
+STDOUT:
+```
+Started test suite, PID: 572076
+```
+Full output: [`server-runs/2026-05-14T23-06-49-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-06-49-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
