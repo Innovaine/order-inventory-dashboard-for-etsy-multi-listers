@@ -4829,3 +4829,25 @@ CONTAINER ID   IMAGE                                                         COM
 ✓ Dashboard responding on port 3000
 ```
 Full output: [`server-runs/2026-05-14T22-59-38-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-59-38-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T23:00:23.829Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `611599e` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 10292ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+# Run abbreviated smoke test (3 critical tests covering auth, inventory, CSV export)
+PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers npx playwright test tests/web/dashboard.spec.ts:4 tests/web/dashboard.spec.ts:59 tests/web/dashboard.spec.ts:142 --reporter=list 2>&1 | tee /tmp/day13-smoke.log
+```
+STDOUT:
+```
+
+Running 3 tests using 1 worker
+
+  ✓  1 [chromium] › tests/web/dashboard.spec.ts:4:5 › FR-1: User can enter API key and see validation (549ms)
+  ✓  2 [chromium] › tests/web/dashboard.spec.ts:59:5 › FR-2: Inventory table displays and sorts by quantity (3.3s)
+  ✓  3 [chromium] › tests/web/dashboard.spec.ts:142:5 › FR-4: CSV export button triggers download (2.2s)
+
+  3 passed (6.7s)
+```
+Full output: [`server-runs/2026-05-14T23-00-23-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-00-23-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
