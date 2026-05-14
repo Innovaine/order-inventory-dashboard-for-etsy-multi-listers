@@ -1792,3 +1792,12 @@ STDOUT:
 aaa92d4c80b3   postgres:16-alpine                                     "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
 ```
 Full output: [`server-runs/2026-05-14T19-08-32-app-docker-ps--a-grep-etsy-docker-logs-etsy--1.log`](server-runs/2026-05-14T19-08-32-app-docker-ps--a-grep-etsy-docker-logs-etsy--1.log)
+
+## 2026-05-14T19:09:30.426Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0e6093a` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 17509ms)
+```
+docker start etsy-dashboard-app; sleep 15; docker ps | grep etsy-dashboard-app; curl -sS http://localhost:3000/ 2>&1 | head -5
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
