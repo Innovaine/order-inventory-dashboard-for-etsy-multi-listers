@@ -4927,3 +4927,53 @@ Checking inside container...
 -rw-r--r-- 1 nextjs nextjs  559 May 14 23:03 analytics-events.json
 ```
 Full output: [`server-runs/2026-05-14T23-03-50-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-03-50-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T23:04:40.704Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `576bd63` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 1881ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+echo "=== Checking QUICKSTART.md ==="
+if [ -f QUICKSTART.md ]; then
+  echo "✓ QUICKSTART.md exists"
+  head -20 QUICKSTART.md
+else
+  echo "⚠ QUICKSTART.md not found"
+fi
+
+echo ""
+echo "=== Checking onboarding materials ==="
+ls -lh onboarding*.html dashboard-empty*.html csv-preview.html 2>/dev/null | wc -l
+echo "Found $(ls onboarding*.html dashboard-empty*.html csv-preview.html 2>/dev/null | wc -l) onboarding HTML files"
+```
+STDOUT:
+```
+=== Checking QUICKSTART.md ===
+✓ QUICKSTART.md exists
+# Etsy Dashboard — Quick Start Guide
+
+Welcome! This dashboard helps you track inventory and orders from your Etsy shop in one place.
+
+## What You'll Need
+
+1. **Your Etsy API Key** — Follow the steps below to get one (it takes about 5 minutes)
+2. **A web browser** — Chrome, Firefox, or Safari work great
+
+---
+
+## Step 1: Get Your Etsy API Key
+
+To connect your shop, you need an Etsy API key (also called an "OAuth token").
+
+### How to Create an Etsy API Key:
+
+1. Go to **[Etsy Developer Portal](https://www.etsy.com/developers/your-apps)**
+2. Click **"Create a New App"**
+3. Fill in the form:
+
+=== Checking onboarding materials ===
+3
+Found 3 onboarding HTML files
+```
+Full output: [`server-runs/2026-05-14T23-04-40-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-04-40-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
