@@ -2458,3 +2458,59 @@ STDOUT:
 Rebuild started, PID=518476
 ```
 Full output: [`server-runs/2026-05-14T19-36-53-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-36-53-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:47:00.354Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `d7ee200` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2245ms) _(showing tail — full 4,700B stdout + 0B stderr)_
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+kill -0 $(cat /tmp/etsy-rebuild.pid) 2>/dev/null && echo "BUILD RUNNING" || echo "BUILD DONE"
+tail -100 /tmp/etsy-rebuild.log
+```
+STDOUT:
+```
+… COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+#23 DONE 0.0s
+
+#24 [runner 10/13] COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
+#24 DONE 0.0s
+
+#25 [runner 11/13] COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.bin/prisma ./node_modules/.bin/prisma
+#25 DONE 0.0s
+
+#26 [runner 12/13] COPY --from=builder --chown=nextjs:nodejs /app/node_modules/prisma ./node_modules/prisma
+#26 DONE 0.1s
+
+#27 [runner 13/13] COPY --from=builder --chown=nextjs:nodejs /app/node_modules/@prisma ./node_modules/@prisma
+#27 DONE 0.1s
+
+#28 exporting to image
+#28 exporting layers
+#28 exporting layers 1.8s done
+#28 exporting manifest sha256:787d74585e326c9da60b3f1c255f5703b24997b42fb927e156136ab1589f8007 done
+#28 exporting config sha256:4e2cd8ef2146a7d1a614730ba8409edadc343e33c65bacd66d2296323240b65a done
+#28 exporting attestation manifest sha256:3c1c66cbe108065aa87590266854c228a0dddf34480fbbe09157796ed889220b done
+#28 exporting manifest list sha256:6a6e2db683bb1bc7fae440a15989dff211a937bd8b1e545439b8e92bd3a1870a done
+#28 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#28 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
+#28 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest 1.0s done
+#28 DONE 2.8s
+
+#29 resolving provenance for metadata file
+#29 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built 
+ Network order-inventory-dashboard-for-etsy-multi-listers_default Creating 
+ Network order-inventory-dashboard-for-etsy-multi-listers_default Created 
+ Container etsy-dashboard-db Creating 
+ Container etsy-dashboard-db Created 
+ Container etsy-dashboard-app Creating 
+ Container etsy-dashboard-app Created 
+ Container etsy-dashboard-db Starting 
+ Container etsy-dashboard-db Started 
+ Container etsy-dashboard-db Waiting 
+ Container etsy-dashboard-db Healthy 
+ Container etsy-dashboard-app Starting 
+ Container etsy-dashboard-app Started
+```
+Full output: [`server-runs/2026-05-14T19-47-00-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-47-00-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
