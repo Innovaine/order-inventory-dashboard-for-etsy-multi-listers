@@ -2606,3 +2606,32 @@ Error: ENOENT: no such file or directory, open '/app/node_modules/.bin/prisma_sc
 Node.js v20.20.2
 ```
 Full output: [`server-runs/2026-05-14T19-48-37-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log`](server-runs/2026-05-14T19-48-37-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log)
+
+## 2026-05-14T19:49:24.198Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `851267a` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 3215ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+git pull
+docker compose down
+nohup docker compose build > /tmp/etsy-build-day8.log 2>&1 &
+echo $! > /tmp/etsy-build-day8.pid
+echo "Build started, PID=$(cat /tmp/etsy-build-day8.pid)"
+```
+STDOUT:
+```
+Updating 0b6c397..851267a
+Fast-forward
+ Dockerfile            |   8 +-
+ day-07/_index.md      |  17 +++
+ day-07/engineering.md | 352 ++++++++++++++++++++++++++++++++++++++++++++++++++
+ day-08/_plan.md       |  38 ++++++
+ server-log.md         | 189 +++++++++++++++++++++++++++
+ 5 files changed, 600 insertions(+), 4 deletions(-)
+ create mode 100644 day-07/_index.md
+ create mode 100644 day-07/engineering.md
+ create mode 100644 day-08/_plan.md
+Build started, PID=524469
+```
+Full output: [`server-runs/2026-05-14T19-49-24-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-49-24-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
