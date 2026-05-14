@@ -4139,3 +4139,24 @@ etsy-dashboard-app  |  ✓ Starting...
 etsy-dashboard-app  |  ✓ Ready in 144ms
 ```
 Full output: [`server-runs/2026-05-14T21-59-42-app-sleep-5-1.log`](server-runs/2026-05-14T21-59-42-app-sleep-5-1.log)
+
+## 2026-05-14T22:00:02.536Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `62a3e5f` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2314ms)
+```
+curl -sf http://localhost:3000 -o /dev/null && echo "✓ Dashboard OK" || echo "✗ Dashboard FAIL"
+curl -sf http://localhost:3000/api/session -o /dev/null && echo "✓ API OK" || echo "✗ API FAIL"
+# Test analytics event logging
+curl -X POST http://localhost:3000/api/events -H "Content-Type: application/json" -d '{"eventType":"test_event","metadata":{"test":true}}' && echo ""
+# Check if event was logged
+cat /tmp/analytics-events.json 2>/dev/null || echo "Analytics file not created yet"
+```
+STDOUT:
+```
+✓ Dashboard OK
+✗ API FAIL
+{"success":true,"event":{"timestamp":"2026-05-14T22:00:02.538Z","eventType":"test_event","metadata":{"test":true}}}
+Analytics file not created yet
+```
+Full output: [`server-runs/2026-05-14T22-00-02-app-curl--sf-http-localhost-3000--o-dev-null-1.log`](server-runs/2026-05-14T22-00-02-app-curl--sf-http-localhost-3000--o-dev-null-1.log)
