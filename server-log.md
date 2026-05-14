@@ -4443,3 +4443,36 @@ _Pre-SSH: warehouse pushed to GitHub as commit `808d004` so the server's `git pu
 ls -lah /tmp/analytics-events.json 2>/dev/null && echo "---" && cat /tmp/analytics-events.json 2>/dev/null | tail -20
 ```
 ERROR: command exited 2
+
+## 2026-05-14T22:08:46.045Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `867df5a` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2046ms)
+```
+kill -0 $(cat /tmp/day12-build.pid 2>/dev/null) 2>/dev/null && echo "BUILD RUNNING" || (echo "BUILD COMPLETE"; tail -50 /tmp/day12-build.log | tail -20)
+```
+STDOUT:
+```
+BUILD COMPLETE
+#24 DONE 0.0s
+
+#25 [runner 11/11] COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+#25 DONE 2.7s
+
+#26 exporting to image
+#26 exporting layers
+#26 exporting layers 15.5s done
+#26 exporting manifest sha256:f5bc3e2a9b7f934079838af5b1fd40fa44a16b4ee9e68fc62492d171ba7c6091 done
+#26 exporting config sha256:55bd963143710a129aab931b05c213f63c0854f0ad161025e5c2eabcbff9bda2 done
+#26 exporting attestation manifest sha256:ec24c786bcd47d7313fc0cf8859162e36725f85eda58c5210e594ad1e641de68 0.0s done
+#26 exporting manifest list sha256:508970d5ab2ff818d6cafb9faee541d17e7b149e0a454b1644d6c4c46c34c47c done
+#26 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
+#26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest 4.1s done
+#26 DONE 19.7s
+
+#27 resolving provenance for metadata file
+#27 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built
+```
+Full output: [`server-runs/2026-05-14T22-08-46-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log`](server-runs/2026-05-14T22-08-46-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log)
