@@ -2355,3 +2355,65 @@ bd7e1a971800   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-en
 036d22572ef6   postgres:16-alpine                                     "docker-entrypoint.s…"   2 minutes ago    Up 2 minutes (healthy)         0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
 ```
 Full output: [`server-runs/2026-05-14T19-34-37-app-docker-ps-sleep-3-docker-logs-etsy-dashb-1.log`](server-runs/2026-05-14T19-34-37-app-docker-ps-sleep-3-docker-logs-etsy-dashb-1.log)
+
+## 2026-05-14T19:35:05.211Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `8b19998` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2338ms)
+```
+docker logs etsy-dashboard-app 2>&1 | tail -50
+```
+STDOUT:
+```
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.20.2
+node:internal/modules/cjs/loader:1210
+  throw err;
+  ^
+
+Error: Cannot find module '/app/node_modules/.bin/prisma'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.20.2
+node:internal/modules/cjs/loader:1210
+  throw err;
+  ^
+
+Error: Cannot find module '/app/node_modules/.bin/prisma'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.20.2
+node:internal/modules/cjs/loader:1210
+  throw err;
+  ^
+
+Error: Cannot find module '/app/node_modules/.bin/prisma'
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12)
+    at node:internal/main/run_main_module:28:49 {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: []
+}
+
+Node.js v20.20.2
+```
+Full output: [`server-runs/2026-05-14T19-35-05-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log`](server-runs/2026-05-14T19-35-05-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log)
