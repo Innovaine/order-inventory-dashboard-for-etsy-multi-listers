@@ -1966,3 +1966,18 @@ _Pre-SSH: warehouse pushed to GitHub as commit `514bc0e` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && ls -la | head -30
 ```
 ERROR: command exited 1
+
+## 2026-05-14T19:16:50.857Z — Nadia ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `a1ba6e0` so the server's `git pull` will pick it up._
+
+### Command 1 on app as devops (✗ exit 2, 2025ms)
+```
+cd ~ && pwd && ls -d order* 2>&1
+```
+STDOUT:
+```
+/home/devops
+ls: cannot access 'order*': No such file or directory
+```
+ERROR: command exited 2
+Full output: [`server-runs/2026-05-14T19-16-50-app-cd-pwd-ls--d-order-2-1-1.log`](server-runs/2026-05-14T19-16-50-app-cd-pwd-ls--d-order-2-1-1.log)
