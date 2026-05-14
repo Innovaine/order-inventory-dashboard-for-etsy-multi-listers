@@ -2533,3 +2533,11 @@ f093e29f7632   postgres:16-alpine                                     "docker-en
 APP NOT RESPONDING
 ```
 Full output: [`server-runs/2026-05-14T19-47-34-app-docker-ps-1.log`](server-runs/2026-05-14T19-47-34-app-docker-ps-1.log)
+
+## 2026-05-14T19:48:15.918Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `31a2925` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2532ms)
+```
+docker logs etsy-dashboard-app --tail 80
+```
