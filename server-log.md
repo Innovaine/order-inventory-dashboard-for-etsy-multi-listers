@@ -3055,3 +3055,94 @@ _Pre-SSH: warehouse pushed to GitHub as commit `5468922` so the server's `git pu
 ```
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose down
 ```
+
+## 2026-05-14T20:19:48.861Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `dab1310` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 1959ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+nohup docker compose build > /tmp/etsy-build-day9.log 2>&1 &
+echo $! > /tmp/etsy-build-day9.pid
+echo "Build started, PID=$(cat /tmp/etsy-build-day9.pid)"
+```
+STDOUT:
+```
+Build started, PID=541457
+```
+Full output: [`server-runs/2026-05-14T20-19-48-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-19-48-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T20:20:05.171Z — Anil ran 1 command(s)
+### Command 1 on app as engineer (✓ exit 0, 1935ms) _(showing tail — full 2,598B stdout + 0B stderr)_
+```
+kill -0 $(cat /tmp/etsy-build-day9.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -80 /tmp/etsy-build-day9.log
+```
+STDOUT:
+```
+… RUN npm run build
+#9 CACHED
+
+#10 [runner 10/11] COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+#10 CACHED
+
+#11 [builder 1/5] WORKDIR /app
+#11 CACHED
+
+#12 [runner  5/11] COPY --from=builder /app/public ./public
+#12 CACHED
+
+#13 [runner  9/11] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#13 CACHED
+
+#14 [runner  3/11] RUN groupadd --system --gid 1001 nodejs
+#14 CACHED
+
+#15 [runner  2/11] RUN apt-get update && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
+#15 CACHED
+
+#16 [builder 4/5] RUN ./node_modules/.bin/prisma generate
+#16 CACHED
+
+#17 [deps 3/4] COPY package.json package-lock.json* ./
+#17 CACHED
+
+#18 [builder 2/5] COPY --from=deps /app/node_modules ./node_modules
+#18 CACHED
+
+#19 [runner  8/11] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+#19 CACHED
+
+#20 [runner  4/11] RUN useradd --system --uid 1001 nextjs
+#20 CACHED
+
+#21 [runner  7/11] RUN chown nextjs:nodejs .next
+#21 CACHED
+
+#22 [builder 3/5] COPY . .
+#22 CACHED
+
+#23 [deps 4/4] RUN npm install --frozen-lockfile || npm install
+#23 CACHED
+
+#24 [deps 2/4] WORKDIR /app
+#24 CACHED
+
+#25 [runner 11/11] COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+#25 CACHED
+
+#26 exporting to image
+#26 exporting layers done
+#26 exporting manifest sha256:252eef01db71b654f949b89541038020e7c7c03c07b19eb121523ff0953433cb done
+#26 exporting config sha256:a6cd0ea6a26cd77887f95ee9880a7c39a6e521b90116ff8ddf4c7ac48702480a done
+#26 exporting attestation manifest sha256:320961d93b69a2b29edc3cdc87d46cae1da1ade148897fb149a628842c2b0954 done
+#26 exporting manifest list sha256:951c19e87a12d0e458a6ab732c8abe2b4b4051a235e1d27fac21829ece8c2cd7 done
+#26 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#26 DONE 0.1s
+
+#27 resolving provenance for metadata file
+#27 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built
+```
+Full output: [`server-runs/2026-05-14T20-20-05-app-kill--0-cat-tmp-etsy-build-day9.pid-2-de-1.log`](server-runs/2026-05-14T20-20-05-app-kill--0-cat-tmp-etsy-build-day9.pid-2-de-1.log)
