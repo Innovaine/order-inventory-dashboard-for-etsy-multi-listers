@@ -1887,3 +1887,16 @@ _Pre-SSH: warehouse pushed to GitHub as commit `03c5ffb` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose down && docker compose up -d && sleep 10 && docker ps
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T19:13:50.916Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `08bcee6` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2296ms)
+```
+docker images | grep etsy | head -5
+```
+STDOUT:
+```
+order-inventory-dashboard-for-etsy-multi-listers-app:latest   6c3bc9612257        272MB         68.5MB   U
+```
+Full output: [`server-runs/2026-05-14T19-13-50-app-docker-images-grep-etsy-head--5-1.log`](server-runs/2026-05-14T19-13-50-app-docker-images-grep-etsy-head--5-1.log)
