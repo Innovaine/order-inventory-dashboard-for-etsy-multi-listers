@@ -4434,3 +4434,12 @@ STDOUT:
 {"success":true,"event":{"timestamp":"2026-05-14T22:07:54.684Z","eventType":"test_view","metadata":{"test":true}}}
 ```
 Full output: [`server-runs/2026-05-14T22-07-54-app-curl--s-http-localhost-3000-api-session--1.log`](server-runs/2026-05-14T22-07-54-app-curl--s-http-localhost-3000-api-session--1.log)
+
+## 2026-05-14T22:08:13.303Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `808d004` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exit 2, 2029ms)
+```
+ls -lah /tmp/analytics-events.json 2>/dev/null && echo "---" && cat /tmp/analytics-events.json 2>/dev/null | tail -20
+```
+ERROR: command exited 2
