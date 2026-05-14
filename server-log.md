@@ -3885,3 +3885,33 @@ Running 11 tests using 1 worker
   ✓   7 [chromium] › tests/web/dashboard.spec.ts:142:5 › FR-4: CSV export button triggers download (2.2s)
 ```
 Full output: [`server-runs/2026-05-14T21-13-04-app-kill--0-cat-tmp-pw.pid-2-dev-null-echo-R-1.log`](server-runs/2026-05-14T21-13-04-app-kill--0-cat-tmp-pw.pid-2-dev-null-echo-R-1.log)
+
+## 2026-05-14T21:13:27.335Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0de245b` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2124ms)
+```
+kill -0 $(cat /tmp/pw.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -100 /tmp/pw-output.log
+```
+STDOUT:
+```
+DONE
+
+Running 11 tests using 1 worker
+
+  ✓   1 [chromium] › tests/web/dashboard.spec.ts:4:5 › FR-1: User can enter API key and see validation (487ms)
+  ✓   2 [chromium] › tests/web/dashboard.spec.ts:32:5 › FR-1b: Valid API key allows dashboard access (2.3s)
+  ✓   3 [chromium] › tests/web/dashboard.spec.ts:59:5 › FR-2: Inventory table displays and sorts by quantity (3.2s)
+  ✓   4 [chromium] › tests/web/dashboard.spec.ts:92:5 › FR-2b: Rate limit error shows user-friendly message (2.2s)
+  ✓   5 [chromium] › tests/web/dashboard.spec.ts:107:5 › FR-3: Orders table displays recent orders (3.2s)
+  ✓   6 [chromium] › tests/web/dashboard.spec.ts:129:5 › FR-3b: Shows placeholder when no orders exist (2.2s)
+  ✓   7 [chromium] › tests/web/dashboard.spec.ts:142:5 › FR-4: CSV export button triggers download (2.2s)
+  ✓   8 [chromium] › tests/web/dashboard.spec.ts:169:5 › FR-5: Sync status displays and manual sync works (2.2s)
+  ✓   9 [chromium] › tests/web/dashboard.spec.ts:194:5 › FR-5b: Shows error when API key becomes invalid (2.2s)
+  ✓  10 [chromium] › tests/web/dashboard.spec.ts:208:5 › FR-6: Dashboard is responsive on mobile viewport (2.2s)
+  ✓  11 [chromium] › tests/web/dashboard.spec.ts:248:5 › NFR-1: Dashboard loads within performance budget (736ms)
+
+  11 passed (23.9s)
+```
+Full output: [`server-runs/2026-05-14T21-13-27-app-kill--0-cat-tmp-pw.pid-2-dev-null-echo-R-1.log`](server-runs/2026-05-14T21-13-27-app-kill--0-cat-tmp-pw.pid-2-dev-null-echo-R-1.log)
