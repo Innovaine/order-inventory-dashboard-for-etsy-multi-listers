@@ -4252,3 +4252,67 @@ bf4263f Søren (reviewer, day 12) — pre-SSH sync
 43fcf2b Anil (engineer, day 12) — pre-SSH sync
 ```
 Full output: [`server-runs/2026-05-14T22-02-51-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-02-51-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T22:03:06.470Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `df2e6b1` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2574ms) _(showing tail — full 4,900B stdout + 0B stderr)_
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull --ff-only origin main
+```
+STDOUT:
+```
+…|   90 +
+ 62 files changed, 10847 insertions(+), 356 deletions(-)
+ create mode 100644 QUICKSTART.md
+ create mode 100644 backend-validation-checklist.md
+ create mode 100644 day-04/_index.md
+ create mode 100644 day-04/review.md
+ create mode 100644 day-04/test.md
+ create mode 100644 day-05/_index.md
+ create mode 100644 day-05/_plan.md
+ create mode 100644 day-05/engineering.md
+ create mode 100644 day-05/review.md
+ create mode 100644 day-05/test.md
+ create mode 100644 day-06/_index.md
+ create mode 100644 day-06/_plan.md
+ create mode 100644 day-06/engineering.md
+ create mode 100644 day-06/security.md
+ create mode 100644 day-07/_index.md
+ create mode 100644 day-07/_plan.md
+ create mode 100644 day-07/engineering.md
+ create mode 100644 day-08/_index.md
+ create mode 100644 day-08/_plan.md
+ create mode 100644 day-08/engineering.md
+ create mode 100644 day-09/_index.md
+ create mode 100644 day-09/_plan.md
+ create mode 100644 day-09/engineering.md
+ create mode 100644 day-10/_index.md
+ create mode 100644 day-10/_plan.md
+ create mode 100644 day-10/design.md
+ create mode 100644 day-10/engineering.md
+ create mode 100644 day-10/review.md
+ create mode 100644 day-10/test.md
+ create mode 100644 day-11/_index.md
+ create mode 100644 day-11/_plan.md
+ create mode 100644 day-11/design.md
+ create mode 100644 day-11/engineering.md
+ create mode 100644 day-11/pm-status.md
+ create mode 100644 day-11/requirements.md
+ create mode 100644 day-11/risks.md
+ create mode 100644 day-11/test.md
+ create mode 100644 day-12/_plan.md
+ create mode 100644 day-12/design.md
+ create mode 100644 day-12/engineering.md
+ create mode 100644 day-12/requirements.md
+ create mode 100644 next.config.js
+ create mode 100644 playwright.config.ts
+ create mode 100644 public/.gitkeep
+ create mode 100644 src/app/api/events/route.ts
+ create mode 100644 test-results/day-04/report.md
+ create mode 100644 test-results/day-05/report.md
+ create mode 100644 test-results/day-10/report.md
+ create mode 100644 test-results/day-11/report.md
+ create mode 100644 wireframe-dashboard-annotated.txt
+```
+Full output: [`server-runs/2026-05-14T22-03-06-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-03-06-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
