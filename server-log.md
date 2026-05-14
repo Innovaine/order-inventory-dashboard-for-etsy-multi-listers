@@ -105,3 +105,12 @@ Dockerfile:9
   11 |     # Rebuild the source code only when needed
 ```
 Full output: [`server-runs/2026-05-14T11-55-34-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T11-55-34-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T11:56:20.703Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `890fa07` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exec-error: Connection timed out, 15807ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm install --package-lock-only 2>&1 | tail -20
+```
+ERROR: Connection timed out
