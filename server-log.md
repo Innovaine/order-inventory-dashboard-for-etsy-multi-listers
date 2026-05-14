@@ -1878,3 +1878,12 @@ Validation Error Count: 1
 Prisma CLI Version : 7.8.0
 ```
 Full output: [`server-runs/2026-05-14T19-12-26-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log`](server-runs/2026-05-14T19-12-26-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log)
+
+## 2026-05-14T19:13:18.094Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `03c5ffb` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 13667ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose down && docker compose up -d && sleep 10 && docker ps
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
