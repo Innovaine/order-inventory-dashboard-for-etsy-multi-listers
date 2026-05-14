@@ -3940,3 +3940,29 @@ STDOUT:
 -rw-rw-r-- 1 tester tester 20916 May 14 21:13 test-results/nfr-1-performance.png
 ```
 Full output: [`server-runs/2026-05-14T21-14-01-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-14-01-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T21:14:23.850Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `248e0e2` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2488ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+cp test-results/*.png test-results/day-11/
+ls -lh test-results/day-11/
+```
+STDOUT:
+```
+total 260K
+-rw-rw-r-- 1 tester tester 22K May 14 21:14 fr-1-invalid-key.png
+-rw-rw-r-- 1 tester tester 23K May 14 21:14 fr-1b-dashboard-load.png
+-rw-rw-r-- 1 tester tester 21K May 14 21:14 fr-2-inventory-table.png
+-rw-rw-r-- 1 tester tester 21K May 14 21:14 fr-2b-rate-limit.png
+-rw-rw-r-- 1 tester tester 21K May 14 21:14 fr-3-orders-table.png
+-rw-rw-r-- 1 tester tester 21K May 14 21:14 fr-3b-no-orders.png
+-rw-rw-r-- 1 tester tester 21K May 14 21:14 fr-4-csv-export.png
+-rw-rw-r-- 1 tester tester 21K May 14 21:14 fr-5-sync-status.png
+-rw-rw-r-- 1 tester tester 21K May 14 21:14 fr-5b-invalid-key-error.png
+-rw-rw-r-- 1 tester tester 19K May 14 21:14 fr-6-mobile-layout.png
+-rw-rw-r-- 1 tester tester 21K May 14 21:14 nfr-1-performance.png
+```
+Full output: [`server-runs/2026-05-14T21-14-23-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-14-23-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
