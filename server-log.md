@@ -335,3 +335,86 @@ STDOUT:
 -rw-rw-r--  1 reviewer reviewer   824 May 14 11:55 package.json
 ```
 Full output: [`server-runs/2026-05-14T13-24-42-app-ls--la-order-inventory-dashboard-for-ets-1.log`](server-runs/2026-05-14T13-24-42-app-ls--la-order-inventory-dashboard-for-ets-1.log)
+
+## 2026-05-14T13:25:15.586Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `f952e35` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 9958ms) _(showing tail — full 4,069B stdout + 0B stderr)_
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker --version && docker system prune -f && docker image ls | head -5
+```
+STDOUT:
+```
+…lumtsbftppmh2wj23jbe
+lcs2bk0pbgjexpescrhfojpzt
+pcohqttol192g0cwi7cno2kua
+nl00yz6szlq7zso79i21i4smn
+iyzon2mv4qyw40t6csfis3ji3
+lqjfjdh5o4j50tl410kpbxo0n
+3makzj9cjnw8pr5vmgbhke8kl
+33iyyx9alhajgz6y03ackda12
+03tix9k6pa1vvq9s88cs0y7mm
+vkrby31gf8j15hlmvimu5mc29
+un79trus3cx70myyo9wiiuu6z
+m8g9vrdxd8mipuxxg3h444564
+rah5r7nulgtujfdt8f5hhirhn
+7ce6dg5ba84gpizgym9hyvpub
+mo97sfuld362imqrlw6ak8ilp
+hjkkgvj5torwqyu24gt14yk64
+8av4jpynglsbb1cz2a9hgb8bs
+z8k9h2wx3syzom34bug3bkg1x
+ji93nzph9iwmge0fim496tww1
+fqod3g5s7sh48ezqk9kr0bb0y
+5s29vv9v9z1kg15yjgbzp7iiq
+whdsj860wl78y1z2qoauzq1wb
+s6ls00n4sff2k56znvgeob4tj
+fgumvqdv4tldqz2ah141dkz3h
+sbqnmvdirmxtd976dbtesqg74
+atnxc8jr58vbv29283euijrva
+ss27givz68asergr1o7qvbklf
+nnjnzcf74adxr90q3kamfeeij
+zvste6gg3lf72gv6c8146oig8
+z6zscjd6eevp09lzo7gfdyisc
+prelo9qbp9nbf1t694t3vom8i
+hxfza4jyh2egzm4jlswp0g184
+obhvwv58lz3tn6mrwbuie4arr
+40vmnc1la8apsxuh9atornt7q
+vcbv6l4e0cnvn3c18sdhkftuo
+zp0m3sxd8elw1oaih4tdatcav
+tysucmr40yrt42skbgpe3vcv0
+ctxl85lhh8sqmzwplnkcv3gfm
+c0iawbmn8dnb7wftdrveyzqnn
+icucym9vwxxr41lohv93ukmro
+n20uqyq63f28xobvq79b1ivg6
+nb2tinvdi4z06uyzrakzfnsxo
+kszsji71va9j1wlffbtathfvj
+xfdo0tuxh4i2vgryxewljcqqh
+1v1d6jjgitshmie80opg8g6qu
+it6gxournujdii9becw2wv8ej
+jt8aiahdqj8mjo229lzpjskhm
+1cvl2uunlwgciihxng0ztwdta
+rwxyb8iu39vhbfdvzxw6l82fr
+zkx4ekz204fcd17s1onvujft3
+mo54t88r64t7lsxlothz79obc
+lw9sf1niq6jxcf8p5hrlm8jd7
+buv3ue7tro6s434fdcxb582lq
+igse1u310kfuqm9vmp99eesa1
+lcv8ya5ctro9miirih6iirbry
+xjjxzyftz1b3n5ap5wkockc72
+yngw2ex0lns90ckfox7xr61f9
+ife86s6sc3zynouuhc6htmh2u
+2duggl47j1f9vvucpb47q1h84
+j9lq4lm4yjeokazl9ovaxd4h6
+i524fzegmv9k79lkh7uac6b6y
+jekr9xe44op6vs8lkdjino935
+tpxaikg9t8s074vjuj025553t
+yb8pjlv1ukp061hebdtiekne2
+7v6a5htsj9ew5fjpjmtvsdcxf
+
+Total reclaimed space: 4.323GB
+IMAGE                              ID             DISK USAGE   CONTENT SIZE   EXTRA
+email-to-sql-email-to-sql:latest   e0e0f363e4ac        207MB         50.7MB   U    
+postgres:16-alpine                 4e6e670bb069        395MB          111MB        
+shop-in-a-box-app:latest           586b1e56c46a        203MB         48.5MB   U
+```
+Full output: [`server-runs/2026-05-14T13-25-15-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T13-25-15-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
