@@ -2904,3 +2904,66 @@ Fast-forward
 Build started, PID=530251
 ```
 Full output: [`server-runs/2026-05-14T19-55-57-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-55-57-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:57:47.148Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `f798f86` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 8247ms) _(showing tail — full 6,267B stdout + 0B stderr)_
+```
+kill -0 $(cat /tmp/etsy-build-debian.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -100 /tmp/etsy-build-debian.log
+```
+STDOUT:
+```
+…hunks/fd9d1056-e8defd3dfc2f912f.js  53.6 kB
+#18 21.29   └ other shared chunks (total)          1.89 kB
+#18 21.29 
+#18 21.29 
+#18 21.29 ○  (Static)   prerendered as static content
+#18 21.29 ƒ  (Dynamic)  server-rendered on demand
+#18 21.29 
+#18 21.32 npm notice
+#18 21.32 npm notice New major version of npm available! 10.8.2 -> 11.14.1
+#18 21.32 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1
+#18 21.32 npm notice To update run: npm install -g npm@11.14.1
+#18 21.32 npm notice
+#18 DONE 21.4s
+
+#19 [runner  5/11] COPY --from=builder /app/public ./public
+#19 DONE 0.0s
+
+#20 [runner  6/11] RUN mkdir .next
+#20 DONE 0.1s
+
+#21 [runner  7/11] RUN chown nextjs:nodejs .next
+#21 DONE 0.2s
+
+#22 [runner  8/11] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+#22 DONE 0.3s
+
+#23 [runner  9/11] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#23 DONE 0.0s
+
+#24 [runner 10/11] COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+#24 DONE 0.0s
+
+#25 [runner 11/11] COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+#25 DONE 2.3s
+
+#26 exporting to image
+#26 exporting layers
+#26 exporting layers 13.6s done
+#26 exporting manifest sha256:06dd7031a823370d61fee02d2ff6b4b5b17a6fdfc1a8b07f4b8e6ae699c1c6f9 done
+#26 exporting config sha256:db10ae5c4eca856e51f83baf2b6dd1fc78557b2ca18065b983e14bafd0062ea4 done
+#26 exporting attestation manifest sha256:847fcc6b817138bc1a1155ca0b511d2a230d4e533a3eeacb15bed6d0a7dfcc52 done
+#26 exporting manifest list sha256:a1096dee5dbc5ffc51de62927a94498a815f071e43500c471ce568351c45463f done
+#26 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
+#26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest 3.2s done
+#26 DONE 16.8s
+
+#27 resolving provenance for metadata file
+#27 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built
+```
+Full output: [`server-runs/2026-05-14T19-57-47-app-kill--0-cat-tmp-etsy-build-debian.pid-2--1.log`](server-runs/2026-05-14T19-57-47-app-kill--0-cat-tmp-etsy-build-debian.pid-2--1.log)
