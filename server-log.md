@@ -3559,3 +3559,45 @@ EOF
 node test-results/day-10/manual-test.js
 ```
 ERROR: command exited 1
+
+## 2026-05-14T20:47:19.497Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `9afb9a2` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2357ms) _(showing tail — full 12,493B stdout + 0B stderr)_
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+
+echo "=== FR-1: Authentication endpoints exist ==="
+echo "POST /api/auth:"
+curl -X POST http://localhost:3000/api/auth \
+  -H "Content-Type: application/json" \
+  -d '{"apiKey":"test"}' \
+  -w "\nHTTP Status: %{http_code}\n" 2>&1 | tail -5
+
+echo -e "\n=== FR-2 & FR-3: Inventory and Orders endpoints ==="
+echo "GET /api/inventory (unauthenticated):"
+curl -sS http://localhost:3000/api/inventory -w "\nHTTP Status: %{http_code}\n"
+
+echo -e "\nGET /api/orders (unauthenticated):"
+curl -sS http://localhost:3000/api/orders -w "\nHTTP Status: %{http_code}\n"
+
+echo -e "\n=== FR-4: CSV Export endpoint ==="
+echo "GET /api/export-csv:"
+curl -sS http://localhost:3000/api/export-csv -w "\nHTTP Status: %{http_code}\n" | head -3
+
+echo -e "\n=== FR-5: Sync endpoint ==="
+echo "POST /api/sync:"
+curl -X POST http://localhost:3000/api/sync -w "\nHTTP Status: %{http_code}\n" 2>&1 | tail -3
+
+echo -e "\n=== FR-6: Pages render ==="
+echo "GET / (homepage):"
+curl -sS http://localhost:3000 -w "\nHTTP Status: %{http_code}\n" | grep -E "(title|Etsy|Connect)" | head -3
+
+echo -e "\nGET /dashboard:"
+curl -sS http://localhost:3000/dashboard -w "\nHTTP Status: %{http_code}\n" | grep -E "(dashboard|inventory|orders)" -i | head -3
+```
+STDOUT:
+```
+…defined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":null}]}]}]}],null],null],\"couldBeIntercepted\":false,\"initialHead\":[false,\"$La\"],\"globalErrorComponent\":\"$b\",\"missingSlots\":\"$Wc\"}]]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Etsy Dashboard\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Order and inventory dashboard for Etsy sellers\"}],[\"$\",\"meta\",\"4\",{\"name\":\"next-size-adjust\"}]]\n4:null\n"])</script></body></html>
+```
+Full output: [`server-runs/2026-05-14T20-47-19-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-47-19-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
