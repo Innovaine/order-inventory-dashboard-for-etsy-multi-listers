@@ -4094,3 +4094,18 @@ NAME                IMAGE                COMMAND                  SERVICE    CRE
 etsy-dashboard-db   postgres:16-alpine   "docker-entrypoint.s…"   postgres   2 hours ago   Up 2 hours (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
 ```
 Full output: [`server-runs/2026-05-14T21-58-41-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-58-41-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T21:58:57.536Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `cd4483f` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 3171ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup docker compose up -d app > /tmp/up.log 2>&1 &
+echo $! > /tmp/up.pid
+echo "Up started, PID=$(cat /tmp/up.pid)"
+```
+STDOUT:
+```
+Up started, PID=558042
+```
+Full output: [`server-runs/2026-05-14T21-58-57-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-58-57-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
