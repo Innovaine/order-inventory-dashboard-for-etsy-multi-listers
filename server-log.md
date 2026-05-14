@@ -1917,3 +1917,12 @@ CONTAINER ID   IMAGE                COMMAND                  CREATED            
 f3c312a88d61   postgres:16-alpine   "docker-entrypoint.s…"   About a minute ago   Up About a minute (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
 ```
 Full output: [`server-runs/2026-05-14T19-14-46-app-uptime-df--h-docker-ps-1.log`](server-runs/2026-05-14T19-14-46-app-uptime-df--h-docker-ps-1.log)
+
+## 2026-05-14T19:15:10.724Z — Nadia ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `7c8bc16` so the server's `git pull` will pick it up._
+
+### Command 1 on app as devops (✗ exit 1, 2242ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm audit --json 2>&1 | head -200
+```
+ERROR: command exited 1
