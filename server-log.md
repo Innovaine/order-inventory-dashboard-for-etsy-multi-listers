@@ -3219,3 +3219,42 @@ e0ef3006b440   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-en
 HEALTHY
 ```
 Full output: [`server-runs/2026-05-14T20-40-03-app-docker-ps-1.log`](server-runs/2026-05-14T20-40-03-app-docker-ps-1.log)
+
+## 2026-05-14T20:41:16.015Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `d4b36b7` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2178ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+
+# Test 1: Health check - confirm app is responding
+echo "=== TEST 1: Health check ==="
+curl -sf http://localhost:3000 > /dev/null && echo "✓ App is responding" || echo "✗ App is down"
+
+# Test 2: Test unauthenticated session endpoint (should return 401)
+echo -e "\n=== TEST 2: Unauthenticated session endpoint ==="
+curl -s http://localhost:3000/api/session | head -20
+
+# Test 3: Test unauthenticated inventory endpoint (should return 401)
+echo -e "\n=== TEST 3: Unauthenticated inventory endpoint ==="
+curl -s http://localhost:3000/api/inventory | head -20
+
+# Test 4: Check Docker container health
+echo -e "\n=== TEST 4: Docker container status ==="
+docker ps --filter name=etsy-dashboard --format "table {{.Names}}\t{{.Status}}"
+```
+STDOUT:
+```
+=== TEST 1: Health check ===
+✓ App is responding
+
+=== TEST 2: Unauthenticated session endpoint ===
+{"error":"Not authenticated"}
+=== TEST 3: Unauthenticated inventory endpoint ===
+{"error":"Not authenticated"}
+=== TEST 4: Docker container status ===
+NAMES                STATUS
+etsy-dashboard-app   Up 11 minutes
+etsy-dashboard-db    Up 15 minutes (healthy)
+```
+Full output: [`server-runs/2026-05-14T20-41-15-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-41-15-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
