@@ -4339,3 +4339,56 @@ _Pre-SSH: warehouse pushed to GitHub as commit `fa2e526` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && df -h / | tail -1 && nohup docker compose build > /tmp/day12-build.log 2>&1 & echo $! > /tmp/day12-build.pid && echo "Started build PID=$(cat /tmp/day12-build.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T22:04:14.098Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `f3aac8b` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2106ms)
+```
+kill -0 $(cat /tmp/day12-build.pid 2>/dev/null) 2>/dev/null && echo "BUILD RUNNING" || echo "BUILD DONE/NOT STARTED" && tail -40 /tmp/day12-build.log
+```
+STDOUT:
+```
+BUILD RUNNING
+#6 transferring context: 368.13MB 2.6s done
+#6 DONE 2.6s
+
+#7 [deps 1/4] RUN apt-get update && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
+#7 CACHED
+
+#8 [deps 2/4] WORKDIR /app
+#8 CACHED
+
+#9 [deps 3/4] COPY package.json package-lock.json* ./
+#9 DONE 0.4s
+
+#10 [deps 4/4] RUN npm install --frozen-lockfile || npm install
+#10 18.75 npm warn deprecated next@14.2.3: This version has a security vulnerability. Please upgrade to a patched version. See https://nextjs.org/blog/security-update-2025-12-11 for more details.
+#10 19.78 
+#10 19.78 added 144 packages, and audited 145 packages in 20s
+#10 19.78 
+#10 19.78 33 packages are looking for funding
+#10 19.78   run `npm fund` for details
+#10 19.90 
+#10 19.90 2 vulnerabilities (1 moderate, 1 critical)
+#10 19.90 
+#10 19.90 To address all issues, run:
+#10 19.90   npm audit fix --force
+#10 19.90 
+#10 19.90 Run `npm audit` for details.
+#10 19.90 npm notice
+#10 19.90 npm notice New major version of npm available! 10.8.2 -> 11.14.1
+#10 19.90 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1
+#10 19.90 npm notice To update run: npm install -g npm@11.14.1
+#10 19.90 npm notice
+#10 DONE 20.3s
+
+#11 [builder 1/5] WORKDIR /app
+#11 CACHED
+
+#12 [builder 2/5] COPY --from=deps /app/node_modules ./node_modules
+#12 DONE 2.0s
+
+#13 [builder 3/5] COPY . .
+```
+Full output: [`server-runs/2026-05-14T22-04-14-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log`](server-runs/2026-05-14T22-04-14-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log)
