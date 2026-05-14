@@ -1948,3 +1948,12 @@ STDOUT:
 ---audit-complete---
 ```
 Full output: [`server-runs/2026-05-14T19-15-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-15-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:16:14.101Z — Nadia ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `c663fd3` so the server's `git pull` will pick it up._
+
+### Command 1 on app as devops (✗ exit 1, 2261ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && ls -la node_modules 2>&1 | head -20
+```
+ERROR: command exited 1
