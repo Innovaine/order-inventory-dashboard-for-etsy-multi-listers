@@ -3319,3 +3319,64 @@ Updating 8c696ce..e28ca24
 ```
 ERROR: command exited 1
 Full output: [`server-runs/2026-05-14T20-43-38-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-43-38-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T20:44:14.725Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `babfc77` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2896ms) _(showing tail — full 2,148B stdout + 0B stderr)_
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git restore package.json && git pull
+```
+STDOUT:
+```
+…               |   17 +
+ day-05/test.md                  |   86 ++
+ day-06/_index.md                |   17 +
+ day-06/_plan.md                 |   37 +
+ day-06/engineering.md           |   94 ++
+ day-06/security.md              |   81 ++
+ day-07/_index.md                |   17 +
+ day-07/_plan.md                 |   38 +
+ day-07/engineering.md           |  352 +++++++
+ day-08/_index.md                |   17 +
+ day-08/_plan.md                 |   38 +
+ day-08/engineering.md           |  368 +++++++
+ day-09/_index.md                |   17 +
+ day-09/_plan.md                 |   38 +
+ day-09/engineering.md           |  273 ++++++
+ day-10/_plan.md                 |   36 +
+ day-10/design.md                |   66 ++
+ day-10/engineering.md           |   77 ++
+ day-10/review.md                |   27 +
+ docker-compose.yml              |    2 +-
+ package.json                    |    4 +-
+ public/.gitkeep                 |    1 +
+ server-log.md                   | 2026 +++++++++++++++++++++++++++++++++++++++
+ src/app/api/export-csv/route.ts |   12 +-
+ src/app/api/orders/route.ts     |   12 +-
+ src/app/api/sync/route.ts       |   12 +-
+ test-results/day-05/report.md   |  245 +++++
+ 28 files changed, 3999 insertions(+), 31 deletions(-)
+ create mode 100644 day-05/_index.md
+ create mode 100644 day-05/test.md
+ create mode 100644 day-06/_index.md
+ create mode 100644 day-06/_plan.md
+ create mode 100644 day-06/engineering.md
+ create mode 100644 day-06/security.md
+ create mode 100644 day-07/_index.md
+ create mode 100644 day-07/_plan.md
+ create mode 100644 day-07/engineering.md
+ create mode 100644 day-08/_index.md
+ create mode 100644 day-08/_plan.md
+ create mode 100644 day-08/engineering.md
+ create mode 100644 day-09/_index.md
+ create mode 100644 day-09/_plan.md
+ create mode 100644 day-09/engineering.md
+ create mode 100644 day-10/_plan.md
+ create mode 100644 day-10/design.md
+ create mode 100644 day-10/engineering.md
+ create mode 100644 day-10/review.md
+ create mode 100644 public/.gitkeep
+ create mode 100644 test-results/day-05/report.md
+```
+Full output: [`server-runs/2026-05-14T20-44-14-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-44-14-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
