@@ -1926,3 +1926,12 @@ _Pre-SSH: warehouse pushed to GitHub as commit `7c8bc16` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm audit --json 2>&1 | head -200
 ```
 ERROR: command exited 1
+
+## 2026-05-14T19:15:28.922Z — Nadia ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `fdca03e` so the server's `git pull` will pick it up._
+
+### Command 1 on app as devops (✗ exit 1, 1993ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm audit 2>&1 | tail -100
+```
+ERROR: command exited 1
