@@ -2672,3 +2672,37 @@ STDOUT:
 #15 16.67    Collecting build traces ...
 ```
 Full output: [`server-runs/2026-05-14T19-49-53-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log`](server-runs/2026-05-14T19-49-53-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log)
+
+## 2026-05-14T19:50:15.602Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `373a363` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2021ms)
+```
+kill -0 $(cat /tmp/etsy-build-day8.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -20 /tmp/etsy-build-day8.log
+```
+STDOUT:
+```
+RUNNING
+#19 [runner  3/10] RUN adduser --system --uid 1001 nextjs
+#19 CACHED
+
+#20 [runner  6/10] RUN chown nextjs:nodejs .next
+#20 CACHED
+
+#21 [runner  7/10] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+#21 DONE 0.3s
+
+#22 [runner  8/10] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#22 DONE 0.0s
+
+#23 [runner  9/10] COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+#23 DONE 0.0s
+
+#24 [runner 10/10] COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+#24 DONE 2.9s
+
+#25 exporting to image
+#25 exporting layers
+```
+Full output: [`server-runs/2026-05-14T19-50-15-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log`](server-runs/2026-05-14T19-50-15-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log)
