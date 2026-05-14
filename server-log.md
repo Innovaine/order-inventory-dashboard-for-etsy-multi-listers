@@ -695,3 +695,22 @@ _Pre-SSH: warehouse pushed to GitHub as commit `a6466fc` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose build 2>&1 | tail -100
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T17:32:25.559Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `f1d8304` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2455ms)
+```
+docker ps && docker images | head -5
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                       COMMAND                  CREATED        STATUS                    PORTS                                         NAMES
+94d6636652f1   shop-in-a-box-app           "docker-entrypoint.s…"   22 hours ago   Up 22 hours (unhealthy)   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   shop-in-a-box-app-1
+394b68190016   email-to-sql-email-to-sql   "docker-entrypoint.s…"   24 hours ago   Up 24 hours (healthy)     0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   email-to-sql-webhook
+IMAGE                              ID             DISK USAGE   CONTENT SIZE   EXTRA
+email-to-sql-email-to-sql:latest   e0e0f363e4ac        207MB         50.7MB   U    
+postgres:16-alpine                 4e6e670bb069        395MB          111MB        
+shop-in-a-box-app:latest           586b1e56c46a        203MB         48.5MB   U
+```
+Full output: [`server-runs/2026-05-14T17-32-25-app-docker-ps-docker-images-head--5-1.log`](server-runs/2026-05-14T17-32-25-app-docker-ps-docker-images-head--5-1.log)
