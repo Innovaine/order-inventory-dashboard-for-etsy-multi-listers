@@ -3202,3 +3202,20 @@ No pending migrations to apply.
  ✓ Ready in 130ms
 ```
 Full output: [`server-runs/2026-05-14T20-32-38-app-sleep-5-1.log`](server-runs/2026-05-14T20-32-38-app-sleep-5-1.log)
+
+## 2026-05-14T20:40:03.661Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `43d559e` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2250ms)
+```
+docker ps
+curl -sf http://localhost:3000 -o /dev/null && echo "HEALTHY" || echo "DOWN"
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                                                  COMMAND                  CREATED          STATUS                    PORTS                                         NAMES
+e0ef3006b440   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   14 minutes ago   Up 10 minutes             0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   etsy-dashboard-app
+5fadef28d2f0   postgres:16-alpine                                     "docker-entrypoint.s…"   14 minutes ago   Up 14 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+HEALTHY
+```
+Full output: [`server-runs/2026-05-14T20-40-03-app-docker-ps-1.log`](server-runs/2026-05-14T20-40-03-app-docker-ps-1.log)
