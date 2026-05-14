@@ -1500,3 +1500,47 @@ _Pre-SSH: warehouse pushed to GitHub as commit `264b418` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup docker compose build > /tmp/etsy-build2.log 2>&1 & echo $! > /tmp/etsy-build2.pid && echo "Started build, PID=$(cat /tmp/etsy-build2.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T18:59:16.807Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0a15b7e` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2517ms)
+```
+cat /tmp/etsy-build2.pid 2>/dev/null || echo "PID file not found"; kill -0 $(cat /tmp/etsy-build2.pid 2>/dev/null) 2>/dev/null && echo "RUNNING" || echo "STOPPED/DONE"; tail -50 /tmp/etsy-build2.log 2>/dev/null | tail -30 || echo "Log not found"
+```
+STDOUT:
+```
+493842
+STOPPED/DONE
+#20 [runner  6/10] RUN chown nextjs:nodejs .next
+#20 DONE 0.2s
+
+#21 [runner  7/10] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+#21 DONE 0.3s
+
+#22 [runner  8/10] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#22 DONE 0.0s
+
+#23 [runner  9/10] COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+#23 DONE 0.0s
+
+#24 [runner 10/10] COPY --from=builder --chown=nextjs:nodejs /app/node_modules/.prisma ./node_modules/.prisma
+#24 DONE 0.0s
+
+#25 exporting to image
+#25 exporting layers
+#25 exporting layers 1.3s done
+#25 exporting manifest sha256:dd3dcb180cea89e5964e9ec6c2e31d95f1c06401b30b6973585233abe32162d0 done
+#25 exporting config sha256:0c296f607875e60959c08c541a562c6596f341fdd7aacc341f7901940a9bb118 done
+#25 exporting attestation manifest sha256:40612e259700b7ecbb4ad5b69fc99f976b98bc77248762c678f9156b4c981dd7 done
+#25 exporting manifest list sha256:a9f7de88ca451039ab269ca6c22ae7b32d1fa8fc57b8458f87036e0f91c4414f done
+#25 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#25 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
+#25 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest 0.5s done
+#25 DONE 1.9s
+
+#26 resolving provenance for metadata file
+#26 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built
+```
+Full output: [`server-runs/2026-05-14T18-59-16-app-cat-tmp-etsy-build2.pid-2-dev-null-echo--1.log`](server-runs/2026-05-14T18-59-16-app-cat-tmp-etsy-build2.pid-2-dev-null-echo--1.log)
