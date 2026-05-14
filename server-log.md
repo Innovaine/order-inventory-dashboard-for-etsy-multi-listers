@@ -114,3 +114,16 @@ _Pre-SSH: warehouse pushed to GitHub as commit `890fa07` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm install --package-lock-only 2>&1 | tail -20
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T11:58:25.493Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `3ecfd19` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2720ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers 2>/dev/null && git status && echo "--- Docker status ---" && docker ps -a || echo "Repo not yet cloned for tester"
+```
+STDOUT:
+```
+Repo not yet cloned for tester
+```
+Full output: [`server-runs/2026-05-14T11-58-25-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T11-58-25-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
