@@ -803,3 +803,26 @@ Fast-forward
 -rw-rw-r-- 1 tester tester 777 May 14 17:34 package-lock.json
 ```
 Full output: [`server-runs/2026-05-14T17-34-34-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-34-34-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T17:35:21.902Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `078d18e` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✗ exec-error: Connection timed out, 15322ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && \
+docker compose build && \
+docker compose up -d
+```
+ERROR: Connection timed out
+
+## 2026-05-14T17:35:38.965Z — Priya ran 1 command(s)
+### Command 1 on app as tester (✓ exit 0, 2169ms)
+```
+pwd && date
+```
+STDOUT:
+```
+/home/tester
+Thu May 14 17:35:39 UTC 2026
+```
+Full output: [`server-runs/2026-05-14T17-35-38-app-pwd-date-1.log`](server-runs/2026-05-14T17-35-38-app-pwd-date-1.log)
