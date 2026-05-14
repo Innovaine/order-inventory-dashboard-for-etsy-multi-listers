@@ -4532,3 +4532,16 @@ _Pre-SSH: warehouse pushed to GitHub as commit `6c2b857` so the server's `git pu
 docker stop etsy-dashboard-app && sleep 2 && docker run -d --name etsy-dashboard-app-new --network order-inventory-dashboard-for-etsy-multi-listers_default -p 3000:3000 -e DATABASE_URL="postgresql://dashboard:dashboard@postgres:5432/etsy_dashboard" order-inventory-dashboard-for-etsy-multi-listers-app:latest && sleep 3 && curl -sf http://localhost:3000 -o /dev/null && echo "✓ App responding" || echo "✗ App not responding"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T22:10:55.610Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `5abe1b2` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2359ms)
+```
+docker ps --filter "name=etsy-dashboard-app" --format "{{.ID}}\t{{.Image}}\t{{.Status}}"
+```
+STDOUT:
+```
+7cdb76d4c870	order-inventory-dashboard-for-etsy-multi-listers-app:latest	Up 20 seconds
+```
+Full output: [`server-runs/2026-05-14T22-10-55-app-docker-ps---filter-name-etsy-dashboard-a-1.log`](server-runs/2026-05-14T22-10-55-app-docker-ps---filter-name-etsy-dashboard-a-1.log)
