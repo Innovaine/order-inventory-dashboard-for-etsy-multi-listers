@@ -3785,3 +3785,28 @@ STDOUT:
 Started npm install, PID=549426
 ```
 Full output: [`server-runs/2026-05-14T21-10-29-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-10-29-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T21:10:45.949Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `4046741` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2159ms)
+```
+kill -0 $(cat /tmp/npm-install-pw.pid) 2>/dev/null && echo "RUNNING" || echo "DONE" && tail -30 /tmp/npm-install-pw.log
+```
+STDOUT:
+```
+DONE
+
+up to date, audited 145 packages in 2s
+
+33 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 moderate, 1 critical)
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+```
+Full output: [`server-runs/2026-05-14T21-10-45-app-kill--0-cat-tmp-npm-install-pw.pid-2-dev-1.log`](server-runs/2026-05-14T21-10-45-app-kill--0-cat-tmp-npm-install-pw.pid-2-dev-1.log)
