@@ -1754,3 +1754,12 @@ COMPLETE
  Image order-inventory-dashboard-for-etsy-multi-listers-app Built
 ```
 Full output: [`server-runs/2026-05-14T19-05-05-app-kill--0-cat-tmp-etsy-build3.pid-2-dev-nu-1.log`](server-runs/2026-05-14T19-05-05-app-kill--0-cat-tmp-etsy-build3.pid-2-dev-nu-1.log)
+
+## 2026-05-14T19:05:40.006Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `dacd32c` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 12916ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose up -d
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
