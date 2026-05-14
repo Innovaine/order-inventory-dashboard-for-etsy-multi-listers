@@ -906,3 +906,12 @@ Fast-forward
  create mode 100644 test-results/day-04/report.md
 ```
 Full output: [`server-runs/2026-05-14T17-49-48-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-49-48-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T17:50:26.209Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0a8bd50` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out, 24035ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && timeout 180 docker compose build 2>&1 | tee /tmp/docker-build.log
+```
+ERROR: Connection timed out
