@@ -2029,3 +2029,17 @@ echo $! > /tmp/etsy-build-day6.pid
 echo "Build started, PID=$(cat /tmp/etsy-build-day6.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T19:23:05.327Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `c502ab8` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 1962ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker ps -a && docker images | grep etsy | head -3
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+order-inventory-dashboard-for-etsy-multi-listers-app:latest   06b78b277e5a        272MB         68.5MB
+```
+Full output: [`server-runs/2026-05-14T19-23-05-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-23-05-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
