@@ -3440,3 +3440,42 @@ Error: No tests found
 Exit code: 0
 ```
 Full output: [`server-runs/2026-05-14T20-45-19-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-45-19-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T20:45:54.493Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `20a58f5` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 3275ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+ls -la playwright.config.* 2>/dev/null || echo "No playwright config found"
+# Try running tests with explicit config
+PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers npx playwright test tests/web/dashboard.spec.ts --reporter=list 2>&1 | head -100
+```
+STDOUT:
+```
+No playwright config found
+Error: Playwright Test did not expect test() to be called here.
+Most common reasons include:
+- You are calling test() in a configuration file.
+- You are calling test() in a file that is imported by the configuration file.
+- You have two different versions of @playwright/test. This usually happens
+  when one of the dependencies in your package.json depends on @playwright/test.
+
+   at tests/web/dashboard.spec.ts:4
+
+  2 |
+  3 | // FR-1: Etsy API key input & authentication flow
+> 4 | test('FR-1: User can enter API key and see validation', async ({ page }) => {
+    |     ^
+  5 |   test.setTimeout(30000);
+  6 |   
+  7 |   await page.goto('http://localhost:3000');
+    at _TestTypeImpl._currentSuite (/home/tester/order-inventory-dashboard-for-etsy-multi-listers/node_modules/playwright/lib/common/index.js:2221:13)
+    at _TestTypeImpl._createTest (/home/tester/order-inventory-dashboard-for-etsy-multi-listers/node_modules/playwright/lib/common/index.js:2234:24)
+    at /home/tester/order-inventory-dashboard-for-etsy-multi-listers/node_modules/playwright/lib/common/index.js:1111:12
+    at Object.<anonymous> (/home/tester/order-inventory-dashboard-for-etsy-multi-listers/tests/web/dashboard.spec.ts:4:5)
+Error: No tests found.
+Make sure that arguments are regular expressions matching test files.
+You may need to escape symbols like "$" or "*" and quote the arguments.
+```
+Full output: [`server-runs/2026-05-14T20-45-54-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-45-54-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
