@@ -4405,3 +4405,18 @@ STDOUT:
 BUILD STILL RUNNING
 ```
 Full output: [`server-runs/2026-05-14T22-04-52-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log`](server-runs/2026-05-14T22-04-52-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log)
+
+## 2026-05-14T22:05:22.618Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `32589d2` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2436ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker ps --format "table {{.Names}}\t{{.Status}}"
+```
+STDOUT:
+```
+NAMES                STATUS
+etsy-dashboard-app   Up 6 minutes
+etsy-dashboard-db    Up 2 hours (healthy)
+```
+Full output: [`server-runs/2026-05-14T22-05-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-05-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
