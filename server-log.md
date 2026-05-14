@@ -3915,3 +3915,28 @@ Running 11 tests using 1 worker
   11 passed (23.9s)
 ```
 Full output: [`server-runs/2026-05-14T21-13-27-app-kill--0-cat-tmp-pw.pid-2-dev-null-echo-R-1.log`](server-runs/2026-05-14T21-13-27-app-kill--0-cat-tmp-pw.pid-2-dev-null-echo-R-1.log)
+
+## 2026-05-14T21:14:01.925Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `5201449` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 3129ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+mkdir -p test-results/day-11
+ls -la test-results/*.png 2>/dev/null | head -20
+```
+STDOUT:
+```
+-rw-rw-r-- 1 tester tester 22362 May 14 21:12 test-results/fr-1-invalid-key.png
+-rw-rw-r-- 1 tester tester 23390 May 14 21:12 test-results/fr-1b-dashboard-load.png
+-rw-rw-r-- 1 tester tester 20916 May 14 21:12 test-results/fr-2-inventory-table.png
+-rw-rw-r-- 1 tester tester 20916 May 14 21:12 test-results/fr-2b-rate-limit.png
+-rw-rw-r-- 1 tester tester 20916 May 14 21:12 test-results/fr-3-orders-table.png
+-rw-rw-r-- 1 tester tester 20916 May 14 21:13 test-results/fr-3b-no-orders.png
+-rw-rw-r-- 1 tester tester 20916 May 14 21:13 test-results/fr-4-csv-export.png
+-rw-rw-r-- 1 tester tester 20916 May 14 21:13 test-results/fr-5-sync-status.png
+-rw-rw-r-- 1 tester tester 20916 May 14 21:13 test-results/fr-5b-invalid-key-error.png
+-rw-rw-r-- 1 tester tester 18992 May 14 21:13 test-results/fr-6-mobile-layout.png
+-rw-rw-r-- 1 tester tester 20916 May 14 21:13 test-results/nfr-1-performance.png
+```
+Full output: [`server-runs/2026-05-14T21-14-01-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-14-01-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
