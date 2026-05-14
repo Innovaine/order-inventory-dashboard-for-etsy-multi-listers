@@ -3501,3 +3501,61 @@ STDOUT:
 …defined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L8\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"title\",null,{\"children\":\"404: This page could not be found.\"}],[\"$\",\"div\",null,{\"style\":{\"fontFamily\":\"system-ui,\\\"Segoe UI\\\",Roboto,Helvetica,Arial,sans-serif,\\\"Apple Color Emoji\\\",\\\"Segoe UI Emoji\\\"\",\"height\":\"100vh\",\"textAlign\":\"center\",\"display\":\"flex\",\"flexDirection\":\"column\",\"alignItems\":\"center\",\"justifyContent\":\"center\"},\"children\":[\"$\",\"div\",null,{\"children\":[[\"$\",\"style\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\"}}],[\"$\",\"h1\",null,{\"className\":\"next-error-h1\",\"style\":{\"display\":\"inline-block\",\"margin\":\"0 20px 0 0\",\"padding\":\"0 23px 0 0\",\"fontSize\":24,\"fontWeight\":500,\"verticalAlign\":\"top\",\"lineHeight\":\"49px\"},\"children\":\"404\"}],[\"$\",\"div\",null,{\"style\":{\"display\":\"inline-block\"},\"children\":[\"$\",\"h2\",null,{\"style\":{\"fontSize\":14,\"fontWeight\":400,\"lineHeight\":\"49px\",\"margin\":0},\"children\":\"This page could not be found.\"}]}]]}]}]],\"notFoundStyles\":[],\"styles\":null}]}]}]}],null],null],\"couldBeIntercepted\":false,\"initialHead\":[false,\"$La\"],\"globalErrorComponent\":\"$b\",\"missingSlots\":\"$Wc\"}]]\n"])</script><script>self.__next_f.push([1,"a:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}],[\"$\",\"title\",\"2\",{\"children\":\"Etsy Dashboard\"}],[\"$\",\"meta\",\"3\",{\"name\":\"description\",\"content\":\"Order and inventory dashboard for Etsy sellers\"}],[\"$\",\"meta\",\"4\",{\"name\":\"next-size-adjust\"}]]\n4:null\n"])</script></body></html>
 ```
 Full output: [`server-runs/2026-05-14T20-46-26-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-46-26-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T20:46:54.684Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `17ee56a` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✗ exit 1, 2035ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+# Create a simple Node script to test with Playwright directly
+cat > test-results/day-10/manual-test.js << 'EOF'
+const { chromium } = require('playwright');
+
+(async () => {
+  const browser = await chromium.launch({ 
+    headless: true,
+    executablePath: '/usr/local/share/playwright-browsers/chromium-1148/chrome-linux/chrome'
+  });
+  const context = await browser.newContext();
+  const page = await context.newPage();
+
+  console.log('Test 1: Homepage loads');
+  await page.goto('http://localhost:3000', { waitUntil: 'networkidle', timeout: 10000 });
+  await page.screenshot({ path: 'test-results/day-10/01-homepage.png', fullPage: true });
+  const title = await page.title();
+  console.log('✓ Page title:', title);
+  
+  console.log('\nTest 2: Check for connect form');
+  const hasConnectText = await page.getByText(/connect/i).count() > 0;
+  console.log('✓ Has "Connect" text:', hasConnectText);
+  
+  console.log('\nTest 3: Try invalid API key');
+  const input = page.locator('input').first();
+  if (await input.isVisible()) {
+    await input.fill('invalid-test-key-12345');
+    await page.screenshot({ path: 'test-results/day-10/02-invalid-key-entered.png', fullPage: true });
+    
+    const submitBtn = page.getByRole('button', { name: /connect|submit/i });
+    if (await submitBtn.isVisible()) {
+      await submitBtn.click();
+      await page.waitForTimeout(2000);
+      await page.screenshot({ path: 'test-results/day-10/03-after-submit.png', fullPage: true });
+      console.log('✓ Submitted invalid key');
+    }
+  }
+  
+  console.log('\nTest 4: Mobile viewport');
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('http://localhost:3000');
+  await page.screenshot({ path: 'test-results/day-10/04-mobile-view.png', fullPage: true });
+  console.log('✓ Mobile screenshot captured');
+
+  await browser.close();
+  console.log('\n✅ Manual tests complete');
+})();
+EOF
+
+node test-results/day-10/manual-test.js
+```
+ERROR: command exited 1
