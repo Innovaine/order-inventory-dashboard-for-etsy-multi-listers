@@ -4636,3 +4636,30 @@ STDOUT:
 {"success":true,"event":{"timestamp":"2026-05-14T22:13:51.295Z","eventType":"test1","metadata":{}}}{"success":true,"event":{"timestamp":"2026-05-14T22:13:51.310Z","eventType":"test2","metadata":{}}}{"success":true,"event":{"timestamp":"2026-05-14T22:13:51.322Z","eventType":"test3","metadata":{}}}
 ```
 Full output: [`server-runs/2026-05-14T22-13-51-app-curl--s--X-POST-http-localhost-3000-api--1.log`](server-runs/2026-05-14T22-13-51-app-curl--s--X-POST-http-localhost-3000-api--1.log)
+
+## 2026-05-14T22:14:17.956Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `350d821` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2176ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && test -f QUICKSTART.md && wc -l QUICKSTART.md && head -15 QUICKSTART.md
+```
+STDOUT:
+```
+99 QUICKSTART.md
+# Etsy Dashboard — Quick Start Guide
+
+Welcome! This dashboard helps you track inventory and orders from your Etsy shop in one place.
+
+## What You'll Need
+
+1. **Your Etsy API Key** — Follow the steps below to get one (it takes about 5 minutes)
+2. **A web browser** — Chrome, Firefox, or Safari work great
+
+---
+
+## Step 1: Get Your Etsy API Key
+
+To connect your shop, you need an Etsy API key (also called an "OAuth token").
+```
+Full output: [`server-runs/2026-05-14T22-14-17-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-14-17-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
