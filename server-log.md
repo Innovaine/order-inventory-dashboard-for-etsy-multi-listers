@@ -4485,3 +4485,12 @@ _Pre-SSH: warehouse pushed to GitHub as commit `2ca674c` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose restart etsy-dashboard-app && sleep 3 && docker ps --format "table {{.Names}}\t{{.Status}}"
 ```
 ERROR: command exited 1
+
+## 2026-05-14T22:09:30.500Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `5c74af7` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exit 1, 2153ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose logs etsy-dashboard-app --tail=30
+```
+ERROR: command exited 1
