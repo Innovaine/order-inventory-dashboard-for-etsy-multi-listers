@@ -1817,3 +1817,64 @@ aaa92d4c80b3   postgres:16-alpine                                     "docker-en
 curl: (7) Failed to connect to localhost port 3000 after 0 ms: Couldn't connect to server
 ```
 Full output: [`server-runs/2026-05-14T19-10-11-app-docker-ps-curl--sS-http-localhost-3000-2-1.log`](server-runs/2026-05-14T19-10-11-app-docker-ps-curl--sS-http-localhost-3000-2-1.log)
+
+## 2026-05-14T19:12:26.889Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `ddf3445` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2725ms) _(showing tail — full 4,577B stdout + 0B stderr)_
+```
+docker logs etsy-dashboard-app 2>&1 | tail -100
+```
+STDOUT:
+```
+…("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+[Context: getConfig]
+
+Prisma CLI Version : 7.8.0
+Prisma schema loaded from prisma/schema.prisma.
+Error: Prisma schema validation - (get-config wasm)
+Error code: P1012
+error: The datasource property `url` is no longer supported in schema files. Move connection URLs for Migrate to `prisma.config.ts` and pass either `adapter` for a direct database connection or `accelerateUrl` for Accelerate to the `PrismaClient` constructor. See https://pris.ly/d/config-datasource and https://pris.ly/d/prisma7-client-config
+  -->  prisma/schema.prisma:10
+   | 
+ 9 |   provider = "postgresql"
+10 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+[Context: getConfig]
+
+Prisma CLI Version : 7.8.0
+Prisma schema loaded from prisma/schema.prisma.
+Error: Prisma schema validation - (get-config wasm)
+Error code: P1012
+error: The datasource property `url` is no longer supported in schema files. Move connection URLs for Migrate to `prisma.config.ts` and pass either `adapter` for a direct database connection or `accelerateUrl` for Accelerate to the `PrismaClient` constructor. See https://pris.ly/d/config-datasource and https://pris.ly/d/prisma7-client-config
+  -->  prisma/schema.prisma:10
+   | 
+ 9 |   provider = "postgresql"
+10 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+[Context: getConfig]
+
+Prisma CLI Version : 7.8.0
+Prisma schema loaded from prisma/schema.prisma.
+Error: Prisma schema validation - (get-config wasm)
+Error code: P1012
+error: The datasource property `url` is no longer supported in schema files. Move connection URLs for Migrate to `prisma.config.ts` and pass either `adapter` for a direct database connection or `accelerateUrl` for Accelerate to the `PrismaClient` constructor. See https://pris.ly/d/config-datasource and https://pris.ly/d/prisma7-client-config
+  -->  prisma/schema.prisma:10
+   | 
+ 9 |   provider = "postgresql"
+10 |   url      = env("DATABASE_URL")
+   | 
+
+Validation Error Count: 1
+[Context: getConfig]
+
+Prisma CLI Version : 7.8.0
+```
+Full output: [`server-runs/2026-05-14T19-12-26-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log`](server-runs/2026-05-14T19-12-26-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log)
