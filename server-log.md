@@ -866,3 +866,12 @@ STDOUT:
 No etsy-dashboard containers found
 ```
 Full output: [`server-runs/2026-05-14T17-38-30-app-docker-ps--a-grep-etsy-dashboard-echo-No-1.log`](server-runs/2026-05-14T17-38-30-app-docker-ps--a-grep-etsy-dashboard-echo-No-1.log)
+
+## 2026-05-14T17:39:09.398Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `ab3ceea` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✗ exec-error: Connection timed out, 14794ms)
+```
+cd ~ && timeout 120 docker compose -f order-inventory-dashboard-for-etsy-multi-listers/docker-compose.yml build 2>&1 | tail -20
+```
+ERROR: Connection timed out
