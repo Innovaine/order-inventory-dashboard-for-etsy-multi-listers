@@ -1900,3 +1900,20 @@ STDOUT:
 order-inventory-dashboard-for-etsy-multi-listers-app:latest   6c3bc9612257        272MB         68.5MB   U
 ```
 Full output: [`server-runs/2026-05-14T19-13-50-app-docker-images-grep-etsy-head--5-1.log`](server-runs/2026-05-14T19-13-50-app-docker-images-grep-etsy-head--5-1.log)
+
+## 2026-05-14T19:14:46.737Z — Nadia ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `167076d` so the server's `git pull` will pick it up._
+
+### Command 1 on app as devops (✓ exit 0, 2312ms)
+```
+uptime && df -h / && docker ps
+```
+STDOUT:
+```
+ 19:14:47 up 1 day, 20:17,  1 user,  load average: 0.01, 0.16, 0.17
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda1       387G   14G  374G   4% /
+CONTAINER ID   IMAGE                COMMAND                  CREATED              STATUS                        PORTS                                         NAMES
+f3c312a88d61   postgres:16-alpine   "docker-entrypoint.s…"   About a minute ago   Up About a minute (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+```
+Full output: [`server-runs/2026-05-14T19-14-46-app-uptime-df--h-docker-ps-1.log`](server-runs/2026-05-14T19-14-46-app-uptime-df--h-docker-ps-1.log)
