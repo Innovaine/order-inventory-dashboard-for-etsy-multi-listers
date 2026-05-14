@@ -604,3 +604,44 @@ _Pre-SSH: warehouse pushed to GitHub as commit `36126c4` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull && docker compose build && docker compose up -d
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T17:31:09.737Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `ece6ef8` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 1987ms)
+```
+uptime && df -h && ls -la ~/order-inventory-dashboard-for-etsy-multi-listers 2>/dev/null | head -20 || echo "repo not yet cloned"
+```
+STDOUT:
+```
+ 17:31:10 up 1 day, 18:34,  1 user,  load average: 0.20, 0.13, 0.05
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           3.2G  1.3M  3.2G   1% /run
+/dev/sda1       387G   11G  377G   3% /
+tmpfs            16G     0   16G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+/dev/sda16      881M  117M  703M  15% /boot
+/dev/sda15      105M  6.2M   99M   6% /boot/efi
+tmpfs           3.2G   12K  3.2G   1% /run/user/1003
+total 216
+drwxrwxr-x  14 reviewer reviewer  4096 May 14 13:25 .
+drwxr-x---  11 reviewer reviewer  4096 May 14 11:55 ..
+drwxrwxr-x   8 reviewer reviewer  4096 May 14 13:19 .git
+-rw-rw-r--   1 reviewer reviewer  1191 May 14 11:55 Dockerfile
+-rw-rw-r--   1 reviewer reviewer  1849 May 14 11:55 README.md
+-rw-rw-r--   1 reviewer reviewer  1547 May 14 11:55 _meta.json
+drwxrwxr-x   2 reviewer reviewer  4096 May 14 11:55 day-01
+drwxrwxr-x   2 reviewer reviewer  4096 May 14 13:19 day-02
+drwxrwxr-x   2 reviewer reviewer  4096 May 14 13:19 day-03
+drwxrwxr-x   2 reviewer reviewer  4096 May 14 11:55 decisions
+-rw-rw-r--   1 reviewer reviewer  1109 May 14 11:55 docker-compose.yml
+-rw-rw-r--   1 reviewer reviewer   782 May 14 13:19 email-cold-1-etsy-shop-owner-high-volume.txt
+-rw-rw-r--   1 reviewer reviewer   557 May 14 13:19 email-cold-2-etsy-shop-owner-multi-channel.txt
+-rw-rw-r--   1 reviewer reviewer   624 May 14 13:19 email-cold-3-etsy-shop-owner-struggling-growth.txt
+-rw-rw-r--   1 reviewer reviewer   208 May 14 13:19 email-followup.txt
+drwxrwxr-x   2 reviewer reviewer  4096 May 14 13:19 execution
+-rw-rw-r--   1 reviewer reviewer  1154 May 14 11:55 idea.md
+-rw-rw-r--   1 reviewer reviewer  9791 May 14 11:55 landing.html
+drwxrwxr-x 124 reviewer reviewer  4096 May 14 13:25 node_modules
+```
+Full output: [`server-runs/2026-05-14T17-31-09-app-uptime-df--h-ls--la-order-inventory-dash-1.log`](server-runs/2026-05-14T17-31-09-app-uptime-df--h-ls--la-order-inventory-dash-1.log)
