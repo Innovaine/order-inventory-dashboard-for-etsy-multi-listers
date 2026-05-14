@@ -3810,3 +3810,12 @@ To address all issues, run:
 Run `npm audit` for details.
 ```
 Full output: [`server-runs/2026-05-14T21-10-45-app-kill--0-cat-tmp-npm-install-pw.pid-2-dev-1.log`](server-runs/2026-05-14T21-10-45-app-kill--0-cat-tmp-npm-install-pw.pid-2-dev-1.log)
+
+## 2026-05-14T21:11:16.367Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `6924ef7` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 12903ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers npx playwright test --reporter=list 2>&1 | tee /tmp/playwright-run.log
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
