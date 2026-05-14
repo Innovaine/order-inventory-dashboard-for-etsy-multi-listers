@@ -1269,3 +1269,27 @@ Total:	3.184GB
 Cache cleared
 ```
 Full output: [`server-runs/2026-05-14T17-56-40-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-56-40-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T17:58:29.667Z — Priya ran 2 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `96140db` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2368ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers 2>/dev/null && echo "Repo exists" || echo "Repo not yet cloned"
+```
+STDOUT:
+```
+Repo exists
+```
+Full output: [`server-runs/2026-05-14T17-58-29-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-58-29-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+### Command 2 on app as tester (✓ exit 0, 490ms)
+```
+docker ps -a | grep etsy-dashboard || echo "No etsy-dashboard containers found"; docker images | grep etsy-dashboard || echo "No etsy-dashboard images found"
+```
+STDOUT:
+```
+No etsy-dashboard containers found
+No etsy-dashboard images found
+```
+Full output: [`server-runs/2026-05-14T17-58-29-app-docker-ps--a-grep-etsy-dashboard-echo-No-2.log`](server-runs/2026-05-14T17-58-29-app-docker-ps--a-grep-etsy-dashboard-echo-No-2.log)
