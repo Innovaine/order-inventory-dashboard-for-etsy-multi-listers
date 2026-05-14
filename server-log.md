@@ -2635,3 +2635,40 @@ Fast-forward
 Build started, PID=524469
 ```
 Full output: [`server-runs/2026-05-14T19-49-24-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-49-24-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:49:53.507Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `b8bfde3` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 1939ms) _(showing tail — full 7,629B stdout + 0B stderr)_
+```
+kill -0 $(cat /tmp/etsy-build-day8.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -80 /tmp/etsy-build-day8.log
+```
+STDOUT:
+```
+…query_engine-linux-musl.so.node)
+#15 16.12     at Object.loadLibrary (/app/node_modules/@prisma/client/runtime/library.js:111:10243)
+#15 16.12     at async _r.loadEngine (/app/node_modules/@prisma/client/runtime/library.js:112:448)
+#15 16.12     at async _r.instantiateLibrary (/app/node_modules/@prisma/client/runtime/library.js:111:12599) {
+#15 16.12   clientVersion: '5.22.0',
+#15 16.12   errorCode: undefined
+#15 16.12 }
+#15 16.13 CSV export error: q [Error]: Dynamic server usage: Route /api/export-csv couldn't be rendered statically because it accessed `request.url`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+#15 16.13     at Object.get (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:37835)
+#15 16.13     at u (/app/.next/server/app/api/export-csv/route.js:1:612)
+#15 16.13     at /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:34672
+#15 16.13     at /app/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+#15 16.13     at NoopContextManager.with (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+#15 16.13     at ContextAPI.with (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+#15 16.13     at NoopTracer.startActiveSpan (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+#15 16.13     at ProxyTracer.startActiveSpan (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+#15 16.13     at /app/node_modules/next/dist/server/lib/trace/tracer.js:122:103
+#15 16.13     at NoopContextManager.with (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062) {
+#15 16.13   description: "Route /api/export-csv couldn't be rendered statically because it accessed `request.url`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+#15 16.13   digest: 'DYNAMIC_SERVER_USAGE'
+#15 16.13 }
+#15 16.25  ✓ Generating static pages (11/11)
+#15 16.67    Finalizing page optimization ...
+#15 16.67    Collecting build traces ...
+```
+Full output: [`server-runs/2026-05-14T19-49-53-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log`](server-runs/2026-05-14T19-49-53-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log)
