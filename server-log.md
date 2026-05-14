@@ -299,3 +299,16 @@ CONTAINER ID   IMAGE                       COMMAND                  CREATED     
 ```
 ERROR: command exited 1
 Full output: [`server-runs/2026-05-14T13-20-51-app-docker-ps-docker-images-grep-order-1.log`](server-runs/2026-05-14T13-20-51-app-docker-ps-docker-images-grep-order-1.log)
+
+## 2026-05-14T13:21:10.585Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `7eaef32` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 1917ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose ps
+```
+STDOUT:
+```
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+```
+Full output: [`server-runs/2026-05-14T13-21-10-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T13-21-10-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
