@@ -3034,3 +3034,16 @@ Fast-forward
  create mode 100644 day-09/_plan.md
 ```
 Full output: [`server-runs/2026-05-14T20-17-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-17-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T20:18:30.760Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `b436e3f` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 16194ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+docker compose down
+nohup docker compose build > /tmp/etsy-build-day9.log 2>&1 &
+echo $! > /tmp/etsy-build-day9.pid
+echo "Build started, PID=$(cat /tmp/etsy-build-day9.pid)"
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
