@@ -4762,3 +4762,21 @@ Running 11 tests using 1 worker
   11 passed (24.2s)
 ```
 Full output: [`server-runs/2026-05-14T22-23-35-app-kill--0-cat-tmp-pw.pid-2-dev-null-2-dev--1.log`](server-runs/2026-05-14T22-23-35-app-kill--0-cat-tmp-pw.pid-2-dev-null-2-dev--1.log)
+
+## 2026-05-14T22:57:49.459Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `4e2e15a` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2306ms)
+```
+uptime && df -h / | tail -1 && docker ps && curl -sf http://localhost:3000 -o /dev/null && echo "✓ Dashboard responding" || echo "✗ Dashboard not responding"
+```
+STDOUT:
+```
+ 22:57:49 up 2 days, 0 min,  1 user,  load average: 0.00, 0.00, 0.00
+/dev/sda1       387G   30G  358G   8% /
+CONTAINER ID   IMAGE                                                         COMMAND                  CREATED          STATUS                 PORTS                                         NAMES
+7cdb76d4c870   order-inventory-dashboard-for-etsy-multi-listers-app:latest   "docker-entrypoint.s…"   47 minutes ago   Up 47 minutes          0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   etsy-dashboard-app-new
+5fadef28d2f0   postgres:16-alpine                                            "docker-entrypoint.s…"   3 hours ago      Up 3 hours (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+✓ Dashboard responding
+```
+Full output: [`server-runs/2026-05-14T22-57-49-app-uptime-df--h-tail--1-docker-ps-curl--sf--1.log`](server-runs/2026-05-14T22-57-49-app-uptime-df--h-tail--1-docker-ps-curl--sf--1.log)
