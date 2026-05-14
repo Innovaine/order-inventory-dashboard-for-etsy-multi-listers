@@ -5019,3 +5019,15 @@ DONE - tests completed
 nohup: failed to run command 'PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers': No such file or directory
 ```
 Full output: [`server-runs/2026-05-14T23-05-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-05-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T23:06:16.404Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `6e8864b` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 17267ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+# Run with env var exported first
+export PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers
+npx playwright test --reporter=list 2>&1 | tee /tmp/day13-full-regression.log
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
