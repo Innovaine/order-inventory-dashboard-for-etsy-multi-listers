@@ -915,3 +915,16 @@ _Pre-SSH: warehouse pushed to GitHub as commit `0a8bd50` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && timeout 180 docker compose build 2>&1 | tee /tmp/docker-build.log
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T17:50:51.394Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0da3ad4` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2374ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose build > /tmp/docker-build.log 2>&1 & echo "Build started in background, PID: $!"
+```
+STDOUT:
+```
+Build started in background, PID: 490051
+```
+Full output: [`server-runs/2026-05-14T17-50-51-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-50-51-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
