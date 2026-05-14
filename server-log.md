@@ -4780,3 +4780,52 @@ CONTAINER ID   IMAGE                                                         COM
 ✓ Dashboard responding
 ```
 Full output: [`server-runs/2026-05-14T22-57-49-app-uptime-df--h-tail--1-docker-ps-curl--sf--1.log`](server-runs/2026-05-14T22-57-49-app-uptime-df--h-tail--1-docker-ps-curl--sf--1.log)
+
+## 2026-05-14T22:59:38.572Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `c529a6c` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2806ms) _(showing tail — full 3,320B stdout + 0B stderr)_
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull && docker ps && curl -sf http://localhost:3000 -o /dev/null && echo "✓ Dashboard responding on port 3000"
+```
+STDOUT:
+```
+…md                     | 1068 +++++++++++++++++++++
+ src/app/api/events/route.ts       |   74 ++
+ src/app/dashboard/page.tsx        |   42 +
+ src/components/InventoryTable.tsx |   23 +
+ src/components/OrdersTable.tsx    |   23 +
+ test-results/day-11/report.md     |  247 +++++
+ wireframe-dashboard-annotated.txt |   90 ++
+ 32 files changed, 8358 insertions(+), 406 deletions(-)
+ create mode 100644 QUICKSTART.md
+ create mode 100644 backend-validation-checklist.md
+ create mode 100644 csv-preview.html
+ create mode 100644 dashboard-empty-states.html
+ create mode 100644 day-11/pm-status.md
+ create mode 100644 day-11/risks.md
+ create mode 100644 day-11/test.md
+ create mode 100644 day-12/_index.md
+ create mode 100644 day-12/_plan.md
+ create mode 100644 day-12/design.md
+ create mode 100644 day-12/engineering.md
+ create mode 100644 day-12/requirements.md
+ create mode 100644 day-12/review.md
+ create mode 100644 day-13/_plan.md
+ create mode 100644 day-13/design.md
+ create mode 100644 day-13/engineering.md
+ create mode 100644 day-13/review.md
+ create mode 100644 email-welcome.txt
+ create mode 100644 event-audit-day13.md
+ create mode 100644 onboarding-flow.txt
+ create mode 100644 onboarding-tour.html
+ create mode 100644 quick-start-checklist.txt
+ create mode 100644 src/app/api/events/route.ts
+ create mode 100644 test-results/day-11/report.md
+ create mode 100644 wireframe-dashboard-annotated.txt
+CONTAINER ID   IMAGE                                                         COMMAND                  CREATED          STATUS                 PORTS                                         NAMES
+7cdb76d4c870   order-inventory-dashboard-for-etsy-multi-listers-app:latest   "docker-entrypoint.s…"   49 minutes ago   Up 49 minutes          0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   etsy-dashboard-app-new
+5fadef28d2f0   postgres:16-alpine                                            "docker-entrypoint.s…"   3 hours ago      Up 3 hours (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+✓ Dashboard responding on port 3000
+```
+Full output: [`server-runs/2026-05-14T22-59-38-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-59-38-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
