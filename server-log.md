@@ -436,3 +436,14 @@ added 141 packages in 9s
   run `npm fund` for details
 ```
 Full output: [`server-runs/2026-05-14T13-25-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T13-25-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T13:26:39.630Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `c5fe99b` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exec-error: Connection timed out, 35636ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose up -d --build 2>&1 &
+sleep 30
+docker compose ps
+```
+ERROR: Connection timed out
