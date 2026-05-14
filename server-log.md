@@ -826,3 +826,14 @@ STDOUT:
 Thu May 14 17:35:39 UTC 2026
 ```
 Full output: [`server-runs/2026-05-14T17-35-38-app-pwd-date-1.log`](server-runs/2026-05-14T17-35-38-app-pwd-date-1.log)
+
+## 2026-05-14T17:37:04.906Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `ba91780` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✗ exec-error: Connection timed out, 12744ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && \
+nohup docker compose build > /tmp/docker-build.log 2>&1 & \
+echo "Build started in background, PID: $!"
+```
+ERROR: Connection timed out
