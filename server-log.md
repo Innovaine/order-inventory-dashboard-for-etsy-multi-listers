@@ -723,3 +723,36 @@ _Pre-SSH: warehouse pushed to GitHub as commit `34e0043` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && timeout 120 docker compose build 2>&1 || echo "Build timed out or failed with exit code: $?"
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T17:34:19.706Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `050cabf` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2392ms)
+```
+uptime && df -h | head -5 && \
+ls -la ~/order-inventory-dashboard-for-etsy-multi-listers 2>/dev/null | head -10 || echo "repo not yet cloned" && \
+docker ps -a | head -5
+```
+STDOUT:
+```
+ 17:34:19 up 1 day, 18:37,  1 user,  load average: 0.18, 0.18, 0.08
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           3.2G  1.3M  3.2G   1% /run
+/dev/sda1       387G   11G  377G   3% /
+tmpfs            16G     0   16G   0% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+total 152
+drwxrwxr-x  14 tester tester  4096 May 14 13:27 .
+drwxr-x---   9 tester tester  4096 May 14 11:58 ..
+drwxrwxr-x   8 tester tester  4096 May 14 13:27 .git
+-rw-rw-r--   1 tester tester  1191 May 14 11:58 Dockerfile
+-rw-rw-r--   1 tester tester  1849 May 14 11:58 README.md
+-rw-rw-r--   1 tester tester  1547 May 14 11:58 _meta.json
+drwxrwxr-x   2 tester tester  4096 May 14 11:58 day-01
+drwxrwxr-x   2 tester tester  4096 May 14 13:27 day-02
+drwxrwxr-x   2 tester tester  4096 May 14 13:27 day-03
+CONTAINER ID   IMAGE                       COMMAND                  CREATED        STATUS                    PORTS                                         NAMES
+94d6636652f1   shop-in-a-box-app           "docker-entrypoint.s…"   22 hours ago   Up 22 hours (unhealthy)   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   shop-in-a-box-app-1
+394b68190016   email-to-sql-email-to-sql   "docker-entrypoint.s…"   24 hours ago   Up 24 hours (healthy)     0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp   email-to-sql-webhook
+```
+Full output: [`server-runs/2026-05-14T17-34-19-app-uptime-df--h-head--5-1.log`](server-runs/2026-05-14T17-34-19-app-uptime-df--h-head--5-1.log)
