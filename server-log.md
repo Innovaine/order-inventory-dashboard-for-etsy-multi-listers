@@ -4977,3 +4977,24 @@ To connect your shop, you need an Etsy API key (also called an "OAuth token").
 Found 3 onboarding HTML files
 ```
 Full output: [`server-runs/2026-05-14T23-04-40-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-04-40-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T23:05:00.574Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0562d0f` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2214ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+# Run full Playwright test suite
+echo "Starting full Playwright regression test suite..."
+nohup PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers npx playwright test --reporter=list > /tmp/day13-regression.log 2>&1 &
+echo $! > /tmp/day13-pw.pid
+echo "✓ Test suite kicked off in background, PID: $(cat /tmp/day13-pw.pid)"
+echo "Poll with: tail /tmp/day13-regression.log"
+```
+STDOUT:
+```
+Starting full Playwright regression test suite...
+✓ Test suite kicked off in background, PID: 571443
+Poll with: tail /tmp/day13-regression.log
+```
+Full output: [`server-runs/2026-05-14T23-05-00-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-05-00-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
