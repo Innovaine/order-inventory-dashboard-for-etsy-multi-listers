@@ -2706,3 +2706,27 @@ RUNNING
 #25 exporting layers
 ```
 Full output: [`server-runs/2026-05-14T19-50-15-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log`](server-runs/2026-05-14T19-50-15-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log)
+
+## 2026-05-14T19:50:34.347Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `9cb7195` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2097ms)
+```
+kill -0 $(cat /tmp/etsy-build-day8.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -10 /tmp/etsy-build-day8.log
+```
+STDOUT:
+```
+DONE
+#25 exporting attestation manifest sha256:901009eeb7855203991cad177ce7c4b506cc86b0c2e9b43e05d01e1df976cfc6 0.0s done
+#25 exporting manifest list sha256:29183b73f75c5a07133149704fe2be28297867418691c5c94972a45d277c1926 done
+#25 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#25 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
+#25 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest 4.2s done
+#25 DONE 21.7s
+
+#26 resolving provenance for metadata file
+#26 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built
+```
+Full output: [`server-runs/2026-05-14T19-50-34-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log`](server-runs/2026-05-14T19-50-34-app-kill--0-cat-tmp-etsy-build-day8.pid-2-de-1.log)
