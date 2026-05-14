@@ -4693,3 +4693,20 @@ _Pre-SSH: warehouse pushed to GitHub as commit `a1ac6fa` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup npm test 2>&1 > /tmp/pw-test.log & echo $! > /tmp/pw-test.pid && echo "Started Playwright tests PID=$(cat /tmp/pw-test.pid)"
 ```
 ERROR: command exited 1
+
+## 2026-05-14T22:17:24.285Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `3590c39` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2188ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && ls -la tests/ && test -f playwright.config.ts && echo "✓ playwright.config.ts exists"
+```
+STDOUT:
+```
+total 12
+drwxrwxr-x  3 reviewer reviewer 4096 May 14 13:19 .
+drwxrwxr-x 24 reviewer reviewer 4096 May 14 22:03 ..
+drwxrwxr-x  2 reviewer reviewer 4096 May 14 13:19 web
+✓ playwright.config.ts exists
+```
+Full output: [`server-runs/2026-05-14T22-17-24-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-17-24-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
