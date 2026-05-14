@@ -4218,3 +4218,20 @@ STDOUT:
 ✗ events API missing
 ```
 Full output: [`server-runs/2026-05-14T22-01-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-01-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T22:02:04.693Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `7b2e1c6` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2077ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git log --oneline -5
+```
+STDOUT:
+```
+e0dd76a Søren (reviewer, day 4) — pre-SSH sync
+1fc9409 Søren (reviewer, day 4) — pre-SSH sync
+ece6ef8 Søren (reviewer, day 4) — pre-SSH sync
+36126c4 Anil (engineer, day 4) — pre-SSH sync
+fc82266 Anil (engineer, day 4) — pre-SSH sync
+```
+Full output: [`server-runs/2026-05-14T22-02-04-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-02-04-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
