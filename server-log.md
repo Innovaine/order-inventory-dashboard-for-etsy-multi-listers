@@ -48,3 +48,60 @@ _Pre-SSH: warehouse pushed to GitHub as commit `780c131` so the server's `git pu
 ```
 rm -rf ~/order-inventory-dashboard-for-etsy-multi-listers && cd ~ && git clone https://github.com/Innovaine/order-inventory-dashboard-for-etsy-multi-listers.git
 ```
+
+## 2026-05-14T11:55:34.151Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `1b32991` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 4446ms) _(showing tail — full 4,110B stdout + 0B stderr)_
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose build 2>&1 | head -100
+```
+STDOUT:
+```
+…Clean install a project
+#13 0.603 npm error
+#13 0.603 npm error Usage:
+#13 0.603 npm error npm ci
+#13 0.603 npm error
+#13 0.603 npm error Options:
+#13 0.603 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+#13 0.603 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+#13 0.603 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+#13 0.603 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+#13 0.603 npm error [--no-bin-links] [--no-fund] [--dry-run]
+#13 0.603 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+#13 0.603 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+#13 0.603 npm error
+#13 0.603 npm error aliases: clean-install, ic, install-clean, isntall-clean
+#13 0.603 npm error
+#13 0.603 npm error Run "npm help ci" for more info
+#13 0.604 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-05-14T11_55_34_176Z-debug-0.log
+#13 ERROR: process "/bin/sh -c npm ci" did not complete successfully: exit code: 1
+------
+ > [deps 4/4] RUN npm ci:
+0.603 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+0.603 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+0.603 npm error [--no-bin-links] [--no-fund] [--dry-run]
+0.603 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+0.603 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+0.603 npm error
+0.603 npm error aliases: clean-install, ic, install-clean, isntall-clean
+0.603 npm error
+0.603 npm error Run "npm help ci" for more info
+0.604 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-05-14T11_55_34_176Z-debug-0.log
+------
+Dockerfile:9
+
+--------------------
+
+   7 |     
+
+   8 |     COPY package.json package-lock.json* ./
+
+   9 | >>> RUN npm ci
+
+  10 |     
+
+  11 |     # Rebuild the source code only when needed
+```
+Full output: [`server-runs/2026-05-14T11-55-34-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T11-55-34-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
