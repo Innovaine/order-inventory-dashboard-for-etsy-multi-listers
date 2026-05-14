@@ -3828,3 +3828,15 @@ _Pre-SSH: warehouse pushed to GitHub as commit `71f6bce` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup bash -c "PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers npx playwright test --reporter=list" > /tmp/playwright-run.log 2>&1 & echo $! > /tmp/playwright-run.pid && echo "Started Playwright tests, PID=$(cat /tmp/playwright-run.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T21:12:12.983Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `66533ea` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 12270ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+nohup sh -c 'PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers npx playwright test --reporter=list > /tmp/pw-test.log 2>&1' &
+echo $! > /tmp/pw-test.pid
+echo "Started PID=$(cat /tmp/pw-test.pid)"
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
