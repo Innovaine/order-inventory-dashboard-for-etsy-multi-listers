@@ -4998,3 +4998,24 @@ Starting full Playwright regression test suite...
 Poll with: tail /tmp/day13-regression.log
 ```
 Full output: [`server-runs/2026-05-14T23-05-00-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-05-00-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T23:05:39.682Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `7c7e779` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 1988ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+# Check if tests are still running
+kill -0 $(cat /tmp/day13-pw.pid) 2>/dev/null && echo "RUNNING - tests still executing" || echo "DONE - tests completed"
+echo ""
+echo "=== Current test output ==="
+tail -50 /tmp/day13-regression.log
+```
+STDOUT:
+```
+DONE - tests completed
+
+=== Current test output ===
+nohup: failed to run command 'PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers': No such file or directory
+```
+Full output: [`server-runs/2026-05-14T23-05-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-05-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
