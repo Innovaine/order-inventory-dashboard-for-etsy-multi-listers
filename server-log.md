@@ -2881,3 +2881,26 @@ RUNNING
 #26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
 ```
 Full output: [`server-runs/2026-05-14T19-55-07-app-kill--0-cat-tmp-etsy-build-openssl.pid-2-1.log`](server-runs/2026-05-14T19-55-07-app-kill--0-cat-tmp-etsy-build-openssl.pid-2-1.log)
+
+## 2026-05-14T19:55:57.851Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `07f6822` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2952ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+git pull
+docker compose down
+nohup docker compose build > /tmp/etsy-build-debian.log 2>&1 &
+echo $! > /tmp/etsy-build-debian.pid
+echo "Build started, PID=$(cat /tmp/etsy-build-debian.pid)"
+```
+STDOUT:
+```
+Updating 89cd927..07f6822
+Fast-forward
+ Dockerfile    | 12 +++++-----
+ server-log.md | 76 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 82 insertions(+), 6 deletions(-)
+Build started, PID=530251
+```
+Full output: [`server-runs/2026-05-14T19-55-57-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-55-57-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
