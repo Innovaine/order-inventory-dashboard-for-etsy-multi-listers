@@ -2967,3 +2967,16 @@ STDOUT:
  Image order-inventory-dashboard-for-etsy-multi-listers-app Built
 ```
 Full output: [`server-runs/2026-05-14T19-57-47-app-kill--0-cat-tmp-etsy-build-debian.pid-2--1.log`](server-runs/2026-05-14T19-57-47-app-kill--0-cat-tmp-etsy-build-debian.pid-2--1.log)
+
+## 2026-05-14T19:58:24.243Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `d5c058c` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 17059ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+docker compose up -d
+sleep 5
+docker ps
+docker logs etsy-dashboard-app-2-1 --tail=30
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
