@@ -1569,3 +1569,18 @@ a32c757c5a3d   postgres:16-alpine   "docker-entrypoint.s…"   40 seconds ago   
 a32c757c5a3d   postgres:16-alpine                                     "docker-entrypoint.s…"   40 seconds ago   Up 39 seconds (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
 ```
 Full output: [`server-runs/2026-05-14T19-00-36-app-docker-ps-docker-ps--a-grep-etsy-1.log`](server-runs/2026-05-14T19-00-36-app-docker-ps-docker-ps--a-grep-etsy-1.log)
+
+## 2026-05-14T19:01:19.664Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `744ec1f` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 5263ms)
+```
+docker logs etsy-dashboard-app 2>&1 | tail -50; docker start etsy-dashboard-app; sleep 3; docker ps | grep etsy
+```
+STDOUT:
+```
+etsy-dashboard-app
+9a2c5b295948   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   About a minute ago   Up 3 seconds                  0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   etsy-dashboard-app
+a32c757c5a3d   postgres:16-alpine                                     "docker-entrypoint.s…"   About a minute ago   Up About a minute (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+```
+Full output: [`server-runs/2026-05-14T19-01-19-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log`](server-runs/2026-05-14T19-01-19-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log)
