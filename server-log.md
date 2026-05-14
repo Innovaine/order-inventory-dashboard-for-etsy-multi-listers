@@ -4109,3 +4109,33 @@ STDOUT:
 Up started, PID=558042
 ```
 Full output: [`server-runs/2026-05-14T21-58-57-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-58-57-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T21:59:42.334Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `b9f2811` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 7336ms)
+```
+sleep 5
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose ps
+docker compose logs app --tail=20
+```
+STDOUT:
+```
+NAME                 IMAGE                                                  COMMAND                  SERVICE    CREATED              STATUS                 PORTS
+etsy-dashboard-app   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   app        About a minute ago   Up 44 seconds          0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+etsy-dashboard-db    postgres:16-alpine                                     "docker-entrypoint.s…"   postgres   2 hours ago          Up 2 hours (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+etsy-dashboard-app  | Prisma schema loaded from prisma/schema.prisma
+etsy-dashboard-app  | Datasource "db": PostgreSQL database "etsy_dashboard", schema "public" at "postgres:5432"
+etsy-dashboard-app  | 
+etsy-dashboard-app  | 1 migration found in prisma/migrations
+etsy-dashboard-app  | 
+etsy-dashboard-app  | 
+etsy-dashboard-app  | No pending migrations to apply.
+etsy-dashboard-app  |   ▲ Next.js 14.2.3
+etsy-dashboard-app  |   - Local:        http://localhost:3000
+etsy-dashboard-app  |   - Network:      http://0.0.0.0:3000
+etsy-dashboard-app  | 
+etsy-dashboard-app  |  ✓ Starting...
+etsy-dashboard-app  |  ✓ Ready in 144ms
+```
+Full output: [`server-runs/2026-05-14T21-59-42-app-sleep-5-1.log`](server-runs/2026-05-14T21-59-42-app-sleep-5-1.log)
