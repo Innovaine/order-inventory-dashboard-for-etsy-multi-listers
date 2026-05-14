@@ -2,20 +2,18 @@
 // Triggers immediate fetch of inventory and orders from Etsy API
 
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import prisma from '@/lib/prisma';
 import { EtsyClient } from '@/lib/etsy-client';
-
-const prisma = new PrismaClient();
 
 export async function POST(request: NextRequest) {
   try {
-    const body = await request.json();
-    const { shopId } = body;
+    // Read shopId from httpOnly cookie (set during auth)
+    const shopId = request.cookies.get('shopId')?.value;
 
     if (!shopId) {
       return NextResponse.json(
-        { error: 'Shop ID is required' },
-        { status: 400 }
+        { error: 'Not authenticated' },
+        { status: 401 }
       );
     }
 

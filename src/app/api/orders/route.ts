@@ -2,19 +2,17 @@
 // Returns cached order records for display
 
 import { NextRequest, NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '@/lib/prisma';
 
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
-    const shopId = searchParams.get('shopId');
+    // Read shopId from httpOnly cookie (set during auth)
+    const shopId = request.cookies.get('shopId')?.value;
 
     if (!shopId) {
       return NextResponse.json(
-        { error: 'Shop ID is required' },
-        { status: 400 }
+        { error: 'Not authenticated' },
+        { status: 401 }
       );
     }
 

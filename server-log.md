@@ -2995,3 +2995,17 @@ CONTAINER ID   IMAGE                                                  COMMAND   
 c2038095726d   postgres:16-alpine                                     "docker-entrypoint.s…"   11 minutes ago   Up 11 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
 ```
 Full output: [`server-runs/2026-05-14T20-09-43-app-docker-ps-1.log`](server-runs/2026-05-14T20-09-43-app-docker-ps-1.log)
+
+## 2026-05-14T20:14:40.446Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `c7a004a` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 19777ms)
+```
+curl -sf http://localhost:3000 -o /dev/null && echo "OK" || echo "FAIL"
+docker logs etsy-dashboard-app --tail=20
+```
+STDOUT:
+```
+OK
+```
+Full output: [`server-runs/2026-05-14T20-14-40-app-curl--sf-http-localhost-3000--o-dev-null-1.log`](server-runs/2026-05-14T20-14-40-app-curl--sf-http-localhost-3000--o-dev-null-1.log)
