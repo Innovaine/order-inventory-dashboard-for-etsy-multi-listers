@@ -1,6 +1,8 @@
 // FR-3: Orders table component
 // Displays recent orders sorted by date descending (newest first)
 
+import { useEffect } from 'react';
+
 interface Order {
   id: string;
   orderId: string;
@@ -15,7 +17,28 @@ interface OrdersTableProps {
   isLoading: boolean;
 }
 
+// Day 12: Analytics helper - non-blocking event logging
+async function logEvent(eventType: string, metadata?: Record<string, any>) {
+  try {
+    await fetch('/api/events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ eventType, metadata }),
+    });
+  } catch (err) {
+    // Non-blocking - don't fail UI if logging fails
+    console.error('Analytics event failed:', err);
+  }
+}
+
 export default function OrdersTable({ orders, isLoading }: OrdersTableProps) {
+  // Day 12: Log orders_viewed event when orders load
+  useEffect(() => {
+    if (!isLoading && orders.length > 0) {
+      logEvent('orders_viewed', { orderCount: orders.length });
+    }
+  }, [isLoading, orders.length]);
+
   if (isLoading) {
     return (
       <div className="bg-white rounded-lg shadow p-8 text-center">

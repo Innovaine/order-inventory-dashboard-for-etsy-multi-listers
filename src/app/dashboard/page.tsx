@@ -53,8 +53,25 @@ export default function DashboardPage() {
     refetchInterval: 30 * 60 * 1000,
   });
 
+  // Day 12: Analytics helper - non-blocking event logging
+  const logEvent = async (eventType: string, metadata?: Record<string, any>) => {
+    try {
+      await fetch('/api/events', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ eventType, metadata }),
+      });
+    } catch (err) {
+      // Non-blocking - don't fail UI if logging fails
+      console.error('Analytics event failed:', err);
+    }
+  };
+
   const handleSync = async () => {
     if (!shopId) return;
+
+    // Day 12: Log sync action
+    logEvent('sync_clicked', { shopId });
 
     try {
       const res = await fetch('/api/sync', {
@@ -67,14 +84,22 @@ export default function DashboardPage() {
         // Invalidate queries to refetch data
         queryClient.invalidateQueries({ queryKey: ['inventory', shopId] });
         queryClient.invalidateQueries({ queryKey: ['orders', shopId] });
+        // Day 12: Log successful sync
+        logEvent('sync_completed', { shopId });
+      } else {
+        logEvent('sync_failed', { shopId, status: res.status });
       }
     } catch (error) {
       console.error('Sync failed:', error);
+      logEvent('sync_failed', { shopId, error: String(error) });
     }
   };
 
   const handleExportCSV = async () => {
     if (!shopId) return;
+
+    // Day 12: Log export action
+    logEvent('export_clicked', { shopId });
 
     try {
       const res = await fetch('/api/export-csv');
@@ -89,8 +114,11 @@ export default function DashboardPage() {
       a.click();
       document.body.removeChild(a);
       window.URL.revokeObjectURL(url);
+      // Day 12: Log successful export
+      logEvent('export_completed', { shopId });
     } catch (error) {
       console.error('Export failed:', error);
+      logEvent('export_failed', { shopId, error: String(error) });
     }
   };
 
@@ -151,6 +179,20 @@ export default function DashboardPage() {
           </section>
         </div>
       </main>
+
+      {/* Day 12: Feedback footer */}
+      <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-gray-500">
+        <p>
+          Have feedback or need help?{' '}
+          <a
+            href="mailto:feedback@innovaine.com?subject=Etsy Dashboard Feedback"
+            className="text-blue-600 hover:text-blue-700 underline"
+            onClick={() => logEvent('feedback_link_clicked')}
+          >
+            Send us a message
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }

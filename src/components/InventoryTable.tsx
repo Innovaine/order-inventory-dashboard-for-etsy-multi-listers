@@ -2,6 +2,8 @@
 // Displays inventory items sorted by quantity (low stock first)
 // Highlights items with qty < 5
 
+import { useEffect } from 'react';
+
 interface InventoryItem {
   id: string;
   sku: string | null;
@@ -15,7 +17,28 @@ interface InventoryTableProps {
   isLoading: boolean;
 }
 
+// Day 12: Analytics helper - non-blocking event logging
+async function logEvent(eventType: string, metadata?: Record<string, any>) {
+  try {
+    await fetch('/api/events', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ eventType, metadata }),
+    });
+  } catch (err) {
+    // Non-blocking - don't fail UI if logging fails
+    console.error('Analytics event failed:', err);
+  }
+}
+
 export default function InventoryTable({ items, isLoading }: InventoryTableProps) {
+  // Day 12: Log inventory_viewed event when items load
+  useEffect(() => {
+    if (!isLoading && items.length > 0) {
+      logEvent('inventory_viewed', { itemCount: items.length });
+    }
+  }, [isLoading, items.length]);
+
   if (isLoading) {
     return (
       <div className="bg-white rounded-lg shadow p-8 text-center">
