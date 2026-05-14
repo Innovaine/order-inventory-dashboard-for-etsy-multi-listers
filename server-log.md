@@ -4476,3 +4476,12 @@ BUILD COMPLETE
  Image order-inventory-dashboard-for-etsy-multi-listers-app Built
 ```
 Full output: [`server-runs/2026-05-14T22-08-46-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log`](server-runs/2026-05-14T22-08-46-app-kill--0-cat-tmp-day12-build.pid-2-dev-nu-1.log)
+
+## 2026-05-14T22:09:10.424Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `2ca674c` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exit 1, 2390ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose restart etsy-dashboard-app && sleep 3 && docker ps --format "table {{.Names}}\t{{.Status}}"
+```
+ERROR: command exited 1
