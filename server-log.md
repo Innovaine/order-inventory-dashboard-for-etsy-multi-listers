@@ -988,3 +988,12 @@ Dockerfile:9
 failed to solve: process "/bin/sh -c npm ci" did not complete successfully: exit code: 1
 ```
 Full output: [`server-runs/2026-05-14T17-51-40-app-ps-aux-grep-490051-grep--v-grep-echo-Pro-1.log`](server-runs/2026-05-14T17-51-40-app-ps-aux-grep-490051-grep--v-grep-echo-Pro-1.log)
+
+## 2026-05-14T17:52:35.672Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `cf7dca9` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out, 12923ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose build --no-cache > /tmp/docker-build-nocache.log 2>&1 & echo "Build started in background (no cache), PID: $!"
+```
+ERROR: Connection timed out
