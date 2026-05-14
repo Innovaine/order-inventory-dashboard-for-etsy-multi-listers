@@ -3667,3 +3667,48 @@ STDOUT:
 Started npm install, PID=546951
 ```
 Full output: [`server-runs/2026-05-14T20-54-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-54-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T21:07:50.728Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `762fbd7` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 3854ms) _(showing tail — full 3,125B stdout + 0B stderr)_
+```
+uptime && df -h / | tail -1 && docker ps && ls -la ~/order-inventory-dashboard-for-etsy-multi-listers 2>/dev/null || echo "Repo not yet cloned"
+```
+STDOUT:
+```
+…r   4096 May 14 11:58 day-01
+drwxrwxr-x   2 tester tester   4096 May 14 13:27 day-02
+drwxrwxr-x   2 tester tester   4096 May 14 17:34 day-03
+drwxrwxr-x   2 tester tester   4096 May 14 17:58 day-04
+drwxrwxr-x   2 tester tester   4096 May 14 20:44 day-05
+drwxrwxr-x   2 tester tester   4096 May 14 20:44 day-06
+drwxrwxr-x   2 tester tester   4096 May 14 20:44 day-07
+drwxrwxr-x   2 tester tester   4096 May 14 20:44 day-08
+drwxrwxr-x   2 tester tester   4096 May 14 20:44 day-09
+drwxrwxr-x   2 tester tester   4096 May 14 20:44 day-10
+drwxrwxr-x   2 tester tester   4096 May 14 11:58 decisions
+-rw-rw-r--   1 tester tester   1128 May 14 20:44 docker-compose.yml
+-rw-rw-r--   1 tester tester    782 May 14 13:27 email-cold-1-etsy-shop-owner-high-volume.txt
+-rw-rw-r--   1 tester tester    557 May 14 13:27 email-cold-2-etsy-shop-owner-multi-channel.txt
+-rw-rw-r--   1 tester tester    624 May 14 13:27 email-cold-3-etsy-shop-owner-struggling-growth.txt
+-rw-rw-r--   1 tester tester    208 May 14 13:27 email-followup.txt
+drwxrwxr-x   2 tester tester   4096 May 14 13:27 execution
+-rw-rw-r--   1 tester tester   1154 May 14 11:58 idea.md
+-rw-rw-r--   1 tester tester   9791 May 14 11:58 landing.html
+-rw-rw-r--   1 tester tester    214 May 14 17:58 next.config.js
+drwxrwxr-x 125 tester tester   4096 May 14 11:59 node_modules
+-rw-rw-r--   1 tester tester    777 May 14 17:34 package-lock.json
+-rw-rw-r--   1 tester tester    822 May 14 20:44 package.json
+drwxrwxr-x   3 tester tester   4096 May 14 13:27 prisma
+drwxrwxr-x   2 tester tester   4096 May 14 20:44 public
+-rw-rw-r--   1 tester tester  13263 May 14 11:58 requirements.md
+drwxrwxr-x   2 tester tester   4096 May 14 11:58 reviews
+-rw-rw-r--   1 tester tester 151249 May 14 20:44 server-log.md
+drwxrwxr-x   5 tester tester   4096 May 14 11:58 src
+-rw-rw-r--   1 tester tester    265 May 14 11:58 tailwind.config.js
+drwxrwxr-x   2 tester tester   4096 May 14 20:45 test-results
+drwxrwxr-x   3 tester tester   4096 May 14 13:27 tests
+-rw-rw-r--   1 tester tester    602 May 14 11:58 tsconfig.json
+```
+Full output: [`server-runs/2026-05-14T21-07-50-app-uptime-df--h-tail--1-docker-ps-ls--la-or-1.log`](server-runs/2026-05-14T21-07-50-app-uptime-df--h-tail--1-docker-ps-ls--la-or-1.log)
