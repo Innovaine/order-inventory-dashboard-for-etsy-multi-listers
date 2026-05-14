@@ -4684,3 +4684,12 @@ STDOUT:
 121:      logEvent('export_failed', { shopId, error: String(error) });
 ```
 Full output: [`server-runs/2026-05-14T22-15-07-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-15-07-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T22:15:39.993Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `a1ac6fa` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exit 1, 3970ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup npm test 2>&1 > /tmp/pw-test.log & echo $! > /tmp/pw-test.pid && echo "Started Playwright tests PID=$(cat /tmp/pw-test.pid)"
+```
+ERROR: command exited 1
