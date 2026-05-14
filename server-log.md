@@ -4851,3 +4851,38 @@ Running 3 tests using 1 worker
   3 passed (6.7s)
 ```
 Full output: [`server-runs/2026-05-14T23-00-23-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-00-23-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T23:00:50.311Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `cc397d8` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2371ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+# Test analytics endpoint
+echo "=== Testing /api/events endpoint ==="
+curl -s -X POST http://localhost:3000/api/events \
+  -H "Content-Type: application/json" \
+  -d '{"eventName":"test_smoke_run","shopId":"test-shop-123"}' | jq . || echo "Response (not JSON): $(curl -s -X POST http://localhost:3000/api/events -H 'Content-Type: application/json' -d '{\"eventName\":\"test_smoke_run\",\"shopId\":\"test-shop-123\"}')"
+
+echo ""
+echo "=== Checking if event was logged ==="
+# Check if the event file exists
+if [ -f /tmp/analytics.log ]; then
+  echo "✓ Analytics log exists"
+  echo "Last 5 events:"
+  tail -5 /tmp/analytics.log
+else
+  echo "⚠ Analytics log not found at /tmp/analytics.log"
+fi
+```
+STDOUT:
+```
+=== Testing /api/events endpoint ===
+{
+  "error": "eventType is required and must be a string"
+}
+
+=== Checking if event was logged ===
+⚠ Analytics log not found at /tmp/analytics.log
+```
+Full output: [`server-runs/2026-05-14T23-00-50-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T23-00-50-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
