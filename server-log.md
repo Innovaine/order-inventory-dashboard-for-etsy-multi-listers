@@ -4663,3 +4663,24 @@ Welcome! This dashboard helps you track inventory and orders from your Etsy shop
 To connect your shop, you need an Etsy API key (also called an "OAuth token").
 ```
 Full output: [`server-runs/2026-05-14T22-14-17-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-14-17-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T22:15:07.756Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `b74c45c` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2110ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && grep -n "logEvent.*inventory_viewed" src/components/InventoryTable.tsx && echo "✓ inventory_viewed event wired" && grep -n "logEvent.*orders_viewed" src/components/OrdersTable.tsx && echo "✓ orders_viewed event wired" && grep -n "sync_clicked\|sync_completed\|export_" src/app/dashboard/page.tsx | head -5
+```
+STDOUT:
+```
+38:      logEvent('inventory_viewed', { itemCount: items.length });
+✓ inventory_viewed event wired
+38:      logEvent('orders_viewed', { orderCount: orders.length });
+✓ orders_viewed event wired
+74:    logEvent('sync_clicked', { shopId });
+88:        logEvent('sync_completed', { shopId });
+102:    logEvent('export_clicked', { shopId });
+118:      logEvent('export_completed', { shopId });
+121:      logEvent('export_failed', { shopId, error: String(error) });
+```
+Full output: [`server-runs/2026-05-14T22-15-07-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-15-07-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
