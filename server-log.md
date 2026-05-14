@@ -3402,3 +3402,41 @@ Playwright already installed, skipping install
 Ready to run tests
 ```
 Full output: [`server-runs/2026-05-14T20-44-47-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-44-47-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T20:45:19.670Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `19861d6` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 3903ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+mkdir -p test-results/day-10
+PLAYWRIGHT_BROWSERS_PATH=/usr/local/share/playwright-browsers npx playwright test --reporter=list 2>&1 | tee test-results/day-10/playwright-output.txt
+echo "Exit code: $?"
+```
+STDOUT:
+```
+Error: Playwright Test did not expect test() to be called here.
+Most common reasons include:
+- You are calling test() in a configuration file.
+- You are calling test() in a file that is imported by the configuration file.
+- You have two different versions of @playwright/test. This usually happens
+  when one of the dependencies in your package.json depends on @playwright/test.
+
+   at tests/web/dashboard.spec.ts:4
+
+  2 |
+  3 | // FR-1: Etsy API key input & authentication flow
+> 4 | test('FR-1: User can enter API key and see validation', async ({ page }) => {
+    |     ^
+  5 |   test.setTimeout(30000);
+  6 |   
+  7 |   await page.goto('http://localhost:3000');
+    at _TestTypeImpl._currentSuite (/home/tester/order-inventory-dashboard-for-etsy-multi-listers/node_modules/playwright/lib/common/index.js:2221:13)
+    at _TestTypeImpl._createTest (/home/tester/order-inventory-dashboard-for-etsy-multi-listers/node_modules/playwright/lib/common/index.js:2234:24)
+    at /home/tester/order-inventory-dashboard-for-etsy-multi-listers/node_modules/playwright/lib/common/index.js:1111:12
+    at Object.<anonymous> (/home/tester/order-inventory-dashboard-for-etsy-multi-listers/tests/web/dashboard.spec.ts:4:5)
+Error: No tests found
+
+Exit code: 0
+```
+Full output: [`server-runs/2026-05-14T20-45-19-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-45-19-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
