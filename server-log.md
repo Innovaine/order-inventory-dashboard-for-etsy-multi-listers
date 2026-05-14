@@ -4027,3 +4027,47 @@ echo $! > /tmp/build.pid
 echo "Build started, PID=$(cat /tmp/build.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T21:55:52.605Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `e14e61e` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2191ms)
+```
+kill -0 $(cat /tmp/build.pid 2>/dev/null) 2>/dev/null && echo "BUILD RUNNING" || echo "BUILD DONE/NOT STARTED"
+tail -100 /tmp/build.log 2>/dev/null | tail -30
+```
+STDOUT:
+```
+BUILD DONE/NOT STARTED
+#21 [runner  7/11] RUN chown nextjs:nodejs .next
+#21 CACHED
+
+#22 [runner  8/11] COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+#22 DONE 0.3s
+
+#23 [runner  9/11] COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+#23 DONE 0.0s
+
+#24 [runner 10/11] COPY --from=builder --chown=nextjs:nodejs /app/prisma ./prisma
+#24 DONE 0.0s
+
+#25 [runner 11/11] COPY --from=builder --chown=nextjs:nodejs /app/node_modules ./node_modules
+#25 DONE 2.6s
+
+#26 exporting to image
+#26 exporting layers
+#26 exporting layers 15.8s done
+#26 exporting manifest sha256:aedba9797fcb9ab171371b170ccb6d7effae103089ad3a811c23da83f0c88a6c done
+#26 exporting config sha256:87862ebfafc5f7a01559762c744706819ecb8d290c5f6e6715310fc789d83afb done
+#26 exporting attestation manifest sha256:85dd0301f3b5346df2a5e2180240c33c72673aece9a4d50b76c361c5632107c3 0.0s done
+#26 exporting manifest list sha256:4be0f022519d2f9a514d6ec70b8bf4da91881f19882f085620a2dd3545db2c39 0.0s done
+#26 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
+#26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest 3.7s done
+#26 DONE 19.6s
+
+#27 resolving provenance for metadata file
+#27 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built
+```
+Full output: [`server-runs/2026-05-14T21-55-52-app-kill--0-cat-tmp-build.pid-2-dev-null-2-d-1.log`](server-runs/2026-05-14T21-55-52-app-kill--0-cat-tmp-build.pid-2-dev-null-2-d-1.log)
