@@ -2052,3 +2052,30 @@ _Pre-SSH: warehouse pushed to GitHub as commit `fce68db` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose up -d
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T19:26:39.186Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `e9df804` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2296ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker ps && docker ps -a | grep etsy && df -h / | tail -1 && git status
+```
+STDOUT:
+```
+CONTAINER ID   IMAGE                COMMAND                  CREATED         STATUS                   PORTS                                         NAMES
+753ec0027481   postgres:16-alpine   "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+c5e54acff222   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   2 minutes ago   Created                                                                etsy-dashboard-app
+753ec0027481   postgres:16-alpine                                     "docker-entrypoint.s…"   2 minutes ago   Up 2 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+/dev/sda1       387G   15G  372G   4% /
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   package-lock.json
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	node_modules/
+```
+Full output: [`server-runs/2026-05-14T19-26-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-26-39-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
