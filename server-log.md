@@ -595,3 +595,12 @@ _Pre-SSH: warehouse pushed to GitHub as commit `fc82266` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull && npm install
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T17:30:35.304Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `36126c4` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out, 17938ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull && docker compose build && docker compose up -d
+```
+ERROR: Connection timed out
