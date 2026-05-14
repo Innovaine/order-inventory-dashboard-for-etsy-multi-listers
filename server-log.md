@@ -714,3 +714,12 @@ postgres:16-alpine                 4e6e670bb069        395MB          111MB
 shop-in-a-box-app:latest           586b1e56c46a        203MB         48.5MB   U
 ```
 Full output: [`server-runs/2026-05-14T17-32-25-app-docker-ps-docker-images-head--5-1.log`](server-runs/2026-05-14T17-32-25-app-docker-ps-docker-images-head--5-1.log)
+
+## 2026-05-14T17:32:54.841Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `34e0043` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exec-error: Connection timed out, 14817ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && timeout 120 docker compose build 2>&1 || echo "Build timed out or failed with exit code: $?"
+```
+ERROR: Connection timed out
