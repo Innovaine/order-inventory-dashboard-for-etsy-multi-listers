@@ -6,7 +6,9 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 COPY package.json package-lock.json* ./
-RUN npm ci
+# Use npm install instead of npm ci to handle incomplete lockfile
+# TODO: Switch to npm ci once lockfile is fully generated
+RUN npm install --frozen-lockfile || npm install
 
 # Rebuild the source code only when needed
 FROM base AS builder
