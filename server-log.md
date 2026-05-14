@@ -2442,3 +2442,19 @@ _Pre-SSH: warehouse pushed to GitHub as commit `f4ea0d5` so the server's `git pu
 ```
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose down
 ```
+
+## 2026-05-14T19:36:53.460Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `d1218d9` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2035ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+nohup docker compose up --build -d > /tmp/etsy-rebuild.log 2>&1 &
+echo $! > /tmp/etsy-rebuild.pid
+echo "Rebuild started, PID=$(cat /tmp/etsy-rebuild.pid)"
+```
+STDOUT:
+```
+Rebuild started, PID=518476
+```
+Full output: [`server-runs/2026-05-14T19-36-53-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-36-53-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
