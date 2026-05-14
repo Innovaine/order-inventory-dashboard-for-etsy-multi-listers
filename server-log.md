@@ -852,3 +852,17 @@ No etsy/inventory containers
 HTTP 404 in 0.011886s
 ```
 Full output: [`server-runs/2026-05-14T17-37-44-app-docker-ps-grep--E-etsy-inventory-dashboa-1.log`](server-runs/2026-05-14T17-37-44-app-docker-ps-grep--E-etsy-inventory-dashboa-1.log)
+
+## 2026-05-14T17:38:30.720Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `ad0c8fd` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✓ exit 0, 2320ms)
+```
+docker ps -a | grep etsy-dashboard || echo "No etsy-dashboard containers found" && \
+docker images | grep -E 'order-inventory|etsy' | head -5 || echo "No etsy/inventory images"
+```
+STDOUT:
+```
+No etsy-dashboard containers found
+```
+Full output: [`server-runs/2026-05-14T17-38-30-app-docker-ps--a-grep-etsy-dashboard-echo-No-1.log`](server-runs/2026-05-14T17-38-30-app-docker-ps--a-grep-etsy-dashboard-echo-No-1.log)
