@@ -31,3 +31,12 @@ _Pre-SSH: warehouse pushed to GitHub as commit `5fe7809` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose up -d
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T11:54:56.472Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `c5b8962` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exit 1, 2605ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull --ff-only
+```
+ERROR: command exited 1
