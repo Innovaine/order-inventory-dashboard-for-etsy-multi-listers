@@ -1,0 +1,71 @@
+// ASSUMPTION: Single shop per user in v1. Multi-shop deferred to cycle 5.
+// ASSUMPTION: API key stored encrypted or in secure env var per NFR-2. For v1, storing in DB with warning comment.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String?  @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  shops     Shop[]
+}
+
+model Shop {
+  id             String          @id @default(cuid())
+  userId         String
+  user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
+  shopId         String          @unique // Etsy shop ID
+  shopName       String
+  apiKey         String // WARNING: Pre-revenue only. Encrypt this or move to secrets manager post-revenue.
+  lastSyncedAt   DateTime?
+  syncStatus     String          @default("idle") // idle, syncing, success, error
+  syncError      String?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  inventoryItems InventoryItem[]
+  orders         Order[]
+
+  @@index([userId])
+}
+
+model InventoryItem {
+  id             String   @id @default(cuid())
+  shopId         String
+  shop           Shop     @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  listingId      String   // Etsy listing ID
+  sku            String?
+  title          String
+  quantity       Int
+  price          String // Stored as string to avoid float precision issues
+  lastSyncedAt   DateTime @default(now())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([shopId, listingId])
+  @@index([shopId, quantity]) // For sorting by stock level
+}
+
+model Order {
+  id          String   @id @default(cuid())
+  shopId      String
+  shop        Shop     @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  orderId     String   // Etsy receipt/order ID
+  itemTitle   String
+  quantity    Int
+  status      String
+  orderDate   DateTime
+  lastSyncedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([shopId, orderId])
+  @@index([shopId, orderDate]) // For sorting by date descending
+}
