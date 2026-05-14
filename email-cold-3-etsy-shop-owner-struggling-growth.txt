@@ -1,0 +1,11 @@
+Subject: Scaling your Etsy shop without chaos
+
+[Recipient],
+
+I noticed [Their Shop] is doing solid volume. I also noticed that scaling on Etsy while managing inventory manually is a grinding process—each extra order is one more thing to track by hand.
+
+I'm building a lightweight dashboard that syncs with Etsy and gives you visibility into orders + stock without the spreadsheet friction. No integration with other platforms yet, just making Etsy less painful.
+
+I'm validating with sellers like you this week. If you're open to 10 minutes to see whether this solves a real problem for you, I'd like to try.
+
+— [Founder]

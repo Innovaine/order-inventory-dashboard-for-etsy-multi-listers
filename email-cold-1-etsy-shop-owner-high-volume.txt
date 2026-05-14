@@ -1,0 +1,15 @@
+Subject: Your Etsy inventory is costing you time
+
+[Recipient],
+
+I sell on Etsy too. I know the pain: orders come in, you scramble to update inventory across listings, something falls out of sync, a customer buys stock you don't have. Then spreadsheets and manual fixes.
+
+I'm building a dashboard that plugs into your Etsy account and shows you orders + stock in one place. You paste in your API key, refresh takes 30 seconds, and you see what's actually live vs. what's allocated. CSV export if you need it.
+
+No setup, no monthly fee yet (testing with 2–3 sellers first). Just your Etsy account.
+
+If you're moving more than 50 orders a month and managing inventory manually, I'd like to show you what this looks like. Takes 5 minutes to test.
+
+Worth a conversation?
+
+— [Founder]

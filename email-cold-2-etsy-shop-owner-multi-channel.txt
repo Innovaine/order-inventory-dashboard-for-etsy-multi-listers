@@ -1,0 +1,13 @@
+Subject: Selling Etsy + elsewhere? This might help
+
+[Recipient],
+
+If you're selling on Etsy AND your own site (or Amazon, or somewhere else), inventory nightmares multiply. Etsy shows one stock level, reality is split across three places.
+
+I'm building a dashboard for Etsy sellers that pulls your live orders and stock. Single source of truth for one shop to start.
+
+I'm looking for 2–3 sellers to test with this week. You'd be one of the first, and you'd tell me what's broken so I can fix it before it matters.
+
+Interested in 15 minutes?
+
+— [Founder]

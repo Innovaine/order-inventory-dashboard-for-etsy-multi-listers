@@ -149,3 +149,96 @@ _Pre-SSH: warehouse pushed to GitHub as commit `be2cf0b` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm init -y 2>/dev/null; npm install -D @playwright/test typescript @types/node
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T12:00:42.877Z — Priya ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `a99a801` so the server's `git pull` will pick it up._
+
+### Command 1 on app as tester (✗ exit 1, 7558ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose up -d && echo "Docker started" && sleep 3 && docker ps
+```
+STDOUT:
+```
+#1 [internal] load local bake definitions
+#1 reading from stdin 644B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 1.23kB done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/node:20-alpine
+#3 DONE 0.6s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [base 1/1] FROM docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293
+#5 resolve docker.io/library/node:20-alpine@sha256:fb4cd12c85ee03686f6af5362a0b0d56d50c58a04632e6c0fb8363f609372293 0.0s done
+#5 DONE 0.0s
+
+#6 [runner  2/10] RUN addgroup --system --gid 1001 nodejs
+#6 CACHED
+
+#7 [builder 1/5] WORKDIR /app
+#7 CACHED
+
+#8 [runner  3/10] RUN adduser --system --uid 1001 nextjs
+#8 CACHED
+
+#9 [internal] load build context
+#9 transferring context: 316.80MB 1.9s done
+#9 DONE 1.9s
+
+#10 [deps 1/4] RUN apk add --no-cache libc6-compat
+#10 CACHED
+
+#11 [deps 2/4] WORKDIR /app
+#11 CACHED
+
+#12 [deps 3/4] COPY package.json package-lock.json* ./
+#12 DONE 0.3s
+
+#13 [deps 4/4] RUN npm ci
+#13 0.661 npm error code EUSAGE
+#13 0.661 npm error
+#13 0.661 npm error The `npm ci` command can only install with an existing package-lock.json or
+#13 0.661 npm error npm-shrinkwrap.json with lockfileVersion >= 1. Run an install with npm@5 or
+#13 0.661 npm error later to generate a package-lock.json file, then try again.
+#13 0.661 npm error
+#13 0.661 npm error Clean install a project
+#13 0.661 npm error
+#13 0.661 npm error Usage:
+#13 0.661 npm error npm ci
+#13 0.661 npm error
+#13 0.661 npm error Options:
+#13 0.661 npm error [--install-strategy <hoisted|nested|shallow|linked>] [--legacy-bundling]
+#13 0.661 npm error [--global-style] [--omit <dev|optional|peer> [--omit <dev|optional|peer> ...]]
+#13 0.661 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+#13 0.661 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+#13 0.661 npm error [--no-bin-links] [--no-fund] [--dry-run]
+#13 0.661 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+#13 0.661 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+#13 0.661 npm error
+#13 0.661 npm error aliases: clean-install, ic, install-clean, isntall-clean
+#13 0.661 npm error
+#13 0.661 npm error Run "npm help ci" for more info
+#13 0.663 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-05-14T12_00_42_878Z-debug-0.log
+#13 ERROR: process "/bin/sh -c npm ci" did not complete successfully: exit code: 1
+------
+ > [deps 4/4] RUN npm ci:
+0.661 npm error [--include <prod|dev|optional|peer> [--include <prod|dev|optional|peer> ...]]
+0.661 npm error [--strict-peer-deps] [--foreground-scripts] [--ignore-scripts] [--no-audit]
+0.661 npm error [--no-bin-links] [--no-fund] [--dry-run]
+0.661 npm error [-w|--workspace <workspace-name> [-w|--workspace <workspace-name> ...]]
+0.661 npm error [-ws|--workspaces] [--include-workspace-root] [--install-links]
+0.661 npm error
+0.661 npm error aliases: clean-install, ic, install-clean, isntall-clean
+0.661 npm error
+0.661 npm error Run "npm help ci" for more info
+0.663 npm error A complete log of this run can be found in: /root/.npm/_logs/2026-05-14T12_00_42_878Z-debug-0.log
+------
+```
+ERROR: command exited 1
+Full output: [`server-runs/2026-05-14T12-00-42-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T12-00-42-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
