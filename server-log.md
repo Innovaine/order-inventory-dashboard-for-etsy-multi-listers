@@ -4584,3 +4584,28 @@ _Pre-SSH: warehouse pushed to GitHub as commit `51b9978` so the server's `git pu
 docker exec etsy-dashboard-app ls -la /tmp/analytics-events.json && echo "---" && docker exec etsy-dashboard-app cat /tmp/analytics-events.json
 ```
 ERROR: command exited 1
+
+## 2026-05-14T22:12:33.806Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `5369c7b` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2215ms)
+```
+docker logs etsy-dashboard-app --tail=50 | grep -i "analytics\|events\|error" || docker logs etsy-dashboard-app --tail=20
+```
+STDOUT:
+```
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "etsy_dashboard", schema "public" at "postgres:5432"
+
+1 migration found in prisma/migrations
+
+
+No pending migrations to apply.
+  ▲ Next.js 14.2.3
+  - Local:        http://localhost:3000
+  - Network:      http://0.0.0.0:3000
+
+ ✓ Starting...
+ ✓ Ready in 144ms
+```
+Full output: [`server-runs/2026-05-14T22-12-33-app-docker-logs-etsy-dashboard-app---tail-50-1.log`](server-runs/2026-05-14T22-12-33-app-docker-logs-etsy-dashboard-app---tail-50-1.log)
