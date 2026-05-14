@@ -3966,3 +3966,53 @@ total 260K
 -rw-rw-r-- 1 tester tester 21K May 14 21:14 nfr-1-performance.png
 ```
 Full output: [`server-runs/2026-05-14T21-14-23-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-14-23-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T21:52:21.350Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `0e66f35` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2684ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull
+```
+STDOUT:
+```
+Updating 271270e..0e66f35
+Fast-forward
+ QUICKSTART.md                     |   99 ++
+ backend-validation-checklist.md   |   39 +
+ day-11/_index.md                  |   17 +
+ day-11/_plan.md                   |   44 +-
+ day-11/engineering.md             |   82 ++
+ day-11/pm-status.md               |   47 +
+ day-11/requirements.md            |   28 +
+ day-11/risks.md                   |   76 ++
+ day-11/test.md                    |  255 ++++++
+ day-12/_plan.md                   |   39 +
+ day-12/design.md                  | 1803 +++++++++++++++++++++++++++++++++++++
+ day-12/requirements.md            |   31 +
+ landing.html                      |  467 +++++-----
+ requirements.md                   |  237 +++--
+ server-log.md                     |  365 ++++++++
+ src/app/api/events/route.ts       |   74 ++
+ src/app/dashboard/page.tsx        |   42 +
+ src/components/InventoryTable.tsx |   23 +
+ src/components/OrdersTable.tsx    |   23 +
+ test-results/day-11/report.md     |  247 +++++
+ wireframe-dashboard-annotated.txt |   90 ++
+ 21 files changed, 3781 insertions(+), 347 deletions(-)
+ create mode 100644 QUICKSTART.md
+ create mode 100644 backend-validation-checklist.md
+ create mode 100644 day-11/_index.md
+ create mode 100644 day-11/engineering.md
+ create mode 100644 day-11/pm-status.md
+ create mode 100644 day-11/requirements.md
+ create mode 100644 day-11/risks.md
+ create mode 100644 day-11/test.md
+ create mode 100644 day-12/_plan.md
+ create mode 100644 day-12/design.md
+ create mode 100644 day-12/requirements.md
+ create mode 100644 src/app/api/events/route.ts
+ create mode 100644 test-results/day-11/report.md
+ create mode 100644 wireframe-dashboard-annotated.txt
+```
+Full output: [`server-runs/2026-05-14T21-52-21-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T21-52-21-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
