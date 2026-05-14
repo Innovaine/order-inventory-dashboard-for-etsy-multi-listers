@@ -2768,3 +2768,40 @@ CONTAINER ID   IMAGE                                                  COMMAND   
 APP FAIL
 ```
 Full output: [`server-runs/2026-05-14T19-53-13-app-docker-ps-1.log`](server-runs/2026-05-14T19-53-13-app-docker-ps-1.log)
+
+## 2026-05-14T19:53:39.693Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `7d77be4` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2055ms) _(showing tail — full 4,004B stdout + 0B stderr)_
+```
+docker logs etsy-dashboard-app 2>&1 | tail -50
+```
+STDOUT:
+```
+…d not parse schema engine response: SyntaxError: Unexpected token 'E', "Error load"... is not valid JSON
+prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+Please manually install OpenSSL and try installing Prisma again.
+prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+Please manually install OpenSSL and try installing Prisma again.
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "etsy_dashboard", schema "public" at "postgres:5432"
+
+Error: Could not parse schema engine response: SyntaxError: Unexpected token 'E', "Error load"... is not valid JSON
+prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+Please manually install OpenSSL and try installing Prisma again.
+prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+Please manually install OpenSSL and try installing Prisma again.
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "etsy_dashboard", schema "public" at "postgres:5432"
+
+Error: Could not parse schema engine response: SyntaxError: Unexpected token 'E', "Error load"... is not valid JSON
+prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+Please manually install OpenSSL and try installing Prisma again.
+prisma:warn Prisma failed to detect the libssl/openssl version to use, and may not work as expected. Defaulting to "openssl-1.1.x".
+Please manually install OpenSSL and try installing Prisma again.
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "etsy_dashboard", schema "public" at "postgres:5432"
+
+Error: Could not parse schema engine response: SyntaxError: Unexpected token 'E', "Error load"... is not valid JSON
+```
+Full output: [`server-runs/2026-05-14T19-53-39-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log`](server-runs/2026-05-14T19-53-39-app-docker-logs-etsy-dashboard-app-2-1-tail--1.log)
