@@ -2862,3 +2862,22 @@ RUNNING
 #18 16.61    Collecting build traces ...
 ```
 Full output: [`server-runs/2026-05-14T19-54-39-app-kill--0-cat-tmp-etsy-build-openssl.pid-2-1.log`](server-runs/2026-05-14T19-54-39-app-kill--0-cat-tmp-etsy-build-openssl.pid-2-1.log)
+
+## 2026-05-14T19:55:07.215Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `495d864` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2053ms)
+```
+kill -0 $(cat /tmp/etsy-build-openssl.pid) 2>/dev/null && echo "RUNNING" || echo "DONE"
+tail -5 /tmp/etsy-build-openssl.log
+```
+STDOUT:
+```
+RUNNING
+#26 exporting config sha256:ab64bcac7aa90829bfc31c726758a7082a820fe2fe1b8c1dc94eccfb2b65fc6b done
+#26 exporting attestation manifest sha256:0e61c2d0599725b5a6c91d38cdacd2a00e5de5375ecebb0a82d7e0d2db70b2fd 0.0s done
+#26 exporting manifest list sha256:1c2df476ba2fa38947a7a48884bdc726e25462cd487f124c2f8cd55a1c807354 done
+#26 naming to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest done
+#26 unpacking to docker.io/library/order-inventory-dashboard-for-etsy-multi-listers-app:latest
+```
+Full output: [`server-runs/2026-05-14T19-55-07-app-kill--0-cat-tmp-etsy-build-openssl.pid-2-1.log`](server-runs/2026-05-14T19-55-07-app-kill--0-cat-tmp-etsy-build-openssl.pid-2-1.log)
