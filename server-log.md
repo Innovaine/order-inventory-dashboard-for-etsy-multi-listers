@@ -4609,3 +4609,17 @@ No pending migrations to apply.
  ✓ Ready in 144ms
 ```
 Full output: [`server-runs/2026-05-14T22-12-33-app-docker-logs-etsy-dashboard-app---tail-50-1.log`](server-runs/2026-05-14T22-12-33-app-docker-logs-etsy-dashboard-app---tail-50-1.log)
+
+## 2026-05-14T22:13:17.705Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `edc4beb` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✗ exit 1, 2204ms)
+```
+docker exec etsy-dashboard-app ls -la /tmp/ | head -10 && echo "---" && docker exec etsy-dashboard-app touch /tmp/test-write && echo "Can write to /tmp"
+```
+STDOUT:
+```
+---
+```
+ERROR: command exited 1
+Full output: [`server-runs/2026-05-14T22-13-17-app-docker-exec-etsy-dashboard-app-ls--la-tm-1.log`](server-runs/2026-05-14T22-13-17-app-docker-exec-etsy-dashboard-app-ls--la-tm-1.log)
