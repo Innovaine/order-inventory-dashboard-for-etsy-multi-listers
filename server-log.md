@@ -3009,3 +3009,28 @@ STDOUT:
 OK
 ```
 Full output: [`server-runs/2026-05-14T20-14-40-app-curl--sf-http-localhost-3000--o-dev-null-1.log`](server-runs/2026-05-14T20-14-40-app-curl--sf-http-localhost-3000--o-dev-null-1.log)
+
+## 2026-05-14T20:17:22.838Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `e9c2e2f` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 4589ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull
+```
+STDOUT:
+```
+Updating 07f6822..e9c2e2f
+Fast-forward
+ day-08/_index.md                |  17 ++
+ day-08/engineering.md           | 368 ++++++++++++++++++++++++++++++++++++++++
+ day-09/_plan.md                 |  38 +++++
+ server-log.md                   | 128 ++++++++++++++
+ src/app/api/export-csv/route.ts |  12 +-
+ src/app/api/orders/route.ts     |  12 +-
+ src/app/api/sync/route.ts       |  12 +-
+ 7 files changed, 566 insertions(+), 21 deletions(-)
+ create mode 100644 day-08/_index.md
+ create mode 100644 day-08/engineering.md
+ create mode 100644 day-09/_plan.md
+```
+Full output: [`server-runs/2026-05-14T20-17-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T20-17-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
