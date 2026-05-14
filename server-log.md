@@ -2018,3 +2018,14 @@ STDOUT:
 Total reclaimed space: 0B
 ```
 Full output: [`server-runs/2026-05-14T19-21-30-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-21-30-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:22:17.570Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `62138d0` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 12685ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup docker compose build > /tmp/etsy-build-day6.log 2>&1 &
+echo $! > /tmp/etsy-build-day6.pid
+echo "Build started, PID=$(cat /tmp/etsy-build-day6.pid)"
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
