@@ -4732,3 +4732,33 @@ _Pre-SSH: warehouse pushed to GitHub as commit `dcef194` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && nohup npx playwright test --config=playwright.config.ts 2>&1 > /tmp/pw-run.log & echo $! > /tmp/pw.pid && echo "Started PID=$(cat /tmp/pw.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T22:23:36.003Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `efd3413` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 1936ms)
+```
+kill -0 $(cat /tmp/pw.pid 2>/dev/null) 2>/dev/null && echo "TESTS RUNNING" || (echo "TESTS COMPLETE"; echo "=== LAST 60 LINES ==="; tail -60 /tmp/pw-run.log)
+```
+STDOUT:
+```
+TESTS COMPLETE
+=== LAST 60 LINES ===
+
+Running 11 tests using 1 worker
+
+  ✓   1 [chromium] › tests/web/dashboard.spec.ts:4:5 › FR-1: User can enter API key and see validation (621ms)
+  ✓   2 [chromium] › tests/web/dashboard.spec.ts:32:5 › FR-1b: Valid API key allows dashboard access (2.3s)
+  ✓   3 [chromium] › tests/web/dashboard.spec.ts:59:5 › FR-2: Inventory table displays and sorts by quantity (3.2s)
+  ✓   4 [chromium] › tests/web/dashboard.spec.ts:92:5 › FR-2b: Rate limit error shows user-friendly message (2.2s)
+  ✓   5 [chromium] › tests/web/dashboard.spec.ts:107:5 › FR-3: Orders table displays recent orders (3.2s)
+  ✓   6 [chromium] › tests/web/dashboard.spec.ts:129:5 › FR-3b: Shows placeholder when no orders exist (2.2s)
+  ✓   7 [chromium] › tests/web/dashboard.spec.ts:142:5 › FR-4: CSV export button triggers download (2.2s)
+  ✓   8 [chromium] › tests/web/dashboard.spec.ts:169:5 › FR-5: Sync status displays and manual sync works (2.2s)
+  ✓   9 [chromium] › tests/web/dashboard.spec.ts:194:5 › FR-5b: Shows error when API key becomes invalid (2.2s)
+  ✓  10 [chromium] › tests/web/dashboard.spec.ts:208:5 › FR-6: Dashboard is responsive on mobile viewport (2.2s)
+  ✓  11 [chromium] › tests/web/dashboard.spec.ts:248:5 › NFR-1: Dashboard loads within performance budget (737ms)
+
+  11 passed (24.2s)
+```
+Full output: [`server-runs/2026-05-14T22-23-35-app-kill--0-cat-tmp-pw.pid-2-dev-null-2-dev--1.log`](server-runs/2026-05-14T22-23-35-app-kill--0-cat-tmp-pw.pid-2-dev-null-2-dev--1.log)
