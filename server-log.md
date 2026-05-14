@@ -1733,3 +1733,24 @@ RUNNING
 #15 2.682    Creating an optimized production build ...
 ```
 Full output: [`server-runs/2026-05-14T19-04-43-app-docker-ps-cat-tmp-etsy-build3.pid-2-dev--1.log`](server-runs/2026-05-14T19-04-43-app-docker-ps-cat-tmp-etsy-build3.pid-2-dev--1.log)
+
+## 2026-05-14T19:05:05.399Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `75fefd0` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2303ms)
+```
+kill -0 $(cat /tmp/etsy-build3.pid) 2>/dev/null && echo "STILL RUNNING" || echo "COMPLETE"; tail -60 /tmp/etsy-build3.log | grep -E "(Successfully built|ERROR|DONE|Built)" | tail -10
+```
+STDOUT:
+```
+COMPLETE
+#15 DONE 25.8s
+#21 DONE 0.4s
+#22 DONE 0.1s
+#23 DONE 0.0s
+#24 DONE 0.0s
+#25 DONE 2.2s
+#26 DONE 0.0s
+ Image order-inventory-dashboard-for-etsy-multi-listers-app Built
+```
+Full output: [`server-runs/2026-05-14T19-05-05-app-kill--0-cat-tmp-etsy-build3.pid-2-dev-nu-1.log`](server-runs/2026-05-14T19-05-05-app-kill--0-cat-tmp-etsy-build3.pid-2-dev-nu-1.log)
