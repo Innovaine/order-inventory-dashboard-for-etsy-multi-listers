@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EtsyDash — Sell Smarter, Track Faster</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        
+        header {
+            background: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #d1400b;
+        }
+        
+        nav a {
+            margin-left: 2rem;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        
+        nav a:hover {
+            color: #d1400b;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #fff5f3 0%, #fff9f7 100%);
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            background: #d1400b;
+            color: #fff;
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 1rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        
+        .cta-primary:hover {
+            background: #b8360a;
+        }
+        
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #d1400b;
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid #d1400b;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s;
+        }
+        
+        .cta-secondary:hover {
+            background: #f5e6e3;
+        }
+        
+        .value-props {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .prop {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+        }
+        
+        .prop h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+        
+        .prop p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #fff5f3;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+        }
+        
+        .how-it-works {
+            background: #fff;
+            padding: 4rem 1.5rem;
+        }
+        
+        .how-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .step {
+            text-align: center;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #d1400b;
+            color: #fff;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step h4 {
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        
+        .step p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .cta-section {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-primary-light {
+            display: inline-block;
+            background: #d1400b;
+            color: #fff;
+            padding: 0.85rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        
+        .cta-primary-light:hover {
+            background: #b8360a;
+        }
+        
+        footer {
+            background: #f5f5f5;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #e5e5e5;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            nav a {
+                margin-left: 1rem;
+                font-size: 0.85rem;
+            }
+            
+            .hero {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">EtsyDash</div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#how">How it works</a>
+                <a href="#cta">Get started</a>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h1>See All Your Orders. Track All Your Stock. In One Place.</h1>
+            <p class="tagline">EtsyDash brings your inventory and orders together so you can ship faster and restock smarter—no spreadsheets, no switching tabs.</p>
+            <button class="cta-primary" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Start Free</button>
+            <button class="cta-secondary" onclick="alert('Demo coming soon — sign up to be first!')">See a demo</button>
+        </div>
+    </section>
+    
+    <section class="value-props" id="features">
+        <div class="prop">
+            <div class="icon">📦</div>
+            <h3>Live Order Feed</h3>
+            <p>See new orders the moment they arrive. Know what you owe, what's shipped, what's pending—at a glance.</p>
+        </div>
+        <div class="prop">
+            <div class="icon">📊</div>
+            <h3>Real-Time Inventory</h3>
+            <p>Watch stock levels update as orders come in. Get alerts when you're running low on popular items.</p>
+        </div>
+        <div class="prop">
+            <div class="icon">📥</div>
+            <h3>One-Click CSV Export</h3>
+            <p>Download your orders and inventory in seconds. Import straight into your fulfillment or accounting tool.</p>
+        </div>
+    </section>
+    
+    <section class="how-it-works" id="how">
+        <div class="how-content">
+            <h2 class="section-title">How it works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Connect Your Shop</h4>
+                    <p>Paste your Etsy API key. Takes 60 seconds. Your data stays private.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>See Everything Live</h4>
+                    <p>Dashboard updates every 2 minutes. Orders, stock, shipping status—all real-time.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Export & Go</h4>
+                    <p>Download a CSV whenever you need. Run your fulfillment, accounting, or whatever's next.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section" id="cta">
+        <h2>Ship smarter. Starting today.</h2>
+        <p>Free for the first month. No credit card. No surprises.</p>
+        <button class="cta-primary-light">Get Started</button>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 EtsyDash. Built by sellers, for sellers.</p>
+    </footer>
+</body>
+</html>
