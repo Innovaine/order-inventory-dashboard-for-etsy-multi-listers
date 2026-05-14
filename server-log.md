@@ -997,3 +997,30 @@ _Pre-SSH: warehouse pushed to GitHub as commit `cf7dca9` so the server's `git pu
 cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose build --no-cache > /tmp/docker-build-nocache.log 2>&1 & echo "Build started in background (no cache), PID: $!"
 ```
 ERROR: Connection timed out
+
+## 2026-05-14T17:53:09.179Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `64b7a8d` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2002ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && head -15 Dockerfile
+```
+STDOUT:
+```
+FROM node:20-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+# Use npm install instead of npm ci to handle incomplete lockfile
+# TODO: Switch to npm ci once lockfile is fully generated
+RUN npm install --frozen-lockfile || npm install
+
+# Rebuild the source code only when needed
+FROM base AS builder
+WORKDIR /app
+```
+Full output: [`server-runs/2026-05-14T17-53-09-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-53-09-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
