@@ -4623,3 +4623,16 @@ STDOUT:
 ```
 ERROR: command exited 1
 Full output: [`server-runs/2026-05-14T22-13-17-app-docker-exec-etsy-dashboard-app-ls--la-tm-1.log`](server-runs/2026-05-14T22-13-17-app-docker-exec-etsy-dashboard-app-ls--la-tm-1.log)
+
+## 2026-05-14T22:13:51.254Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `d405c36` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 1986ms)
+```
+curl -s -X POST http://localhost:3000/api/events -H "Content-Type: application/json" -d '{"eventType":"test1"}' && curl -s -X POST http://localhost:3000/api/events -H "Content-Type: application/json" -d '{"eventType":"test2"}' && curl -s -X POST http://localhost:3000/api/events -H "Content-Type: application/json" -d '{"eventType":"test3"}'
+```
+STDOUT:
+```
+{"success":true,"event":{"timestamp":"2026-05-14T22:13:51.295Z","eventType":"test1","metadata":{}}}{"success":true,"event":{"timestamp":"2026-05-14T22:13:51.310Z","eventType":"test2","metadata":{}}}{"success":true,"event":{"timestamp":"2026-05-14T22:13:51.322Z","eventType":"test3","metadata":{}}}
+```
+Full output: [`server-runs/2026-05-14T22-13-51-app-curl--s--X-POST-http-localhost-3000-api--1.log`](server-runs/2026-05-14T22-13-51-app-curl--s--X-POST-http-localhost-3000-api--1.log)
