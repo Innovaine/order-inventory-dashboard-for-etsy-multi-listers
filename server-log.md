@@ -2111,3 +2111,11 @@ echo $! > /tmp/etsy-compose.pid
 echo "Started docker compose, PID=$(cat /tmp/etsy-compose.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-14T19:28:57.361Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `f4856d3` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2021ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose down
+```
