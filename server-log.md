@@ -4420,3 +4420,17 @@ etsy-dashboard-app   Up 6 minutes
 etsy-dashboard-db    Up 2 hours (healthy)
 ```
 Full output: [`server-runs/2026-05-14T22-05-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T22-05-22-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T22:07:54.616Z — Søren ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `e43a736` so the server's `git pull` will pick it up._
+
+### Command 1 on app as reviewer (✓ exit 0, 2484ms)
+```
+curl -s http://localhost:3000/api/session 2>&1 | head -20 && echo "---" && curl -s -X POST http://localhost:3000/api/events -H "Content-Type: application/json" -d '{"eventType":"test_view","metadata":{"test":true}}' 2>&1
+```
+STDOUT:
+```
+{"error":"Not authenticated"}---
+{"success":true,"event":{"timestamp":"2026-05-14T22:07:54.684Z","eventType":"test_view","metadata":{"test":true}}}
+```
+Full output: [`server-runs/2026-05-14T22-07-54-app-curl--s-http-localhost-3000-api-session--1.log`](server-runs/2026-05-14T22-07-54-app-curl--s-http-localhost-3000-api-session--1.log)
