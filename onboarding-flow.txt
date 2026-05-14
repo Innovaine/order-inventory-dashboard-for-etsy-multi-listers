@@ -1,0 +1,79 @@
+SCREEN 1: API KEY INPUT (after email login)
+┌────────────────────────────────────────────────────────────┐
+│  Etsy Dashboard                                        ✕    │
+├────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Connect your Etsy shop                                     │
+│                                                             │
+│  You're signed in as: seller@email.com                      │
+│                                                             │
+│  Paste your Etsy API key below. We'll use it to pull your   │
+│  live orders and inventory. Your key stays secure.          │
+│                                                             │
+│  ┌────────────────────────────────────────────────────────┐│
+│  │ Paste API key here                                     ││
+│  │ (starts with "eyJ0..." from your Etsy settings)        ││
+│  │                                                        ││
+│  └────────────────────────────────────────────────────────┘│
+│                                                             │
+│  ☐ I understand this is read-only access                   │
+│                                                             │
+│             [CONNECT SHOP]      [HELP / DOCS]              │
+│                                                             │
+│  Need an API key? Go to etsy.com/your/account/settings      │
+│                                                             │
+└────────────────────────────────────────────────────────────┘
+
+NOTES:
+- Form validation: API key must match pattern (JWT-like)
+- Error state (SCREEN 1B): Red border on input, message below
+  "API key invalid or expired. Check Etsy settings."
+- Loading state (SCREEN 1C): Spinner, text "Connecting to Etsy..."
+- After 3 sec: Show first order count, "Found X orders, Y items"
+
+SCREEN 2: FIRST DASHBOARD VIEW (after successful connection)
+┌────────────────────────────────────────────────────────────┐
+│  Etsy Dashboard                                        👤   │
+├────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Your shops                                                 │
+│  ┌─────────────────┬────────────────────────────────────┐ │
+│  │ Shop: MyShop1   │ Last sync: 30 seconds ago           │ │
+│  │ 7 new orders    │                                    │ │
+│  │ 143 items       │ [SYNC NOW]                         │ │
+│  └─────────────────┴────────────────────────────────────┘ │
+│                                                             │
+│  Recent orders                                              │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │ Order#5829  MyShop1  $87.50    2 hours ago  ⊙       │   │
+│  │ Order#5828  MyShop1  $45.00    4 hours ago  ⊙       │   │
+│  │ Order#5827  MyShop1  $156.00   1 day ago    ✓       │   │
+│  │                                                     │   │
+│  │ [SHOW ALL ORDERS]                                  │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+│  Inventory alerts                                           │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │ ⚠ Blue ceramic bowl: 2 left (usually 20)            │   │
+│  │ ⚠ Earrings set: 0 left — RESTOCK NEEDED            │   │
+│  │                                                     │   │
+│  │ [EXPORT ALL DATA]                                  │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                                                             │
+└────────────────────────────────────────────────────────────┘
+
+NOTES:
+- Sync button is primary affordance (post-login trust signal)
+- Order rows are clickable → expand to show buyer name, address, items
+- Empty state (if no orders in 24h): "All quiet. No new orders."
+- Inventory alerts only show items below threshold (default: 5 units)
+
+EMPTY STATES:
+- No orders: Icon + "No orders today. Check back soon."
+- No inventory: "No low-stock alerts right now."
+- Failed sync: Red banner + [RETRY] button + "Last successful sync: 2 hours ago"
+
+ERROR STATES:
+- API key expired: Full-screen message + [RECONNECT] button
+- Etsy API down: Warning banner "Etsy is experiencing issues. Trying again..."
+- Network error: Retry button + "No connection. Trying again in 5s..."

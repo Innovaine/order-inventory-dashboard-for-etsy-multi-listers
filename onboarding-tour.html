@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Etsy Dashboard — First Look</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #333;
+    }
+    .tour-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tour-step {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      padding: 40px;
+      z-index: 1001;
+      animation: slideUp 0.3s ease-out;
+    }
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .tour-step h2 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+    .tour-step p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    .tour-step ul {
+      margin-left: 20px;
+      margin-bottom: 24px;
+    }
+    .tour-step li {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #666;
+      margin-bottom: 8px;
+    }
+    .tour-step li strong {
+      color: #1a1a1a;
+    }
+    .tour-visual {
+      background: #f9f9f9;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: #666;
+      line-height: 1.6;
+    }
+    .tour-table-sample {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+    .tour-table-sample th {
+      background: #f0f0f0;
+      padding: 8px;
+      text-align: left;
+      font-weight: 600;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .tour-table-sample td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      color: #666;
+    }
+    .tour-table-sample tr:nth-child(even) {
+      background: #fafafa;
+    }
+    .tour-badge {
+      display: inline-block;
+      background: #fff3cd;
+      color: #856404;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .tour-badge.critical {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    .tour-controls {
+      display: flex;
+      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tour-nav {
+      display: flex;
+      gap: 8px;
+    }
+    button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #f1641e;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #d94f15;
+    }
+    .btn-secondary {
+      background: #f0f0f0;
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .btn-secondary:hover {
+      background: #e8e8e8;
+    }
+    .btn-secondary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .tour-progress {
+      font-size: 12px;
+      color: #999;
+    }
+    .icon-order {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    .demo-dashboard {
+      background: white;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #e0e0e0;
+    }
+    .demo-nav {
+      display: flex;
+      gap: 16px;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+    }
+    .demo-nav button {
+      background: none;
+      border: none;
+      padding: 0;
+      color: #999;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .demo-nav button.active {
+      color: #f1641e;
+      border-bottom: 2px solid #f1641e;
+      padding-bottom: 0;
+      margin-bottom: -12px;
+    }
+    .demo-content {
+      display: none;
+      font-size: 12px;
+    }
+    .demo-content.active {
+      display: block;
+    }
+    .demo-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 12px;
+    }
+    .demo-row:last-child {
+      border-bottom: none;
+    }
+    .demo-label {
+      color: #999;
+    }
+    .demo-value {
+      color: #333;
+      font-weight: 500;
+    }
+    .demo-status-low {
+      color: #ff9800;
+      font-weight: 600;
+    }
+    .demo-status-critical {
+      color: #d32f2f;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<div class="tour-overlay">
+  <div class="tour-step">
+    
+    <div id="step-1" class="tour-content">
+      <div class="icon-order">📦</div>
+      <h2>Welcome to your dashboard</h2>
+      <p>Here's what you can do in 60 seconds:</p>
+      <ul>
+        <li><strong>Orders:</strong> See all incoming orders, buyer info, and shipping status</li>
+        <li><strong>Inventory:</strong> Track items below your stock threshold and restock fast</li>
+        <li><strong>Export:</strong> Download orders + inventory as CSV for accounting or analysis</li>
+      </ul>
+      <p style="font-size: 13px; color: #999; margin-top: 20px;">Data syncs automatically every 30 seconds. You can also hit "Sync Now" anytime.</p>
+    </div>
+
+    <div id="step-2" class="tour-content" style="display: none;">
+      <div class="icon-order">📋</div>
+      <h2>Orders Tab</h2>
+      <p>Every order that came into your shop appears here.</p>
+      <div class="demo-dashboard">
+        <div class="demo-nav">
+          <button class="active">Orders</button>
+          <button>Inventory</button>
+        </div>
+        <div class="demo-content active">
+          <div class="demo-row">
+            <span class="demo-label">Order #1001234</span>
+            <span class="demo-value">$24.99</span>
+          </div>
+          <div class="demo-row">
+            <span class="demo-label">Buyer: Sarah M.</span>
+            <span class="demo-value">Shipped ✓</span>
+          </div>
+          <div class="demo-row" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">
+            <span class="demo-label">Order #1001233</span>
+            <span class="demo-value">$18.50</span>
+          </div>
+          <div class="demo-row">
+            <span class="demo-label">Buyer: James K.</span>
+            <span class="demo-value">Awaiting shipment</span>
+          </div>
+        </div>
+      </div>
+      <ul>
+        <li>Click any order to see the buyer's address and full item list</li>
+        <li>Orders update automatically as they come in</li>
+        <li>Filter by status or date if you have 100+ orders</li>
+      </ul>
+    </div>
+
+    <div id="step-3" class="tour-content" style="display: none;">
+      <div class="icon-order">📊</div>
+      <h2>Inventory Tab</h2>
+      <p>See which items are running low so you can restock before they sell out.</p>
+      <div class="demo-dashboard">
+        <div class="demo-nav">
+          <button>Orders</button>
+          <button class="active">Inventory</button>
+        </div>
+        <div class="demo-content active" style="display: block;">
+          <div class="demo-row">
+            <span class="demo-label">Hand-Dyed Linen Shirt</span>
+            <span class="demo-status-critical">2 left</span>
+          </div>
+          <div class="demo-row">
+            <span class="demo-label">Color: Navy</span>
+            <span class="demo-value">Urgent</span>
+          </div>
+          <div class="demo-row" style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0;">
+            <span class="demo-label">Ceramic Coffee Mug</span>
+            <span class="demo-status-low">4 left</span>
+          </div>
+          <div class="demo-row">
+            <span class="demo-label">Color: White</span>
+            <span class="demo-value">Low stock</span>
+          </div>
+        </div>
+      </div>
+      <ul>
+        <li><strong style="color: #d32f2f;">Red (1–2 items):</strong> Restock immediately</li>
+        <li><strong style="color: #ff9800;">Yellow (3–5 items):</strong> Low stock alert</li>
+        <li>Change your threshold anytime in Settings</li>
+      </ul>
+    </div>
+
+    <div id="step-4" class="tour-content" style="display: none;">
+      <div class="icon-order">📥</div>
+      <h2>Export to CSV</h2>
+      <p>Download all your orders and inventory for accounting, taxes, or spreadsheet analysis.</p>
+      <div class="tour-visual">
+        Order ID, Buyer, Amount, Status, Date<br>
+        1001234, Sarah M., $24.99, Shipped, 2026-05-14<br>
+        1001233, James K., $18.50, Awaiting ship, 2026-05-14
+      </div>
+      <ul>
+        <li>Hit the <strong>[EXPORT]</strong> button on the dashboard</li>
+        <li>Opens in Excel, Google Sheets, or any spreadsheet app</li>
+        <li>Use it for accounting, tax prep, or trend analysis</li>
+        <li>Export runs every time you click — always current data</li>
+      </ul>
+    </div>
+
+    <div id="step-5" class="tour-content" style="display: none;">
+      <div class="icon-order">✓</div>
+      <h2>You're all set</h2>
+      <p>Your dashboard is live and syncing. Here's what to do next:</p>
+      <ul>
+        <li>Watch orders flow in over the next hour (refresh to see the latest)</li>
+        <li>Set your inventory threshold in <strong>Settings</strong> if you want alerts at 10 items instead of 5</li>
+        <li>Add another shop in <strong>Settings > Add Shop</strong> if you run multiple Etsy accounts</li>
+      </ul>
+      <p style="font-size: 13px; color: #999; margin-top: 20px;">Questions? Reply to your welcome email or check the help docs.</p>
+    </div>
+
+    <div class="tour-controls" style="margin-top: 32px;">
+      <span class="tour-progress"><span id="current-step">1</span> of 5</span>
+      <div class="tour-nav">
+        <button class="btn-secondary" id="btn-prev" onclick="prevStep()" disabled>Back</button>
+        <button class="btn-primary" id="btn-next" onclick="nextStep()">Next</button>
+        <button class="btn-secondary" onclick="skipTour()" style="display: none;" id="btn-skip">Skip</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  let currentStep = 1;
+  const totalSteps = 5;
+
+  function showStep(n) {
+    // Hide all steps
+    document.querySelectorAll('.tour-content').forEach(el => {
+      el.style.display = 'none';
+    });
+    // Show current step
+    document.getElementById('step-' + n).style.display = 'block';
+    // Update progress
+    document.getElementById('current-step').textContent = n;
+    // Update button states
+    document.getElementById('btn-prev').disabled = (n === 1);
+    document.getElementById('btn-next').textContent = (n === totalSteps) ? 'Done' : 'Next';
+    document.getElementById('btn-skip').style.display = (n < totalSteps) ? 'inline-block' : 'none';
+  }
+
+  function nextStep() {
+    if (currentStep < totalSteps) {
+      currentStep++;
+      showStep(currentStep);
+    } else {
+      endTour();
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 1) {
+      currentStep--;
+      showStep(currentStep);
+    }
+  }
+
+  function skipTour() {
+    endTour();
+  }
+
+  function endTour() {
+    // In production: set localStorage flag to not show this again
+    // localStorage.setItem('etsy-onboarding-complete', 'true');
+    // Then redirect or close the modal
+    document.querySelector('.tour-overlay').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  // Initialize
+  showStep(1);
+  document.body.style.overflow = 'hidden';
+</script>
+
+</body>
+</html>

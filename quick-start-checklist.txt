@@ -1,0 +1,75 @@
+SELLER ONBOARDING CHECKLIST
+(What a seller sees after they land on the dashboard for the first time)
+
+═══════════════════════════════════════════════════════════════
+
+STEP 1: VERIFY YOUR API KEY ✓
+  ☐ Paste your Etsy API key in the box above
+  ☐ Hit [CONNECT]
+  ☐ Wait for the green checkmark (takes ~3 seconds)
+  
+  🔧 If you don't have an API key yet:
+     → Go to Etsy.com > Account Settings > Apps & Integrations
+     → Click "Create New Key"
+     → Copy the key and paste it here
+  
+  💡 Your key is secure. We don't store it. We only use it to read your orders.
+
+═══════════════════════════════════════════════════════════════
+
+STEP 2: FIRST SYNC ✓
+  ☐ Click [SYNC NOW] to pull your latest orders and inventory
+  ☐ Wait 10–15 seconds (first sync is slower)
+  ☐ You'll see your orders and low-stock items appear below
+
+  💡 After the first sync, we refresh automatically every 30 seconds.
+
+═══════════════════════════════════════════════════════════════
+
+STEP 3: EXPLORE YOUR DASHBOARD
+  
+  📦 ORDERS TAB
+     • See all orders from the last 30 days
+     • Click any order to see the buyer's address and items
+     • Orders update automatically as they come in
+  
+  📊 INVENTORY TAB
+     • See items that are below 5 units in stock
+     • Red = critical (1–2 items left)
+     • Yellow = low (3–5 items)
+     • Change the threshold anytime in Settings
+  
+  📥 EXPORT TO CSV
+     • Hit the [EXPORT] button to download all orders + inventory
+     • Opens in Excel, Google Sheets, or any spreadsheet app
+     • Use it for accounting, tax prep, or analysis
+
+═══════════════════════════════════════════════════════════════
+
+COMMON QUESTIONS
+
+Q: Can I add more shops?
+A: Yes. Go to Settings > Add Shop and paste another API key.
+
+Q: How often do you sync?
+A: Every 30 seconds automatically. Or hit [SYNC NOW] to refresh instantly.
+
+Q: Is my API key safe?
+A: Yes. We don't store it. It's encrypted and sent only to Etsy to fetch your data.
+
+Q: What if I see a "sync failed" message?
+A: Usually Etsy is having issues or your internet dropped. Hit [RETRY] and it will try again.
+
+Q: Can I export this data?
+A: Yes. Hit [EXPORT] to download a CSV file with all your orders and inventory.
+
+═══════════════════════════════════════════════════════════════
+
+NEXT STEPS
+  • Watch your orders flow in over the next hour
+  • Add a second shop if you run multiple (Settings > Add Shop)
+  • Set your inventory threshold in Settings if you want to change when alerts show
+
+Questions? Reply to the welcome email or check the help docs.
+
+═══════════════════════════════════════════════════════════════

@@ -1,0 +1,28 @@
+FROM: Etsy Dashboard <hello@dashboard.local>
+TO: {{seller_email}}
+SUBJECT: Your dashboard is ready — see all your orders in one place
+
+---
+
+Hi {{seller_name}},
+
+You just connected your Etsy shop to the dashboard. Here's what you can do right now:
+
+✓ See all your orders in one place (instead of switching between shops)
+✓ Track inventory across all your listings in real time
+✓ Export orders + inventory to CSV with one click
+
+Your API key is secure and read-only. We don't store your shop data on our servers.
+
+👉 Go to your dashboard now
+[{{dashboard_url}}/dashboard]
+
+Questions? You can reply to this email or check the help docs.
+
+Quick tip: Click the [SYNC NOW] button whenever you want the latest orders and inventory. It updates every 30 seconds automatically.
+
+Welcome aboard,
+Etsy Dashboard Team
+
+---
+P.S. — If you manage multiple shops, you can add more API keys from your dashboard settings. Add the next shop whenever you're ready.
