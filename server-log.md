@@ -1778,3 +1778,17 @@ aaa92d4c80b3   postgres:16-alpine   "docker-entrypoint.s…"   2 minutes ago   U
 curl: (7) Failed to connect to localhost port 3000 after 0 ms: Couldn't connect to server
 ```
 Full output: [`server-runs/2026-05-14T19-07-49-app-docker-ps-sleep-10-curl--sSf-http-localh-1.log`](server-runs/2026-05-14T19-07-49-app-docker-ps-sleep-10-curl--sSf-http-localh-1.log)
+
+## 2026-05-14T19:08:33.013Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `529d6d0` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2099ms)
+```
+docker ps -a | grep etsy; docker logs etsy-dashboard-app 2>&1 | tail -100 || echo "App container not found"
+```
+STDOUT:
+```
+601ad2eb60fb   order-inventory-dashboard-for-etsy-multi-listers-app   "docker-entrypoint.s…"   3 minutes ago   Created                                                                etsy-dashboard-app
+aaa92d4c80b3   postgres:16-alpine                                     "docker-entrypoint.s…"   3 minutes ago   Up 3 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp   etsy-dashboard-db
+```
+Full output: [`server-runs/2026-05-14T19-08-32-app-docker-ps--a-grep-etsy-docker-logs-etsy--1.log`](server-runs/2026-05-14T19-08-32-app-docker-ps--a-grep-etsy-docker-logs-etsy--1.log)
