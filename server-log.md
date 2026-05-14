@@ -1024,3 +1024,29 @@ FROM base AS builder
 WORKDIR /app
 ```
 Full output: [`server-runs/2026-05-14T17-53-09-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-53-09-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T17:53:45.596Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `9bd9c9f` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 8570ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && npm install --package-lock-only && ls -lh package-lock.json && wc -l package-lock.json
+```
+STDOUT:
+```
+
+up to date, audited 142 packages in 6s
+
+33 packages are looking for funding
+  run `npm fund` for details
+
+2 vulnerabilities (1 moderate, 1 critical)
+
+To address all issues, run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+-rw-rw-r-- 1 engineer engineer 70K May 14 17:53 package-lock.json
+2082 package-lock.json
+```
+Full output: [`server-runs/2026-05-14T17-53-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T17-53-45-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
