@@ -1679,3 +1679,12 @@ Fast-forward
  3 files changed, 205 insertions(+), 4 deletions(-)
 ```
 Full output: [`server-runs/2026-05-14T19-03-47-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T19-03-47-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T19:04:19.504Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `664e885` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✗ exec-error: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more), 12748ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && docker compose down && nohup docker compose build > /tmp/etsy-build3.log 2>&1 & echo $! > /tmp/etsy-build3.pid && echo "Started build, PID=$(cat /tmp/etsy-build3.pid)"
+```
+ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
