@@ -1478,3 +1478,16 @@ Fast-forward
  create mode 100644 public/.gitkeep
 ```
 Full output: [`server-runs/2026-05-14T18-55-51-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T18-55-51-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-14T18:56:18.895Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `d88b0a0` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2049ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && ls -la .dockerignore 2>/dev/null || echo ".dockerignore not found"
+```
+STDOUT:
+```
+.dockerignore not found
+```
+Full output: [`server-runs/2026-05-14T18-56-18-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-14T18-56-18-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
