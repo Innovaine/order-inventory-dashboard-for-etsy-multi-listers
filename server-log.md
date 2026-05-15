@@ -5376,3 +5376,19 @@ STDOUT:
 Migration complete
 ```
 Full output: [`server-runs/2026-05-15T14-43-31-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-15T14-43-31-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-15T14:43:49.949Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `795265c` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 1941ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+nohup docker compose build > /tmp/day14-build3.log 2>&1 &
+echo $! > /tmp/day14-build3.pid
+echo "Build started, PID=$(cat /tmp/day14-build3.pid)"
+```
+STDOUT:
+```
+Build started, PID=686741
+```
+Full output: [`server-runs/2026-05-15T14-43-49-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-15T14-43-49-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
