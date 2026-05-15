@@ -35,11 +35,35 @@ export async function POST(request: NextRequest) {
       data: { syncStatus: 'syncing', syncError: null },
     });
 
-    const etsyClient = new EtsyClient(shop.apiKey);
+    let etsyClient = new EtsyClient(shop.apiKey);
 
     try {
       // Fetch inventory
-      const listings = await etsyClient.getInventory(shop.shopId);
+      let listings;
+      try {
+        listings = await etsyClient.getInventory(shop.shopId);
+      } catch (error: any) {
+        // If token expired, try to refresh
+        if (error.message.includes('expired') && shop.refreshToken) {
+          console.log('Access token expired, refreshing...');
+          const tokenData = await EtsyClient.refreshAccessToken(shop.refreshToken);
+          
+          // Update shop with new token
+          await prisma.shop.update({
+            where: { id: shopId },
+            data: {
+              apiKey: tokenData.access_token,
+              refreshToken: tokenData.refresh_token,
+            },
+          });
+          
+          // Retry with new token
+          etsyClient = new EtsyClient(tokenData.access_token);
+          listings = await etsyClient.getInventory(shop.shopId);
+        } else {
+          throw error;
+        }
+      }
 
       // Clear old inventory and insert new
       await prisma.inventoryItem.deleteMany({

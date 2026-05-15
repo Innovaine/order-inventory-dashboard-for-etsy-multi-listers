@@ -24,7 +24,8 @@ model Shop {
   user           User            @relation(fields: [userId], references: [id], onDelete: Cascade)
   shopId         String          @unique // Etsy shop ID
   shopName       String
-  apiKey         String // WARNING: Pre-revenue only. Encrypt this or move to secrets manager post-revenue.
+  apiKey         String // WARNING: OAuth access token. Pre-revenue only. Encrypt this or move to secrets manager post-revenue.
+  refreshToken   String? // OAuth refresh token for token renewal
   lastSyncedAt   DateTime?
   syncStatus     String          @default("idle") // idle, syncing, success, error
   syncError      String?
