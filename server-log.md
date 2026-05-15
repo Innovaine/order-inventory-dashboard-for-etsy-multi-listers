@@ -5228,3 +5228,65 @@ echo $! > /tmp/day14-build.pid
 echo "Build started, PID=$(cat /tmp/day14-build.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-15T14:41:02.174Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `1d73ea0` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2018ms) _(showing tail — full 4,935B stdout + 0B stderr)_
+```
+kill -0 $(cat /tmp/day14-build.pid 2>/dev/null) 2>/dev/null && echo "RUNNING" || echo "NOT_RUNNING"
+tail -80 /tmp/day14-build.log 2>/dev/null || echo "Log not found"
+```
+STDOUT:
+```
+…st/compiled/@opentelemetry/api/index.js:1:7062)
+#15 14.97     at ContextAPI.with (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+#15 14.97     at NoopTracer.startActiveSpan (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+#15 14.97     at ProxyTracer.startActiveSpan (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+#15 14.97     at /app/node_modules/next/dist/server/lib/trace/tracer.js:122:103
+#15 14.97     at NoopContextManager.with (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062) {
+#15 14.97   description: "Route /api/export-csv couldn't be rendered statically because it accessed `request.cookies`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+#15 14.97   digest: 'DYNAMIC_SERVER_USAGE'
+#15 14.97 }
+#15 15.05  ✓ Generating static pages (13/13)
+#15 15.06 
+#15 15.06 > Export encountered errors on following paths:
+#15 15.06 	/page: /
+#15 15.08 npm notice
+#15 15.08 npm notice New major version of npm available! 10.8.2 -> 11.14.1
+#15 15.08 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1
+#15 15.08 npm notice To update run: npm install -g npm@11.14.1
+#15 15.08 npm notice
+#15 ERROR: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+------
+ > [builder 5/5] RUN npm run build:
+14.97 }
+15.05  ✓ Generating static pages (13/13)
+15.06 
+15.06 > Export encountered errors on following paths:
+15.06 	/page: /
+15.08 npm notice
+15.08 npm notice New major version of npm available! 10.8.2 -> 11.14.1
+15.08 npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.14.1
+15.08 npm notice To update run: npm install -g npm@11.14.1
+15.08 npm notice
+------
+Dockerfile:23
+
+--------------------
+
+  21 |     
+
+  22 |     # Build Next.js app
+
+  23 | >>> RUN npm run build
+
+  24 |     
+
+  25 |     # Production image, copy all the files and run next
+
+--------------------
+
+failed to solve: process "/bin/sh -c npm run build" did not complete successfully: exit code: 1
+```
+Full output: [`server-runs/2026-05-15T14-41-02-app-kill--0-cat-tmp-day14-build.pid-2-dev-nu-1.log`](server-runs/2026-05-15T14-41-02-app-kill--0-cat-tmp-day14-build.pid-2-dev-nu-1.log)
