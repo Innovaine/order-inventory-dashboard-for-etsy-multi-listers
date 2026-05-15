@@ -5166,3 +5166,54 @@ CONTAINER ID   IMAGE                                                         COM
 OK
 ```
 Full output: [`server-runs/2026-05-15T14-36-10-app-docker-ps-curl--sf-http-localhost-3000---1.log`](server-runs/2026-05-15T14-36-10-app-docker-ps-curl--sf-http-localhost-3000---1.log)
+
+## 2026-05-15T14:40:01.353Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `fce3893` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 3541ms) _(showing tail — full 2,608B stdout + 0B stderr)_
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers && git pull
+```
+STDOUT:
+```
+…                               | 1917 ++++++++++++++++++++
+ day-13/engineering.md                              |   43 +
+ day-13/review.md                                   |   28 +
+ day-13/test.md                                     |  260 +++
+ day-14/_plan.md                                    |   34 +
+ email-welcome.txt                                  |   28 +
+ event-audit-day13.md                               |   31 +
+ landing.html                                       |  615 +++----
+ onboarding-flow.txt                                |   79 +
+ onboarding-tour.html                               |  410 +++++
+ .../20260515000000_add_refresh_token/migration.sql |    2 +
+ prisma/schema.prisma                               |    3 +-
+ quick-start-checklist.txt                          |   75 +
+ server-log.md                                      | 1200 ++++++++++++
+ src/app/api/auth/callback/route.ts                 |  126 ++
+ src/app/api/auth/route.ts                          |  115 +-
+ src/app/api/sync/route.ts                          |   28 +-
+ src/app/page.tsx                                   |  121 +-
+ src/lib/etsy-client.ts                             |  179 +-
+ 27 files changed, 6316 insertions(+), 499 deletions(-)
+ create mode 100644 csv-preview.html
+ create mode 100644 dashboard-empty-states.html
+ create mode 100644 day-12/_index.md
+ create mode 100644 day-12/engineering.md
+ create mode 100644 day-12/review.md
+ create mode 100644 day-13/_index.md
+ create mode 100644 day-13/_plan.md
+ create mode 100644 day-13/design.md
+ create mode 100644 day-13/engineering.md
+ create mode 100644 day-13/review.md
+ create mode 100644 day-13/test.md
+ create mode 100644 day-14/_plan.md
+ create mode 100644 email-welcome.txt
+ create mode 100644 event-audit-day13.md
+ create mode 100644 onboarding-flow.txt
+ create mode 100644 onboarding-tour.html
+ create mode 100644 prisma/migrations/20260515000000_add_refresh_token/migration.sql
+ create mode 100644 quick-start-checklist.txt
+ create mode 100644 src/app/api/auth/callback/route.ts
+```
+Full output: [`server-runs/2026-05-15T14-40-01-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-15T14-40-01-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
