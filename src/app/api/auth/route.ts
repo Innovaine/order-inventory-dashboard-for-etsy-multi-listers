@@ -2,6 +2,9 @@
 // Returns OAuth URL for user to authorize the app
 
 import { NextRequest, NextResponse } from 'next/server';
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic';
 import { EtsyClient } from '@/lib/etsy-client';
 import crypto from 'crypto';
 

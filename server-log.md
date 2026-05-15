@@ -5301,3 +5301,39 @@ echo $! > /tmp/day14-build2.pid
 echo "Build started, PID=$(cat /tmp/day14-build2.pid)"
 ```
 ERROR: Connection timed out (mutating command — not auto-retried; queue it again if you want to try once more)
+
+## 2026-05-15T14:42:00.130Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `4737a99` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 1789ms) _(showing tail — full 3,695B stdout + 0B stderr)_
+```
+kill -0 $(cat /tmp/day14-build2.pid 2>/dev/null) 2>/dev/null && echo "RUNNING" || echo "NOT_RUNNING"
+tail -40 /tmp/day14-build2.log 2>/dev/null || echo "Log not found"
+```
+STDOUT:
+```
+…dist/compiled/@opentelemetry/api/index.js:1:7062) {
+#15 14.82   description: "Route /api/inventory couldn't be rendered statically because it accessed `request.cookies`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+#15 14.82   digest: 'DYNAMIC_SERVER_USAGE'
+#15 14.82 }
+#15 14.82    Generating static pages (6/13) 
+#15 14.82    Generating static pages (9/13) 
+#15 14.84 OAuth callback error: q [Error]: Dynamic server usage: Route /api/auth/callback couldn't be rendered statically because it accessed `nextUrl.searchParams`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error
+#15 14.84     at Object.get (/app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38289)
+#15 14.84     at p (/app/.next/server/app/api/auth/callback/route.js:1:1326)
+#15 14.84     at /app/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:34672
+#15 14.84     at /app/node_modules/next/dist/server/lib/trace/tracer.js:140:36
+#15 14.84     at NoopContextManager.with (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)
+#15 14.84     at ContextAPI.with (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)
+#15 14.84     at NoopTracer.startActiveSpan (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)
+#15 14.84     at ProxyTracer.startActiveSpan (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)
+#15 14.84     at /app/node_modules/next/dist/server/lib/trace/tracer.js:122:103
+#15 14.84     at NoopContextManager.with (/app/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062) {
+#15 14.84   description: "Route /api/auth/callback couldn't be rendered statically because it accessed `nextUrl.searchParams`. See more info here: https://nextjs.org/docs/messages/dynamic-server-error",
+#15 14.84   digest: 'DYNAMIC_SERVER_USAGE'
+#15 14.84 }
+#15 14.91  ✓ Generating static pages (13/13)
+#15 15.10    Finalizing page optimization ...
+#15 15.10    Collecting build traces ...
+```
+Full output: [`server-runs/2026-05-15T14-42-00-app-kill--0-cat-tmp-day14-build2.pid-2-dev-n-1.log`](server-runs/2026-05-15T14-42-00-app-kill--0-cat-tmp-day14-build2.pid-2-dev-n-1.log)

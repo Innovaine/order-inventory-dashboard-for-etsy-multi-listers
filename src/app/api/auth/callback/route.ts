@@ -2,6 +2,9 @@
 // Receives authorization code, exchanges for access token, stores in DB
 
 import { NextRequest, NextResponse } from 'next/server';
+
+// Force dynamic rendering - this route handles OAuth callbacks
+export const dynamic = 'force-dynamic';
 import { EtsyClient } from '@/lib/etsy-client';
 import prisma from '@/lib/prisma';
 

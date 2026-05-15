@@ -2,6 +2,8 @@
 // Triggers immediate fetch of inventory and orders from Etsy API
 
 import { NextRequest, NextResponse } from 'next/server';
+
+export const dynamic = 'force-dynamic';
 import prisma from '@/lib/prisma';
 import { EtsyClient } from '@/lib/etsy-client';
 

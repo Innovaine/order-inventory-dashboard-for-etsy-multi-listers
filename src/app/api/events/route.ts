@@ -7,6 +7,8 @@ import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
+export const dynamic = 'force-dynamic';
+
 const EVENTS_FILE = '/tmp/analytics-events.json';
 
 interface AnalyticsEvent {
