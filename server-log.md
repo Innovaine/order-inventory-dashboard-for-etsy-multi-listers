@@ -5361,3 +5361,18 @@ Fast-forward
  9 files changed, 65 insertions(+)
 ```
 Full output: [`server-runs/2026-05-15T14-43-07-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-15T14-43-07-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
+
+## 2026-05-15T14:43:31.986Z — Anil ran 1 command(s)
+_Pre-SSH: warehouse pushed to GitHub as commit `6746e6c` so the server's `git pull` will pick it up._
+
+### Command 1 on app as engineer (✓ exit 0, 2046ms)
+```
+cd ~/order-inventory-dashboard-for-etsy-multi-listers
+docker compose exec -T db psql -U etsy_user -d etsy_dashboard -c "ALTER TABLE \"Shop\" ADD COLUMN IF NOT EXISTS \"refreshToken\" TEXT;"
+echo "Migration complete"
+```
+STDOUT:
+```
+Migration complete
+```
+Full output: [`server-runs/2026-05-15T14-43-31-app-cd-order-inventory-dashboard-for-etsy-mu-1.log`](server-runs/2026-05-15T14-43-31-app-cd-order-inventory-dashboard-for-etsy-mu-1.log)
